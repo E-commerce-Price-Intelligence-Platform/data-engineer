@@ -4,7 +4,7 @@ from price_intelligence.items import SmartphoneItem
 
 
 class JumiaSpider(scrapy.Spider):
-    name            = "jumia_ma"
+    name            = "jumia"
     allowed_domains = ["jumia.ma"]
 
     start_urls = [

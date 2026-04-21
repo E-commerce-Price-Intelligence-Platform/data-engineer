@@ -6,11 +6,11 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 from datetime import datetime
 import csv, json, os, time
 
 # ── Config ────────────────────────────────────────────────
-CHROMEDRIVER_PATH = r"C:\Users\hp\.wdm\drivers\chromedriver\win64\147.0.7727.57\chromedriver-win32\chromedriver.exe"
 OUTPUT_DIR        = "output"
 SEARCH_QUERIES    = [
     "samsung galaxy s24 smartphone",
@@ -19,8 +19,8 @@ SEARCH_QUERIES    = [
     "apple iphone 15 smartphone",
 ]
 BASE_URL  = "https://www.amazon.fr/s?k="
-MAX_PAGES = 5
-WAIT_PAGE = 4
+MAX_PAGES = 3
+WAIT_PAGE = 3
 
 MOTS_EXCLUS = [
     "coque", "étui", "housse", "verre trempé", "film protecteur",
@@ -40,13 +40,31 @@ MOTS_EXCLUS = [
 # ── Driver ────────────────────────────────────────────────
 def make_driver():
     options = Options()
-    options.add_argument("--start-maximized")
+    options.add_argument("--headless")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--window-size=1920,1080")
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("--disable-notifications")
     options.add_argument("--lang=fr-FR")
-    options.add_experimental_option("excludeSwitches", ["enable-automation"])
-    options.add_experimental_option("useAutomationExtension", False)
-    driver = webdriver.Chrome(service=Service(CHROMEDRIVER_PATH), options=options)
+    options.add_argument(
+        "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/147.0.0.0 Safari/537.36"
+    )
+    options.page_load_strategy = "none"  # return immediately; WebDriverWait handles readiness
+
+    selenium_url = os.environ.get("SELENIUM_REMOTE_URL")
+    if selenium_url:
+        driver = webdriver.Remote(command_executor=selenium_url, options=options)
+    else:
+        options.add_experimental_option("excludeSwitches", ["enable-automation"])
+        options.add_experimental_option("useAutomationExtension", False)
+        driver = webdriver.Chrome(
+            service=Service(ChromeDriverManager().install()),
+            options=options
+        )
     driver.execute_script(
         "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
     )
@@ -109,7 +127,11 @@ def is_smartphone(name):
 
 # ── Scraper page listing ──────────────────────────────────
 def scrape_listing_page(driver, url):
-    driver.get(url)
+    try:
+        driver.get(url)
+    except Exception as e:
+        print(f"  ✗ Impossible de charger {url}: {e}")
+        return []
     time.sleep(WAIT_PAGE)
 
     # Fermer popup cookies si présent
@@ -230,18 +252,20 @@ def scrape_query(driver, query):
 
 # ── Sauvegarde ────────────────────────────────────────────
 def save_results(items):
+    if not items:
+        print("⚠️ Aucun produit — aucun fichier créé")
+        return
+
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-    if items:
-        csv_path = f"{OUTPUT_DIR}/amazon_{ts}.csv"
-        with open(csv_path, "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=items[0].keys())
-            writer.writeheader()
-            writer.writerows(items)
-        print(f"\n✅ CSV : {csv_path}")
+    csv_path = f"{OUTPUT_DIR}/amazon.csv"
+    with open(csv_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=items[0].keys())
+        writer.writeheader()
+        writer.writerows(items)
+    print(f"\n✅ CSV : {csv_path}")
 
-    json_path = f"{OUTPUT_DIR}/amazon_{ts}.json"
+    json_path = f"{OUTPUT_DIR}/amazon.json"
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(items, f, ensure_ascii=False, indent=2)
     print(f"✅ JSON : {json_path}")

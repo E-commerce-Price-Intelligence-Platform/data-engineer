@@ -20,6 +20,7 @@ ITEM_PIPELINES = {
     "price_intelligence.pipelines.JsonPipeline": 200,
 }
 
+
 LOG_LEVEL = "INFO"
 FEED_EXPORT_ENCODING = "utf-8"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"

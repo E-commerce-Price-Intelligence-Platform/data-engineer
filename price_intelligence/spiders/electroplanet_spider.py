@@ -6,18 +6,20 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 from datetime import datetime
 import csv, json, os, time
 
 # ── Config ────────────────────────────────────────────────
-CHROMEDRIVER_PATH = r"C:\Users\hp\.wdm\drivers\chromedriver\win64\147.0.7727.57\chromedriver-win32\chromedriver.exe"
 OUTPUT_DIR        = "output"
 
 # ✅ CHANGEMENT 1
 SEARCH_QUERIES    = ["samsung galaxy", "apple iphone"]
 
 WAIT_PAGE         = 4
-WAIT_PRODUCT      = 2
+WAIT_PRODUCT      = 1
 
 # ── Helpers ───────────────────────────────────────────────
 def clean_price(price_str):
@@ -65,15 +67,31 @@ def get_brand(name):
 # ── Driver ────────────────────────────────────────────────
 def make_driver():
     options = Options()
-    options.add_argument("--start-maximized")
+    options.add_argument("--headless")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--window-size=1920,1080")
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("--disable-notifications")
-    options.add_experimental_option("excludeSwitches", ["enable-automation"])
-    options.add_experimental_option("useAutomationExtension", False)
-    return webdriver.Chrome(
-        service=Service(CHROMEDRIVER_PATH),
-        options=options,
+    options.add_argument(
+        "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/147.0.0.0 Safari/537.36"  
     )
+    options.page_load_strategy = "none"  # don't wait for full page load; WebDriverWait handles it
+
+    selenium_url = os.environ.get("SELENIUM_REMOTE_URL")
+    if selenium_url:
+        driver = webdriver.Remote(command_executor=selenium_url, options=options)
+    else:
+        options.add_experimental_option("excludeSwitches", ["enable-automation"])
+        options.add_experimental_option("useAutomationExtension", False)
+        driver = webdriver.Chrome(
+            service=Service(ChromeDriverManager().install()),
+            options=options,
+        )
+    return driver
 
 # ── Scraper ───────────────────────────────────────────────
 def scrape_product(driver, url, fallback_name):
@@ -153,20 +171,33 @@ def scrape_query(driver, query):
 
     while url:
         print(f"\n[Electroplanet] '{query}' — page {page}")
-        driver.get(url)
-        time.sleep(WAIT_PAGE)
+        driver.get(url)  # returns immediately (pageLoadStrategy=none)
 
-        # Fermer popup
+        # Dismiss any popup/cookie overlay
+        for selector in ["button.action-close", "button.accept-cookies",
+                         "#cookie-accept", ".modal-close"]:
+            try:
+                driver.find_element(By.CSS_SELECTOR, selector).click()
+                time.sleep(0.5)
+            except Exception:
+                pass
+
+        # Wait up to 15 s for at least one product link to appear
         try:
-            driver.find_element(By.CSS_SELECTOR, "button.action-close").click()
-            time.sleep(1)
+            WebDriverWait(driver, 15).until(
+                EC.presence_of_element_located(
+                    (By.CSS_SELECTOR, "a.product-item-link")
+                )
+            )
         except Exception:
-            pass
+            pass  # will report 0 products below
 
         # Produits
         els = driver.find_elements(By.CSS_SELECTOR, "a.product-item-link")
         print(f"  → {len(els)} produits trouvés")
         if not els:
+            print(f"  ℹ page title: {driver.title[:80]}")
+            print(f"  ℹ page source: {driver.page_source[:300]}")
             break
 
         products_data = [
@@ -194,18 +225,20 @@ def scrape_query(driver, query):
 
 
 def save_results(items, spider_name="electroplanet"):
+    if not items:
+        print("⚠️ Aucun produit — aucun fichier créé")
+        return None, None
+
     os.makedirs(OUTPUT_DIR, exist_ok=True)
-    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
 
-    csv_path = f"{OUTPUT_DIR}/{spider_name}_{ts}.csv"
-    if items:
-        with open(csv_path, "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=items[0].keys())
-            writer.writeheader()
-            writer.writerows(items)
-        print(f"\n✅ CSV sauvegardé : {csv_path}")
+    csv_path = f"{OUTPUT_DIR}/{spider_name}.csv"
+    with open(csv_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=items[0].keys())
+        writer.writeheader()
+        writer.writerows(items)
+    print(f"\n✅ CSV sauvegardé : {csv_path}")
 
-    json_path = f"{OUTPUT_DIR}/{spider_name}_{ts}.json"
+    json_path = f"{OUTPUT_DIR}/{spider_name}.json"
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(items, f, ensure_ascii=False, indent=2)
     print(f"✅ JSON sauvegardé : {json_path}")

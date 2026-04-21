@@ -1,0 +1,10 @@
+#Claude
+.claude
+
+#Airflow
+
+airflow/logs/*
+
+#desktop
+
+desktop.ini

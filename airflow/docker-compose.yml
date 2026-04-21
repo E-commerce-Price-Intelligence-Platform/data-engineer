@@ -1,0 +1,34 @@
+services:
+  airflow:
+    build: .
+    container_name: airflow
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=SequentialExecutor
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=sqlite:////opt/airflow/airflow.db
+      - AIRFLOW__DATABASE__SQL_ENGINE_ARGS={"connect_args":{"timeout":60}}
+      - AIRFLOW__SCHEDULER__JOB_HEARTBEAT_SEC=30
+      - AIRFLOW__SCHEDULER__SCHEDULER_HEARTBEAT_SEC=30
+      - AIRFLOW__WEBSERVER__SECRET_KEY=price_intelligence_secret
+      - _AIRFLOW_DB_MIGRATE=true
+      - _AIRFLOW_WWW_USER_CREATE=true
+      - _AIRFLOW_WWW_USER_USERNAME=admin
+      - _AIRFLOW_WWW_USER_PASSWORD=admin123
+      - SELENIUM_REMOTE_URL=http://selenium:4444
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./logs:/opt/airflow/logs
+      - ./plugins:/opt/airflow/plugins
+      - C:/Users/hp/Desktop/price-intelligence:/opt/airflow/price_intelligence
+    ports:
+      - "8080:8080"
+    command: standalone
+    depends_on:
+      - selenium
+
+  selenium:
+    image: selenium/standalone-chrome:latest
+    container_name: selenium
+    shm_size: 2g
+    ports:
+      - "4444:4444"
