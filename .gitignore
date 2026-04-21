@@ -8,3 +8,13 @@ airflow/logs/*
 #desktop
 
 desktop.ini
+
+#VSCode
+.vscode/
+
+#Python
+__pycache__/*
+
+price_intelligence/__pycache__/*
+
+price_intelligence/spiders/__pycache__/*
