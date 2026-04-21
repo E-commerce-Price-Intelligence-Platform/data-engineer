@@ -1,0 +1,279 @@
+"""
+Spider Amazon — 100% Selenium
+Lancement : python spiders/amazon_spider.py
+"""
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from datetime import datetime
+import csv, json, os, time
+
+# ── Config ────────────────────────────────────────────────
+CHROMEDRIVER_PATH = r"C:\Users\hp\.wdm\drivers\chromedriver\win64\147.0.7727.57\chromedriver-win32\chromedriver.exe"
+OUTPUT_DIR        = "output"
+SEARCH_QUERIES    = [
+    "samsung galaxy s24 smartphone",
+    "samsung galaxy a55 smartphone",
+    "apple iphone 16 smartphone",
+    "apple iphone 15 smartphone",
+]
+BASE_URL  = "https://www.amazon.fr/s?k="
+MAX_PAGES = 5
+WAIT_PAGE = 4
+
+MOTS_EXCLUS = [
+    "coque", "étui", "housse", "verre trempé", "film protecteur",
+    "chargeur", "câble", "batterie", "perche selfie",
+    "écouteurs", "earphone", "headphone",
+    "montre connectée", "galaxy watch", "galaxy buds", "galaxy fit",
+    "bracelet", "brassard sport", "adaptateur",
+    "stylet", "station de charge", "dock",
+    "téléphone fixe", "dect", "logicom", "panasonic",
+    "motorola", "xiaomi", "poco", "oppo", "honor", "pixel", "tcl",
+    "drybag", "stabilisateur", "cardan", "carte mémoire",
+    "powerbank", "visionneuse", "filtre nd",
+    "topeak", "ram mount", "neewer", "piaggio",
+    "enceinte", "bonnet bluetooth",
+]
+
+# ── Driver ────────────────────────────────────────────────
+def make_driver():
+    options = Options()
+    options.add_argument("--start-maximized")
+    options.add_argument("--disable-blink-features=AutomationControlled")
+    options.add_argument("--disable-notifications")
+    options.add_argument("--lang=fr-FR")
+    options.add_experimental_option("excludeSwitches", ["enable-automation"])
+    options.add_experimental_option("useAutomationExtension", False)
+    driver = webdriver.Chrome(service=Service(CHROMEDRIVER_PATH), options=options)
+    driver.execute_script(
+        "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
+    )
+    return driver
+
+# ── Helpers ───────────────────────────────────────────────
+def clean_price(price_str):
+    if not price_str:
+        return None
+    cleaned = (
+        price_str
+        .replace("€", "").replace("EUR", "")
+        .replace("\xa0", "").replace("\u202f", "")
+        .replace(" ", "").replace("\u00a0", "")
+        .replace(",", ".").strip()
+    )
+    parts = cleaned.split(".")
+    if len(parts) == 3:
+        cleaned = parts[0] + parts[1] + "." + parts[2]
+    try:
+        return float(cleaned)
+    except ValueError:
+        return None
+
+def extract_model(name):
+    n = name.lower()
+    models = [
+        "s26 ultra", "s26+", "s26", "s25 ultra", "s25+", "s25",
+        "s24 ultra", "s24+", "s24", "s23 ultra", "s23+", "s23",
+        "a57", "a56", "a55", "a36", "a35", "a26", "a25", "a17",
+        "a16", "a15", "a07", "a06", "a05",
+        "z fold 7", "z fold 6", "z fold 5",
+        "z flip 7", "z flip 6", "z flip 5",
+        "iphone 17 pro max", "iphone 17 pro", "iphone 17 plus", "iphone 17",
+        "iphone 16 pro max", "iphone 16 pro", "iphone 16 plus", "iphone 16",
+        "iphone 15 pro max", "iphone 15 pro", "iphone 15 plus", "iphone 15",
+        "iphone 14 pro max", "iphone 14 pro", "iphone 14",
+        "iphone 13 pro max", "iphone 13 pro", "iphone 13",
+    ]
+    for m in models:
+        if m in n:
+            return m.title()
+    return "Unknown"
+
+def get_brand(name):
+    n = name.lower()
+    if "samsung" in n:
+        return "samsung"
+    elif "iphone" in n or "apple" in n:
+        return "apple"
+    return "other"
+
+def is_smartphone(name):
+    n = name.lower()
+    if any(mot in n for mot in MOTS_EXCLUS):
+        return False
+    if "samsung" not in n and "iphone" not in n and "apple" not in n:
+        return False
+    return True
+
+# ── Scraper page listing ──────────────────────────────────
+def scrape_listing_page(driver, url):
+    driver.get(url)
+    time.sleep(WAIT_PAGE)
+
+    # Fermer popup cookies si présent
+    try:
+        driver.find_element(By.CSS_SELECTOR, "input#sp-cc-accept").click()
+        time.sleep(1)
+    except Exception:
+        pass
+
+    products = driver.find_elements(
+        By.CSS_SELECTOR, "div[data-component-type='s-search-result']"
+    )
+    print(f"  → {len(products)} résultats bruts")
+
+    items_data = []
+    for product in products:
+        try:
+            name_el = product.find_elements(By.CSS_SELECTOR, "h2 span")
+            name    = name_el[0].text.strip() if name_el else ""
+            if not name or not is_smartphone(name):
+                continue
+
+            link_el = product.find_elements(By.CSS_SELECTOR, "h2 a")
+            href    = link_el[0].get_attribute("href") if link_el else ""
+
+            # Prix
+            price_whole = product.find_elements(By.CSS_SELECTOR, "span.a-price-whole")
+            price_frac  = product.find_elements(By.CSS_SELECTOR, "span.a-price-fraction")
+            if price_whole:
+                whole = price_whole[0].text.replace(",", "").replace(".", "").strip()
+                frac  = price_frac[0].text.strip() if price_frac else "00"
+                try:
+                    price = float(f"{whole}.{frac}")
+                except Exception:
+                    price = None
+            else:
+                price = None
+
+            # Ancien prix
+            old_el    = product.find_elements(
+                By.CSS_SELECTOR, "span.a-price.a-text-price span.a-offscreen"
+            )
+            old_price = clean_price(old_el[0].text) if old_el else None
+
+            # Discount
+            disc_el  = product.find_elements(By.CSS_SELECTOR, "span.a-badge-text")
+            discount = disc_el[0].text.strip() if disc_el else None
+
+            # Rating
+            rating_el = product.find_elements(By.CSS_SELECTOR, "span.a-icon-alt")
+            rating    = rating_el[0].text.strip() if rating_el else None
+
+            # Avis
+            reviews = None
+            for r in product.find_elements(By.CSS_SELECTOR, "span[aria-label]"):
+                label = r.get_attribute("aria-label") or ""
+                if "évaluation" in label or "rating" in label.lower():
+                    reviews = label
+                    break
+
+            items_data.append({
+                "name":        name,
+                "brand":       get_brand(name),
+                "model":       extract_model(name),
+                "price":       price,
+                "old_price":   old_price,
+                "currency":    "EUR",
+                "discount":    discount,
+                "rating":      rating,
+                "reviews":     reviews,
+                "url":         href,
+                "source_site": "amazon_fr",
+                "scraped_at":  datetime.utcnow().isoformat(),
+            })
+
+        except Exception as e:
+            print(f"    ✗ Erreur : {e}")
+            continue
+
+    return items_data
+
+# ── Pagination ────────────────────────────────────────────
+def get_next_page_url(driver):
+    try:
+        next_btn = driver.find_element(By.CSS_SELECTOR, "a.s-pagination-next")
+        return next_btn.get_attribute("href")
+    except Exception:
+        return None
+
+# ── Scraping par query avec déduplication ─────────────────
+def scrape_query(driver, query):
+    all_items = []
+    seen_urls = set()
+    url       = BASE_URL + query.replace(" ", "+")
+    page      = 1
+
+    while url and page <= MAX_PAGES:
+        print(f"\n[Amazon] '{query}' — page {page}")
+        items = scrape_listing_page(driver, url)
+
+        new_items = []
+        for it in items:
+            key = it["url"] or it["name"]
+            if key not in seen_urls:
+                seen_urls.add(key)
+                new_items.append(it)
+
+        all_items.extend(new_items)
+        print(f"  → {len(new_items)} uniques (sur {len(items)} filtrés)")
+        for it in new_items:
+            print(f"    ✓ {it['name'][:65]} — {it['price']} EUR")
+
+        url  = get_next_page_url(driver)
+        page += 1
+        time.sleep(2)
+
+    return all_items
+
+# ── Sauvegarde ────────────────────────────────────────────
+def save_results(items):
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+
+    if items:
+        csv_path = f"{OUTPUT_DIR}/amazon_{ts}.csv"
+        with open(csv_path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=items[0].keys())
+            writer.writeheader()
+            writer.writerows(items)
+        print(f"\n✅ CSV : {csv_path}")
+
+    json_path = f"{OUTPUT_DIR}/amazon_{ts}.json"
+    with open(json_path, "w", encoding="utf-8") as f:
+        json.dump(items, f, ensure_ascii=False, indent=2)
+    print(f"✅ JSON : {json_path}")
+
+# ── Entry point ───────────────────────────────────────────
+if __name__ == "__main__":
+    print("=== Amazon Spider ===")
+    driver    = make_driver()
+    all_items = []
+
+    try:
+        for query in SEARCH_QUERIES:
+            items = scrape_query(driver, query)
+            all_items.extend(items)
+            print(f"\n  → '{query}' : {len(items)} produits")
+    finally:
+        driver.quit()
+        print("\nChrome fermé.")
+
+    # Déduplication finale entre toutes les queries
+    seen  = set()
+    dedup = []
+    for it in all_items:
+        key = it["url"] or it["name"]
+        if key not in seen:
+            seen.add(key)
+            dedup.append(it)
+
+    print(f"\n=== Total après déduplication : {len(dedup)} produits ===")
+    save_results(dedup)
+
+    samsung = [i for i in dedup if i["brand"] == "samsung"]
+    apple   = [i for i in dedup if i["brand"] == "apple"]
+    print(f"Samsung : {len(samsung)}")
+    print(f"Apple   : {len(apple)}")
