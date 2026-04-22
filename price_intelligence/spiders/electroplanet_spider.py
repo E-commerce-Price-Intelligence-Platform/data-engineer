@@ -19,7 +19,6 @@ OUTPUT_DIR        = "output"
 SEARCH_QUERIES    = ["samsung galaxy", "apple iphone"]
 
 WAIT_PAGE         = 4
-WAIT_PRODUCT      = 1
 
 # ── Helpers ───────────────────────────────────────────────
 def clean_price(price_str):
@@ -97,7 +96,14 @@ def make_driver():
 def scrape_product(driver, url, fallback_name):
     try:
         driver.get(url)
-        time.sleep(WAIT_PRODUCT)
+
+        # wait for product title instead of fixed sleep
+        try:
+            WebDriverWait(driver, 8).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, "h1.page-title"))
+            )
+        except Exception:
+            pass
 
         # ✅ CHANGEMENT 2 — NOM
         try:

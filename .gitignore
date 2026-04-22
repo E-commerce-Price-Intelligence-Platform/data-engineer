@@ -1,20 +1,25 @@
-#Claude
-.claude
+# Claude
+.claude/
 
-#Airflow
+# Airflow runtime artifacts
+airflow/logs/
+airflow/plugins/
+airflow/airflow.db
+airflow/airflow.cfg
+airflow/webserver_config.py
+airflow/standalone_admin_password.txt
 
-airflow/logs/*
+# Python build artifacts
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
 
-#desktop
-
+# OS / IDE
 desktop.ini
-
-#VSCode
 .vscode/
-
-#Python
-__pycache__/*
-
-price_intelligence/__pycache__/*
-
-price_intelligence/spiders/__pycache__/*
+.DS_Store

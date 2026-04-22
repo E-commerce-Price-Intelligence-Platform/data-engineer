@@ -15,9 +15,10 @@ default_args = {
     "email_on_failure": False,
 }
 
-SPIDERS_PATH = "/opt/airflow/price_intelligence/price_intelligence/spiders"
-OUTPUT_DIR   = "/opt/airflow/price_intelligence/output"
-PROJECT_ROOT = "/opt/airflow/price_intelligence"
+SPIDERS_PATH  = "/opt/airflow/price_intelligence/price_intelligence/spiders"
+OUTPUT_DIR    = "/opt/airflow/price_intelligence/output"
+PROJECT_ROOT  = "/opt/airflow/price_intelligence"
+BIGTABLE_PATH = "/opt/airflow/price_intelligence/price_intelligence"
 
 
 def _run(cmd, cwd=PROJECT_ROOT):
@@ -29,8 +30,13 @@ def _run(cmd, cwd=PROJECT_ROOT):
         text=True,
         cwd=cwd,
     )
-    for line in iter(process.stdout.readline, ""):
-        logger.info(line.rstrip())
+    try:
+        for line in iter(process.stdout.readline, ""):
+            logger.info(line.rstrip())
+    except Exception:
+        process.kill()
+        process.wait()
+        raise
     process.stdout.close()
     process.wait()
     if process.returncode != 0:
@@ -51,6 +57,16 @@ def run_electroplanet_spider():
 def run_amazon_spider():
     _run(["python", "-u", f"{SPIDERS_PATH}/amazon_spider.py"])
     logger.info("✅ Amazon spider terminé")
+
+
+def setup_bigtable():
+    _run(["python", f"{BIGTABLE_PATH}/bigtable_setup.py"])
+    logger.info("✅ Bigtable setup done")
+
+
+def write_to_bigtable():
+    _run(["python", f"{BIGTABLE_PATH}/bigtable_writer.py"], cwd=OUTPUT_DIR)
+    logger.info("✅ Bigtable write done")
 
 
 def validate_output():
@@ -118,6 +134,17 @@ with DAG(
         execution_timeout=timedelta(minutes=10),
     )
 
+    task_bigtable_setup = PythonOperator(
+        task_id="setup_bigtable",
+        python_callable=setup_bigtable,
+    )
+
+    task_bigtable_write = PythonOperator(
+        task_id="write_to_bigtable",
+        python_callable=write_to_bigtable,
+        execution_timeout=timedelta(minutes=5),
+    )
+
     task_validate = PythonOperator(
         task_id="validate_output",
         python_callable=validate_output,
@@ -128,4 +155,4 @@ with DAG(
         python_callable=generate_report,
     )
 
-    [task_jumia, task_electro] >> task_amazon >> task_validate >> task_report
+    [task_jumia, task_electro] >> task_amazon >> task_bigtable_setup >> task_bigtable_write >> task_validate >> task_report
