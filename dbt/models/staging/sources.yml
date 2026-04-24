@@ -1,0 +1,44 @@
+version: 2
+
+sources:
+  - name: raw_prices
+    database: "{{ var('project_id') }}"
+    schema: "{{ var('raw_dataset') }}"
+    description: "Raw smartphone price data loaded by bigquery_loader.py after each scrape run."
+
+    tables:
+      - name: jumia
+        description: "Raw scraped records from jumia.ma (Scrapy, ~354 products/day)."
+        columns:
+          - name: name
+            tests: [not_null]
+          - name: price
+            tests: [not_null]
+          - name: source_site
+            tests:
+              - accepted_values:
+                  values: ["jumia"]
+
+      - name: electroplanet
+        description: "Raw scraped records from electroplanet.ma (Selenium, ~51 products/day)."
+        columns:
+          - name: name
+            tests: [not_null]
+          - name: price
+            tests: [not_null]
+          - name: source_site
+            tests:
+              - accepted_values:
+                  values: ["electroplanet"]
+
+      - name: amazon
+        description: "Raw scraped records from amazon.fr (Selenium, ~119 products/day)."
+        columns:
+          - name: name
+            tests: [not_null]
+          - name: price
+            tests: [not_null]
+          - name: source_site
+            tests:
+              - accepted_values:
+                  values: ["amazon"]

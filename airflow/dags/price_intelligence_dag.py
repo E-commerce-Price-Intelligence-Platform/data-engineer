@@ -18,17 +18,23 @@ default_args = {
 SPIDERS_PATH  = "/opt/airflow/price_intelligence/price_intelligence/spiders"
 OUTPUT_DIR    = "/opt/airflow/price_intelligence/output"
 PROJECT_ROOT  = "/opt/airflow/price_intelligence"
-BIGTABLE_PATH = "/opt/airflow/price_intelligence/price_intelligence"
+BIGTABLE_PATH = "/opt/airflow/price_intelligence/price_intelligence/bigtable"
+BQ_LOADER     = "/opt/airflow/price_intelligence/price_intelligence/bigquery_loader.py"
+DBT_DIR       = "/opt/airflow/price_intelligence/dbt"
 
 
-def _run(cmd, cwd=PROJECT_ROOT):
+def _run(cmd, cwd=PROJECT_ROOT, extra_env=None):
     """Run a command and stream its output line-by-line into the Airflow log."""
+    env = os.environ.copy()
+    if extra_env:
+        env.update(extra_env)
     process = subprocess.Popen(
         cmd,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         text=True,
         cwd=cwd,
+        env=env,
     )
     try:
         for line in iter(process.stdout.readline, ""):
@@ -43,7 +49,7 @@ def _run(cmd, cwd=PROJECT_ROOT):
         raise Exception(f"Command failed (exit {process.returncode}): {' '.join(cmd)}")
 
 
-# ── Fonctions Python ──────────────────────────────────────
+# ── Scrapers ──────────────────────────────────────────────
 def run_jumia_spider():
     _run(["python", "-m", "scrapy", "crawl", "jumia"])
     logger.info("✅ Jumia spider terminé")
@@ -59,6 +65,7 @@ def run_amazon_spider():
     logger.info("✅ Amazon spider terminé")
 
 
+# ── Bigtable ──────────────────────────────────────────────
 def setup_bigtable():
     _run(["python", f"{BIGTABLE_PATH}/bigtable_setup.py"])
     logger.info("✅ Bigtable setup done")
@@ -69,6 +76,41 @@ def write_to_bigtable():
     logger.info("✅ Bigtable write done")
 
 
+# ── BigQuery + dbt ────────────────────────────────────────
+def load_to_bigquery():
+    _run(
+        ["python", BQ_LOADER],
+        cwd=OUTPUT_DIR,
+        extra_env={"OUTPUT_DIR": OUTPUT_DIR},
+    )
+    logger.info("✅ BigQuery load done")
+
+
+def dbt_deps():
+    _run(
+        ["dbt", "deps", "--project-dir", DBT_DIR, "--profiles-dir", DBT_DIR],
+        cwd=DBT_DIR,
+    )
+    logger.info("✅ dbt deps installed")
+
+
+def dbt_run():
+    _run(
+        ["dbt", "run", "--project-dir", DBT_DIR, "--profiles-dir", DBT_DIR],
+        cwd=DBT_DIR,
+    )
+    logger.info("✅ dbt run complete")
+
+
+def dbt_test():
+    _run(
+        ["dbt", "test", "--project-dir", DBT_DIR, "--profiles-dir", DBT_DIR],
+        cwd=DBT_DIR,
+    )
+    logger.info("✅ dbt test complete")
+
+
+# ── Validation & report ───────────────────────────────────
 def validate_output():
     import glob
     files = glob.glob(f"{OUTPUT_DIR}/*.json")
@@ -113,7 +155,7 @@ with DAG(
     start_date=datetime(2026, 1, 1),
     schedule="0 6 * * *",
     catchup=False,
-    tags=["scraping", "price", "smartphones"],
+    tags=["scraping", "price", "smartphones", "dbt"],
 ) as dag:
 
     task_jumia = PythonOperator(
@@ -145,6 +187,30 @@ with DAG(
         execution_timeout=timedelta(minutes=5),
     )
 
+    task_load_bq = PythonOperator(
+        task_id="load_to_bigquery",
+        python_callable=load_to_bigquery,
+        execution_timeout=timedelta(minutes=10),
+    )
+
+    task_dbt_deps = PythonOperator(
+        task_id="dbt_deps",
+        python_callable=dbt_deps,
+        execution_timeout=timedelta(minutes=5),
+    )
+
+    task_dbt_run = PythonOperator(
+        task_id="dbt_run",
+        python_callable=dbt_run,
+        execution_timeout=timedelta(minutes=15),
+    )
+
+    task_dbt_test = PythonOperator(
+        task_id="dbt_test",
+        python_callable=dbt_test,
+        execution_timeout=timedelta(minutes=10),
+    )
+
     task_validate = PythonOperator(
         task_id="validate_output",
         python_callable=validate_output,
@@ -155,4 +221,13 @@ with DAG(
         python_callable=generate_report,
     )
 
-    [task_jumia, task_electro] >> task_amazon >> task_bigtable_setup >> task_bigtable_write >> task_validate >> task_report
+    # ── Pipeline order ────────────────────────────────────
+    # Jumia + Electroplanet scrape in parallel → Amazon → fan out to Bigtable and BigQuery
+    # dbt runs after BigQuery load; both branches converge at validate → report
+
+    [task_jumia, task_electro] >> task_amazon
+
+    task_amazon >> task_bigtable_setup >> task_bigtable_write
+    task_amazon >> task_load_bq >> task_dbt_deps >> task_dbt_run >> task_dbt_test
+
+    [task_bigtable_write, task_dbt_test] >> task_validate >> task_report

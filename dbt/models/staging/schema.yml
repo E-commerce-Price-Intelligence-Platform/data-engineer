@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: stg_jumia
+    description: "Cleaned and typed records from jumia.ma."
+    columns:
+      - name: product_sk
+        description: "MD5 surrogate key on (name, price, scraped_at, source_site)."
+        tests: [unique, not_null]
+      - name: brand
+        tests: [not_null]
+      - name: model
+        tests: [not_null]
+      - name: price
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+      - name: source_site
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["jumia"]
+      - name: scraped_at
+        tests: [not_null]
+
+  - name: stg_electroplanet
+    description: "Cleaned and typed records from electroplanet.ma."
+    columns:
+      - name: product_sk
+        tests: [unique, not_null]
+      - name: brand
+        tests: [not_null]
+      - name: price
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+      - name: source_site
+        tests:
+          - accepted_values:
+              values: ["electroplanet"]
+
+  - name: stg_amazon
+    description: "Cleaned and typed records from amazon.fr."
+    columns:
+      - name: product_sk
+        tests: [unique, not_null]
+      - name: brand
+        tests: [not_null]
+      - name: price
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+      - name: source_site
+        tests:
+          - accepted_values:
+              values: ["amazon"]

@@ -16,6 +16,9 @@ services:
       - _AIRFLOW_WWW_USER_PASSWORD=admin123
       - SELENIUM_REMOTE_URL=http://selenium:4444
       - BIGTABLE_EMULATOR_HOST=localhost:8086
+      - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/price_intelligence/gcp-credentials.json
+      - GCP_PROJECT=price-intelligence
+      - BQ_LOCATION=EU
     volumes:
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs

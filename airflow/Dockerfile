@@ -9,4 +9,6 @@ RUN pip install --no-cache-dir \
     scrapy \
     selenium \
     webdriver-manager \
-    google-cloud-bigtable
+    google-cloud-bigtable \
+    google-cloud-bigquery \
+    dbt-bigquery

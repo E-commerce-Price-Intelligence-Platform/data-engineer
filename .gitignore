@@ -23,3 +23,6 @@ build/
 desktop.ini
 .vscode/
 .DS_Store
+
+# GCP Credentials
+*.json
