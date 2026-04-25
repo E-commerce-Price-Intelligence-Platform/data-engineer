@@ -17,7 +17,7 @@ services:
       - SELENIUM_REMOTE_URL=http://selenium:4444
       - BIGTABLE_EMULATOR_HOST=localhost:8086
       - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/price_intelligence/gcp-credentials.json
-      - GCP_PROJECT=price-intelligence
+      - GCP_PROJECT=regal-unfolding-490222-g5
       - BQ_LOCATION=EU
     volumes:
       - ./dags:/opt/airflow/dags

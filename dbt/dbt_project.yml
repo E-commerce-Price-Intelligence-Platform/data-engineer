@@ -26,5 +26,5 @@ models:
       +dataset: marts
 
 vars:
-  project_id: "price-intelligence"
+  project_id: "regal-unfolding-490222-g5"
   raw_dataset: "raw_prices"

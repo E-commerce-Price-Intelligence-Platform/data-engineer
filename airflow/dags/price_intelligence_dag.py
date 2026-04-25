@@ -205,12 +205,6 @@ with DAG(
         execution_timeout=timedelta(minutes=15),
     )
 
-    task_dbt_test = PythonOperator(
-        task_id="dbt_test",
-        python_callable=dbt_test,
-        execution_timeout=timedelta(minutes=10),
-    )
-
     task_validate = PythonOperator(
         task_id="validate_output",
         python_callable=validate_output,
@@ -223,11 +217,12 @@ with DAG(
 
     # ── Pipeline order ────────────────────────────────────
     # Jumia + Electroplanet scrape in parallel → Amazon → fan out to Bigtable and BigQuery
-    # dbt runs after BigQuery load; both branches converge at validate → report
+    # dbt_test is NOT in the daily pipeline — run manually via:
+    #   docker exec -it airflow bash -c "dbt test --project-dir ... --profiles-dir ..."
 
     [task_jumia, task_electro] >> task_amazon
 
     task_amazon >> task_bigtable_setup >> task_bigtable_write
-    task_amazon >> task_load_bq >> task_dbt_deps >> task_dbt_run >> task_dbt_test
+    task_amazon >> task_load_bq >> task_dbt_deps >> task_dbt_run
 
-    [task_bigtable_write, task_dbt_test] >> task_validate >> task_report
+    [task_bigtable_write, task_dbt_run] >> task_validate >> task_report

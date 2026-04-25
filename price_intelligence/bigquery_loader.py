@@ -11,7 +11,7 @@ from io import StringIO
 
 from google.cloud import bigquery
 
-PROJECT_ID  = os.environ.get("GCP_PROJECT", "price-intelligence")
+PROJECT_ID  = os.environ.get("GCP_PROJECT", "regal-unfolding-490222-g5")
 RAW_DATASET = "raw_prices"
 SOURCES     = ["jumia", "electroplanet", "amazon"]
 

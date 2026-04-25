@@ -7,22 +7,22 @@ models:
       so same-day re-runs update rather than duplicate.
     columns:
       - name: price_day_sk
-        tests: [unique, not_null]
+        data_tests: [unique, not_null]
       - name: source_site
-        tests: [not_null]
+        data_tests: [not_null]
       - name: brand
-        tests: [not_null]
+        data_tests: [not_null]
       - name: model
-        tests: [not_null]
+        data_tests: [not_null]
       - name: scraped_date
-        tests: [not_null]
+        data_tests: [not_null]
       - name: avg_price
-        tests:
+        data_tests:
           - not_null
           - dbt_utils.expression_is_true:
               expression: "> 0"
       - name: listing_count
-        tests:
+        data_tests:
           - dbt_utils.expression_is_true:
               expression: "> 0"
 
@@ -30,9 +30,9 @@ models:
     description: "Day-over-day price change per (site, brand, model). Needs ≥2 daily snapshots."
     columns:
       - name: price_day_sk
-        tests: [unique, not_null]
+        data_tests: [unique, not_null]
       - name: price_trend
-        tests:
+        data_tests:
           - accepted_values:
               values: ["increase", "decrease", "stable"]
 
@@ -40,28 +40,28 @@ models:
     description: "Aggregated statistics per brand across all sites and models."
     columns:
       - name: brand
-        tests: [unique, not_null]
+        data_tests: [unique, not_null]
       - name: product_count
-        tests:
+        data_tests:
           - dbt_utils.expression_is_true:
               expression: "> 0"
       - name: avg_price
-        tests: [not_null]
+        data_tests: [not_null]
 
   - name: mart_price_comparison
     description: "Average price per (brand, model, site) — use for cross-site comparison."
     columns:
       - name: brand
-        tests: [not_null]
+        data_tests: [not_null]
       - name: model
-        tests: [not_null]
+        data_tests: [not_null]
       - name: source_site
-        tests: [not_null]
+        data_tests: [not_null]
 
   - name: mart_discount_leaders
     description: "Top 100 most discounted products, ranked by computed discount_pct."
     columns:
       - name: discount_pct
-        tests:
+        data_tests:
           - dbt_utils.expression_is_true:
               expression: "> 0"
