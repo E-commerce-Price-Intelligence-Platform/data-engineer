@@ -44,11 +44,10 @@ An end-to-end data engineering pipeline that scrapes smartphone prices from thre
 │  [scrape_jumia, scrape_electroplanet]                            │
 │       └──► scrape_amazon                                         │
 │               ├──► setup_bigtable ──► write_to_bigtable ──┐      │
-│               └──► load_to_bigquery                        │     │
-│                        └──► dbt_deps ──► dbt_run           │     │
-│                                  └──► dbt_test ────────────┤     │
-│                                             └──► validate ─┘     │
-│                                                    └──► report   │
+│               └──► load_to_bigquery                        │      │
+│                        └──► dbt_deps ──► dbt_run ──────────┤      │
+│                                             └──► validate ─┘      │
+│                                                    └──► report    │
 └──────────────────────────────────────────────────────────────────┘
 ```
 
@@ -100,17 +99,17 @@ DAG `price_intelligence_daily` runs every day at 06:00 UTC.
 ```
 [scrape_jumia, scrape_electro]
         └──► scrape_amazon
-                ├──► setup_bigtable ──► write_to_bigtable ──────────────┐
-                └──► load_to_bigquery ──► dbt_deps ──► dbt_run          │
-                                                  └──► dbt_test ────────┤
-                                                             └──► validate_output
-                                                                     └──► generate_report
+                ├──► setup_bigtable ──► write_to_bigtable ──┐
+                └──► load_to_bigquery ──► dbt_deps ──► dbt_run ──┤
+                                                                  └──► validate_output
+                                                                              └──► generate_report
 ```
 
 - Jumia and Electroplanet scrapers run **in parallel**
 - Amazon runs after both complete
 - Bigtable branch and BigQuery/dbt branch run **in parallel** after Amazon
 - Both branches converge at `validate_output` before the final report
+- `dbt test` is excluded from the daily run (53 tests × ~60s each = 50+ min); run manually when needed
 
 Sample report output:
 ```
