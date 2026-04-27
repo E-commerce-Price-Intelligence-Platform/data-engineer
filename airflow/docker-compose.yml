@@ -15,9 +15,13 @@ services:
       - _AIRFLOW_WWW_USER_USERNAME=admin
       - _AIRFLOW_WWW_USER_PASSWORD=admin123
       - SELENIUM_REMOTE_URL=http://selenium:4444
-      - BIGTABLE_EMULATOR_HOST=localhost:8086
-      - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/price_intelligence/gcp-credentials.json
+      # Bigtable configuration - using GCP (no emulator)
       - GCP_PROJECT=regal-unfolding-490222-g5
+      - BIGTABLE_INSTANCE_ID=price-intel-instance
+      - BIGTABLE_TABLE_ID=smartphones
+      - BIGTABLE_REGION=us-central1
+      # BigQuery configuration
+      - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/price_intelligence/gcp-credentials.json
       - BQ_LOCATION=EU
     volumes:
       - ./dags:/opt/airflow/dags
@@ -26,10 +30,9 @@ services:
       - C:/Users/hp/Desktop/price-intelligence:/opt/airflow/price_intelligence
     ports:
       - "8080:8080"
-    command: bash -c "socat TCP-LISTEN:8086,fork,reuseaddr TCP:bigtable:8086 & exec airflow standalone"
+    command: airflow standalone
     depends_on:
       - selenium
-      - bigtable
 
   selenium:
     image: selenium/standalone-chrome:latest
@@ -37,8 +40,3 @@ services:
     shm_size: 2g
     ports:
       - "4444:4444"
-
-  bigtable:
-    image: google/cloud-sdk:latest
-    container_name: bigtable
-    command: gcloud beta emulators bigtable start --host-port=0.0.0.0:8086

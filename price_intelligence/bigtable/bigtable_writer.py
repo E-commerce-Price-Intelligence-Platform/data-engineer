@@ -2,17 +2,23 @@
 Bigtable Writer — reads output JSON files and writes rows to Bigtable.
 Run: python bigtable_writer.py
 Row key: {site}#{brand}#{model}#{timestamp}
+
+Configuration via environment variables:
+  - GCP_PROJECT: GCP project ID (required)
+  - BIGTABLE_INSTANCE_ID: Bigtable instance ID (default: price-intel-instance)
+  - BIGTABLE_TABLE_ID: Bigtable table ID (default: smartphones)
+  - OUTPUT_DIR: Directory containing JSON files (default: ./output)
+  - GOOGLE_APPLICATION_CREDENTIALS: Path to service account key (optional)
 """
 import json, os, re, time, glob
 from datetime import datetime
 from google.cloud import bigtable
 
-os.environ["BIGTABLE_EMULATOR_HOST"] = "localhost:8086"
-
-PROJECT_ID  = "price-intelligence"
-INSTANCE_ID = "price-intel-instance"
-TABLE_ID    = "smartphones"
-OUTPUT_DIR  = r"C:\Users\hp\Desktop\price-intelligence\output"
+# Configuration from environment with sensible defaults
+PROJECT_ID = os.environ.get("GCP_PROJECT", "regal-unfolding-490222-g5")
+INSTANCE_ID = os.environ.get("BIGTABLE_INSTANCE_ID", "price-intel-instance")
+TABLE_ID = os.environ.get("BIGTABLE_TABLE_ID", "smartphones")
+OUTPUT_DIR = os.environ.get("OUTPUT_DIR", r"C:\Users\hp\Desktop\price-intelligence\output")
 
 SOURCES = ["jumia", "electroplanet", "amazon"]
 
@@ -75,9 +81,19 @@ def write_items(table, items, source):
 
 
 def run():
-    print("=== Bigtable Writer ===")
-    print(f"Emulateur : {os.environ['BIGTABLE_EMULATOR_HOST']}")
+    print("=== Bigtable Writer (GCP) ===")
+    print(f"Project   : {PROJECT_ID}")
+    print(f"Instance  : {INSTANCE_ID}")
+    print(f"Table     : {TABLE_ID}")
     print(f"Output dir: {OUTPUT_DIR}")
+
+    # Verify credentials
+    creds_path = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+    if creds_path:
+        print(f"Credentials: {creds_path}")
+    else:
+        print("Credentials: Using default application credentials (ADC)")
+    print()
 
     client   = bigtable.Client(project=PROJECT_ID, admin=False)
     instance = client.instance(INSTANCE_ID)
