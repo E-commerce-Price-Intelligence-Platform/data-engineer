@@ -9,11 +9,20 @@ import json
 import os
 from io import StringIO
 
+from google.api_core import exceptions as gcp_exceptions
 from google.cloud import bigquery
 
 PROJECT_ID  = os.environ.get("GCP_PROJECT", "regal-unfolding-490222-g5")
 RAW_DATASET = "raw_prices"
 SOURCES     = ["jumia", "electroplanet", "amazon"]
+
+# Max fraction of null-price records allowed per source before aborting.
+# Amazon FR hides prices for marketplace/B2B listings — higher threshold needed.
+NULL_PRICE_THRESHOLDS = {
+    "jumia":        0.50,
+    "electroplanet": 0.50,
+    "amazon":       0.80,
+}
 
 SCHEMA = [
     bigquery.SchemaField("name",        "STRING"),
@@ -24,7 +33,7 @@ SCHEMA = [
     bigquery.SchemaField("currency",    "STRING"),
     bigquery.SchemaField("discount",    "STRING"),
     bigquery.SchemaField("rating",      "FLOAT64"),
-    bigquery.SchemaField("reviews",     "FLOAT64"),
+    bigquery.SchemaField("reviews",     "INT64"),
     bigquery.SchemaField("url",         "STRING"),
     bigquery.SchemaField("source_site", "STRING"),
     bigquery.SchemaField("scraped_at",  "TIMESTAMP"),
@@ -37,8 +46,25 @@ def _ensure_dataset(client: bigquery.Client):
     try:
         client.create_dataset(dataset_ref, timeout=30)
         print(f"✅ Dataset '{RAW_DATASET}' created")
-    except Exception:
+    except gcp_exceptions.Conflict:
         print(f"   Dataset '{RAW_DATASET}' already exists")
+    # Any other exception (Forbidden, BadRequest, etc.) propagates so the
+    # caller sees the real error rather than a misleading "already exists".
+
+
+def _check_null_price_rate(source: str, records: list):
+    threshold  = NULL_PRICE_THRESHOLDS.get(source, 0.50)
+    total      = len(records)
+    null_count = sum(1 for r in records if not r.get("price"))
+    rate       = null_count / total
+    if rate > threshold:
+        raise ValueError(
+            f"{source}: {null_count}/{total} records have null price "
+            f"({rate:.0%} > {threshold:.0%} threshold). "
+            "Spider may be broken — aborting load to prevent empty mart tables."
+        )
+    if null_count:
+        print(f"  ⚠ {source}: {null_count}/{total} null-price records will be filtered by dbt")
 
 
 def _load_source(client: bigquery.Client, source: str, output_dir: str):
@@ -57,6 +83,8 @@ def _load_source(client: bigquery.Client, source: str, output_dir: str):
     if not records:
         print(f"  ⚠ {source}: empty file, skipping")
         return 0
+
+    _check_null_price_rate(source, records)
 
     ndjson = "\n".join(json.dumps(row) for row in records)
 

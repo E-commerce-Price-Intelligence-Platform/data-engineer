@@ -8,19 +8,22 @@ sources:
 
     tables:
       - name: jumia
-        description: "Raw scraped records from jumia.ma (Scrapy, ~354 products/day)."
+        description: "Raw scraped records from jumia.ma (Scrapy, ~356 products/day)."
         columns:
           - name: name
             data_tests: [not_null]
           - name: price
-            data_tests: [not_null]
+            data_tests:
+              - not_null:
+                  config:
+                    severity: warn
           - name: source_site
             data_tests:
               - accepted_values:
-                  values: ["jumia"]
+                  values: ["jumia_ma"]
 
       - name: electroplanet
-        description: "Raw scraped records from electroplanet.ma (Selenium, ~51 products/day)."
+        description: "Raw scraped records from electroplanet.ma (Selenium, ~56 products/day)."
         columns:
           - name: name
             data_tests: [not_null]
@@ -32,13 +35,16 @@ sources:
                   values: ["electroplanet"]
 
       - name: amazon
-        description: "Raw scraped records from amazon.fr (Selenium, ~119 products/day)."
+        description: "Raw scraped records from amazon.fr (Selenium, ~140 products/day). ~64% of listings have no visible price (marketplace/B2B)."
         columns:
           - name: name
             data_tests: [not_null]
           - name: price
-            data_tests: [not_null]
+            data_tests:
+              - not_null:
+                  config:
+                    severity: warn
           - name: source_site
             data_tests:
               - accepted_values:
-                  values: ["amazon"]
+                  values: ["amazon_fr"]

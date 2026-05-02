@@ -24,4 +24,3 @@ select
 
 from {{ ref('int_prices_unified') }}
 group by brand
-order by product_count desc

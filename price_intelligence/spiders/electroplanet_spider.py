@@ -1,6 +1,6 @@
 """
-Spider Electroplanet — 100% Selenium, sans Scrapy
-Lancement : python spiders/electroplanet_spider.py
+Spider Electroplanet — Selenium
+Run: python spiders/electroplanet_spider.py
 """
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -10,25 +10,22 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from datetime import datetime
-import csv, json, os, time
+import csv, json, os, re, time
 
-# ── Config ────────────────────────────────────────────────
-OUTPUT_DIR        = "output"
+OUTPUT_DIR     = os.environ.get("OUTPUT_DIR", "output")
+SEARCH_QUERIES = ["samsung galaxy", "apple iphone"]
+WAIT_PAGE      = 15  # seconds to wait for product links
 
-# ✅ CHANGEMENT 1
-SEARCH_QUERIES    = ["samsung galaxy", "apple iphone"]
 
-WAIT_PAGE         = 4
-
-# ── Helpers ───────────────────────────────────────────────
 def clean_price(price_str):
     if not price_str:
         return None
     cleaned = (
         price_str
         .replace("DH", "").replace("dh", "")
-        .replace("\xa0", "").replace("\u202f", "")
-        .replace("\u00a0", "").replace(" ", "")
+        .replace("MAD", "").replace("mad", "")
+        .replace("\xa0", "").replace(" ", "")
+        .replace(" ", "").replace(" ", "")
         .replace(",", ".").strip()
     )
     parts = cleaned.split(".")
@@ -38,6 +35,65 @@ def clean_price(price_str):
         return float(cleaned)
     except ValueError:
         return None
+
+
+def parse_magento_rating(driver):
+    """
+    DOM: <div class="rating-result" title="100%">
+    title is a percentage — convert to 5-star scale.
+    """
+    els = driver.find_elements(By.CSS_SELECTOR, "div.rating-result")
+    if els:
+        title = els[0].get_attribute("title") or ""
+        m = re.search(r"([\d.]+)\s*%", title)
+        if m:
+            return round(float(m.group(1)) / 100 * 5, 1)
+    return None
+
+
+def parse_reviews_count(driver):
+    """DOM: <span itemprop="reviewCount">1</span>"""
+    els = driver.find_elements(By.CSS_SELECTOR, "span[itemprop='reviewCount']")
+    if els:
+        digits = re.sub(r"[^\d]", "", els[0].text)
+        if digits:
+            return int(digits)
+    return None
+
+
+NON_PHONE_KEYWORDS = [
+    "ecouteurs", "buds", "montre", "watch", "fit", "smarttag", "tag2",
+    "cover", "coque", "câble", "chargeur", "casque", "enceinte",
+    "flipsuit", "case", "bracelet", "tablette", "ipad",
+]
+
+MIN_PHONE_PRICE_DH = 800  # anything below this is an accessory/cashback artefact
+
+
+def is_smartphone(driver, name, price):
+    """
+    Three-layer filter:
+    1. Category link must point to smartphone/iphone URL
+    2. Name must not contain non-phone keywords
+    3. Price must be above minimum phone threshold
+    """
+    # Category check
+    els = driver.find_elements(By.CSS_SELECTOR, "h1.page-title a.category-name")
+    if els:
+        href = els[0].get_attribute("href") or ""
+        text = els[0].text.lower()
+        if "smartphone" not in href and "iphone" not in href \
+                and "smartphone" not in text and "iphone" not in text:
+            return False
+    # Keyword exclusion on name
+    n = name.lower()
+    if any(kw in n for kw in NON_PHONE_KEYWORDS):
+        return False
+    # Price sanity
+    if price is not None and price < MIN_PHONE_PRICE_DH:
+        return False
+    return True
+
 
 def extract_model(name):
     n = name.lower()
@@ -55,6 +111,7 @@ def extract_model(name):
             return m.title()
     return "Unknown"
 
+
 def get_brand(name):
     n = name.lower()
     if "samsung" in n:
@@ -63,7 +120,7 @@ def get_brand(name):
         return "apple"
     return "other"
 
-# ── Driver ────────────────────────────────────────────────
+
 def make_driver():
     options = Options()
     options.add_argument("--headless")
@@ -76,9 +133,8 @@ def make_driver():
     options.add_argument(
         "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/147.0.0.0 Safari/537.36"  
+        "Chrome/124.0.0.0 Safari/537.36"
     )
-    options.page_load_strategy = "none"  # don't wait for full page load; WebDriverWait handles it
 
     selenium_url = os.environ.get("SELENIUM_REMOTE_URL")
     if selenium_url:
@@ -92,61 +148,76 @@ def make_driver():
         )
     return driver
 
-# ── Scraper ───────────────────────────────────────────────
+
+def dismiss_popups(driver):
+    for selector in [
+        "button.action-close", "button.accept-cookies",
+        "#cookie-accept", ".modal-close", "button[data-role='closeBtn']",
+    ]:
+        try:
+            driver.find_element(By.CSS_SELECTOR, selector).click()
+            time.sleep(0.4)
+        except Exception:
+            pass
+
+
 def scrape_product(driver, url, fallback_name):
     try:
         driver.get(url)
 
-        # wait for product title instead of fixed sleep
+        # Wait for product title
         try:
-            WebDriverWait(driver, 8).until(
-                EC.presence_of_element_located((By.CSS_SELECTOR, "h1.page-title"))
+            WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located(
+                    (By.CSS_SELECTOR, "h1.page-title, h1.product-name")
+                )
             )
         except Exception:
             pass
 
-        # ✅ CHANGEMENT 2 — NOM
-        try:
-            name = driver.find_element(By.CSS_SELECTOR, "h1.page-title").text.strip()
-        except Exception:
-            name = fallback_name
+        dismiss_popups(driver)
+
+        # Name — span.ref holds the full product title
+        name = fallback_name
+        for sel in ["h1.page-title span.ref", "h1.page-title span.base", "h1.page-title"]:
+            els = driver.find_elements(By.CSS_SELECTOR, sel)
+            if els and els[0].text.strip():
+                name = els[0].text.strip()
+                break
 
         if not name:
             return None
 
-        # ✅ CHANGEMENT 3 — PRIX
+        # Price — use data-price-amount attribute (exact numeric, no parsing errors)
+        price, old_price = None, None
         try:
-            special = driver.find_elements(By.CSS_SELECTOR, "span.special-price span.price")
-            if special:
-                price     = clean_price(special[0].text)
-                old_els   = driver.find_elements(By.CSS_SELECTOR, "span.old-price span.price")
-                old_price = clean_price(old_els[0].text) if old_els else None
-            else:
-                price_el  = driver.find_element(By.CSS_SELECTOR, "div.price-final_price span.price")
-                price     = clean_price(price_el.text)
-                old_price = None
-        except Exception:
-            price, old_price = None, None
+            final_el = driver.find_elements(
+                By.CSS_SELECTOR, "span[data-price-type='finalPrice']"
+            )
+            if final_el:
+                amt = final_el[0].get_attribute("data-price-amount")
+                price = float(amt) if amt else None
 
-        # Discount
-        if price and old_price and old_price > 0:
+            old_el = driver.find_elements(
+                By.CSS_SELECTOR, "span[data-price-type='oldPrice']"
+            )
+            if old_el:
+                amt = old_el[0].get_attribute("data-price-amount")
+                old_price = float(amt) if amt else None
+        except Exception:
+            pass
+
+        # Filter: category + name keywords + price sanity
+        if not is_smartphone(driver, name, price):
+            return None
+
+        discount = None
+        if price and old_price and old_price > price:
             discount = f"{round((1 - price / old_price) * 100)}%"
-        else:
-            discount = None
 
-        # Rating
-        try:
-            r       = driver.find_element(By.CSS_SELECTOR, "div.rating-summary span.rating-result")
-            rating  = r.get_attribute("title")
-        except Exception:
-            rating = None
-
-        # Avis
-        try:
-            rv      = driver.find_element(By.CSS_SELECTOR, "a.action.view span")
-            reviews = rv.text.strip()
-        except Exception:
-            reviews = None
+        # Rating and reviews
+        rating  = parse_magento_rating(driver)
+        reviews = parse_reviews_count(driver)
 
         item = {
             "name":        name,
@@ -162,7 +233,7 @@ def scrape_product(driver, url, fallback_name):
             "source_site": "electroplanet",
             "scraped_at":  datetime.utcnow().isoformat(),
         }
-        print(f"    ✓ {name} — {price} DH")
+        print(f"    ✓ {name[:60]} — {price} DH | ★{rating} ({reviews} avis)")
         return item
 
     except Exception as e:
@@ -171,39 +242,28 @@ def scrape_product(driver, url, fallback_name):
 
 
 def scrape_query(driver, query):
-    items   = []
-    page    = 1
-    url     = f"https://www.electroplanet.ma/catalogsearch/result/?q={query.replace(' ', '+')}"
+    items = []
+    page  = 1
+    url   = f"https://www.electroplanet.ma/catalogsearch/result/?q={query.replace(' ', '+')}"
 
     while url:
         print(f"\n[Electroplanet] '{query}' — page {page}")
-        driver.get(url)  # returns immediately (pageLoadStrategy=none)
+        driver.get(url)
 
-        # Dismiss any popup/cookie overlay
-        for selector in ["button.action-close", "button.accept-cookies",
-                         "#cookie-accept", ".modal-close"]:
-            try:
-                driver.find_element(By.CSS_SELECTOR, selector).click()
-                time.sleep(0.5)
-            except Exception:
-                pass
+        dismiss_popups(driver)
 
-        # Wait up to 15 s for at least one product link to appear
         try:
-            WebDriverWait(driver, 15).until(
-                EC.presence_of_element_located(
-                    (By.CSS_SELECTOR, "a.product-item-link")
-                )
+            WebDriverWait(driver, WAIT_PAGE).until(
+                EC.presence_of_element_located((By.CSS_SELECTOR, "a.product-item-link"))
             )
         except Exception:
-            pass  # will report 0 products below
+            print(f"  ✗ Timeout — aucun produit sur page {page}")
+            print(f"  ℹ titre: {driver.title[:80]}")
+            break
 
-        # Produits
         els = driver.find_elements(By.CSS_SELECTOR, "a.product-item-link")
         print(f"  → {len(els)} produits trouvés")
         if not els:
-            print(f"  ℹ page title: {driver.title[:80]}")
-            print(f"  ℹ page source: {driver.page_source[:300]}")
             break
 
         products_data = [
@@ -216,8 +276,9 @@ def scrape_query(driver, query):
             if item:
                 items.append(item)
 
+        # Navigate back to listing for pagination
         driver.get(url)
-        time.sleep(3)
+        time.sleep(2)
 
         try:
             next_btn = driver.find_element(By.CSS_SELECTOR, "a.action.next")
@@ -242,27 +303,26 @@ def save_results(items, spider_name="electroplanet"):
         writer = csv.DictWriter(f, fieldnames=items[0].keys())
         writer.writeheader()
         writer.writerows(items)
-    print(f"\n✅ CSV sauvegardé : {csv_path}")
+    print(f"\n✅ CSV : {csv_path}")
 
     json_path = f"{OUTPUT_DIR}/{spider_name}.json"
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(items, f, ensure_ascii=False, indent=2)
-    print(f"✅ JSON sauvegardé : {json_path}")
+    print(f"✅ JSON : {json_path}")
 
     return csv_path, json_path
 
 
-# ── Main ──────────────────────────────────────────────────
 if __name__ == "__main__":
     print("=== Electroplanet Spider ===")
-    driver = make_driver()
+    driver    = make_driver()
     all_items = []
 
     try:
         for query in SEARCH_QUERIES:
             items = scrape_query(driver, query)
             all_items.extend(items)
-            print(f"\n  → '{query}' : {len(items)} produits scrapés")
+            print(f"\n  → '{query}' : {len(items)} produits")
     finally:
         driver.quit()
         print("\nChrome fermé.")

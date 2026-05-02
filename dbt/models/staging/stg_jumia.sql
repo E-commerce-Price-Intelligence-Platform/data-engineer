@@ -19,7 +19,7 @@ cleaned as (
         cast(rating as float64)                 as rating,
         cast(reviews as int64)                  as reviews,
         url,
-        source_site,
+        'jumia_ma'                              as source_site,
 
         timestamp(scraped_at)                   as scraped_at,
         date(scraped_at)                        as scraped_date

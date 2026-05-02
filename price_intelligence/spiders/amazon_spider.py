@@ -1,18 +1,19 @@
 """
-Spider Amazon — 100% Selenium
-Lancement : python spiders/amazon_spider.py
+Spider Amazon — Selenium with proper page load waits
+Run: python spiders/amazon_spider.py
 """
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 from datetime import datetime
-import csv, json, os, time
+import csv, json, os, re, time
 
-# ── Config ────────────────────────────────────────────────
-OUTPUT_DIR        = "output"
-SEARCH_QUERIES    = [
+OUTPUT_DIR     = os.environ.get("OUTPUT_DIR", "output")
+SEARCH_QUERIES = [
     "samsung galaxy s24 smartphone",
     "samsung galaxy a55 smartphone",
     "apple iphone 16 smartphone",
@@ -20,7 +21,7 @@ SEARCH_QUERIES    = [
 ]
 BASE_URL  = "https://www.amazon.fr/s?k="
 MAX_PAGES = 3
-WAIT_PAGE = 3
+WAIT_PAGE = 10  # seconds to wait for results
 
 MOTS_EXCLUS = [
     "coque", "étui", "housse", "verre trempé", "film protecteur",
@@ -37,7 +38,7 @@ MOTS_EXCLUS = [
     "enceinte", "bonnet bluetooth",
 ]
 
-# ── Driver ────────────────────────────────────────────────
+
 def make_driver():
     options = Options()
     options.add_argument("--headless")
@@ -51,9 +52,9 @@ def make_driver():
     options.add_argument(
         "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/147.0.0.0 Safari/537.36"
+        "Chrome/124.0.0.0 Safari/537.36"
     )
-    options.page_load_strategy = "none"  # return immediately; WebDriverWait handles readiness
+    # Do NOT use page_load_strategy=none — we need the DOM to actually load
 
     selenium_url = os.environ.get("SELENIUM_REMOTE_URL")
     if selenium_url:
@@ -63,22 +64,22 @@ def make_driver():
         options.add_experimental_option("useAutomationExtension", False)
         driver = webdriver.Chrome(
             service=Service(ChromeDriverManager().install()),
-            options=options
+            options=options,
         )
     driver.execute_script(
         "Object.defineProperty(navigator, 'webdriver', {get: () => undefined})"
     )
     return driver
 
-# ── Helpers ───────────────────────────────────────────────
+
 def clean_price(price_str):
     if not price_str:
         return None
     cleaned = (
         price_str
         .replace("€", "").replace("EUR", "")
-        .replace("\xa0", "").replace("\u202f", "")
-        .replace(" ", "").replace("\u00a0", "")
+        .replace("\xa0", "").replace(" ", "")
+        .replace(" ", "").replace(" ", "")
         .replace(",", ".").strip()
     )
     parts = cleaned.split(".")
@@ -88,6 +89,28 @@ def clean_price(price_str):
         return float(cleaned)
     except ValueError:
         return None
+
+
+def parse_rating(text):
+    """Extract float from '4.5 sur 5 étoiles' or '4.5 out of 5 stars'."""
+    if not text:
+        return None
+    m = re.match(r"([\d,\.]+)", text.strip())
+    if m:
+        try:
+            return float(m.group(1).replace(",", "."))
+        except ValueError:
+            pass
+    return None
+
+
+def parse_reviews(text):
+    """Extract int from '1 234 évaluations' or '1,234 ratings'."""
+    if not text:
+        return None
+    digits = re.sub(r"[^\d]", "", text)
+    return int(digits) if digits else None
+
 
 def extract_model(name):
     n = name.lower()
@@ -109,6 +132,7 @@ def extract_model(name):
             return m.title()
     return "Unknown"
 
+
 def get_brand(name):
     n = name.lower()
     if "samsung" in n:
@@ -116,6 +140,7 @@ def get_brand(name):
     elif "iphone" in n or "apple" in n:
         return "apple"
     return "other"
+
 
 def is_smartphone(name):
     n = name.lower()
@@ -125,21 +150,35 @@ def is_smartphone(name):
         return False
     return True
 
-# ── Scraper page listing ──────────────────────────────────
-def scrape_listing_page(driver, url):
-    try:
-        driver.get(url)
-    except Exception as e:
-        print(f"  ✗ Impossible de charger {url}: {e}")
-        return []
-    time.sleep(WAIT_PAGE)
 
-    # Fermer popup cookies si présent
+def scrape_listing_page(driver, url):
+    driver.get(url)
+
+    # Accept cookies if present
     try:
-        driver.find_element(By.CSS_SELECTOR, "input#sp-cc-accept").click()
+        WebDriverWait(driver, 5).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, "input#sp-cc-accept"))
+        ).click()
         time.sleep(1)
     except Exception:
         pass
+
+    # Wait for product results to load
+    try:
+        WebDriverWait(driver, WAIT_PAGE).until(
+            EC.presence_of_element_located(
+                (By.CSS_SELECTOR, "div[data-component-type='s-search-result']")
+            )
+        )
+    except Exception:
+        print(f"  ✗ Timeout waiting for results on {url}")
+        return []
+
+    # Scroll to trigger lazy-loaded ratings
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight / 2);")
+    time.sleep(2)
+    driver.execute_script("window.scrollTo(0, 0);")
+    time.sleep(1)
 
     products = driver.find_elements(
         By.CSS_SELECTOR, "div[data-component-type='s-search-result']"
@@ -157,20 +196,26 @@ def scrape_listing_page(driver, url):
             link_el = product.find_elements(By.CSS_SELECTOR, "h2 a")
             href    = link_el[0].get_attribute("href") if link_el else ""
 
-            # Prix
+            # Price — try whole+fraction first, fall back to .a-offscreen
+            price = None
             price_whole = product.find_elements(By.CSS_SELECTOR, "span.a-price-whole")
             price_frac  = product.find_elements(By.CSS_SELECTOR, "span.a-price-fraction")
             if price_whole:
-                whole = price_whole[0].text.replace(",", "").replace(".", "").strip()
+                whole = re.sub(r"[^\d]", "", price_whole[0].text)
                 frac  = price_frac[0].text.strip() if price_frac else "00"
+                frac  = re.sub(r"[^\d]", "", frac) or "00"
                 try:
                     price = float(f"{whole}.{frac}")
                 except Exception:
                     price = None
-            else:
-                price = None
+            if price is None:
+                offscreen = product.find_elements(
+                    By.CSS_SELECTOR, "span.a-price span.a-offscreen"
+                )
+                if offscreen:
+                    price = clean_price(offscreen[0].get_attribute("innerHTML"))
 
-            # Ancien prix
+            # Old price
             old_el    = product.find_elements(
                 By.CSS_SELECTOR, "span.a-price.a-text-price span.a-offscreen"
             )
@@ -180,16 +225,40 @@ def scrape_listing_page(driver, url):
             disc_el  = product.find_elements(By.CSS_SELECTOR, "span.a-badge-text")
             discount = disc_el[0].text.strip() if disc_el else None
 
-            # Rating
-            rating_el = product.find_elements(By.CSS_SELECTOR, "span.a-icon-alt")
-            rating    = rating_el[0].text.strip() if rating_el else None
+            # Rating selectors — try most specific first
+            rating = None
+            rating_selectors = [
+                # Numeric text inside popover trigger (product & listing page)
+                "span.a-size-small.a-color-base",
+                # Alt text inside mini star icon
+                "i.a-icon-star-mini span.a-icon-alt",
+                # Regular star icon alt text (listing page)
+                "i[class*='a-icon-star'] span.a-icon-alt",
+                "span.a-icon-alt",
+            ]
+            for sel in rating_selectors:
+                for el in product.find_elements(By.CSS_SELECTOR, sel):
+                    text = el.text.strip()
+                    if not text:
+                        continue
+                    rating = parse_rating(text)
+                    if rating:
+                        break
+                if rating:
+                    break
 
-            # Avis
+            # Reviews — visible count "(1 234)" next to stars
             reviews = None
-            for r in product.find_elements(By.CSS_SELECTOR, "span[aria-label]"):
-                label = r.get_attribute("aria-label") or ""
-                if "évaluation" in label or "rating" in label.lower():
-                    reviews = label
+            for el in product.find_elements(
+                By.CSS_SELECTOR,
+                "span.a-size-base.s-underline-text, "
+                "span[aria-label*='évaluation'], "
+                "span[aria-label*='rating'], "
+                "a[href*='customerReviews'] span",
+            ):
+                text = el.text.strip() or el.get_attribute("aria-label") or ""
+                reviews = parse_reviews(text)
+                if reviews:
                     break
 
             items_data.append({
@@ -213,7 +282,7 @@ def scrape_listing_page(driver, url):
 
     return items_data
 
-# ── Pagination ────────────────────────────────────────────
+
 def get_next_page_url(driver):
     try:
         next_btn = driver.find_element(By.CSS_SELECTOR, "a.s-pagination-next")
@@ -221,7 +290,7 @@ def get_next_page_url(driver):
     except Exception:
         return None
 
-# ── Scraping par query avec déduplication ─────────────────
+
 def scrape_query(driver, query):
     all_items = []
     seen_urls = set()
@@ -242,7 +311,7 @@ def scrape_query(driver, query):
         all_items.extend(new_items)
         print(f"  → {len(new_items)} uniques (sur {len(items)} filtrés)")
         for it in new_items:
-            print(f"    ✓ {it['name'][:65]} — {it['price']} EUR")
+            print(f"    ✓ {it['name'][:65]} — {it['price']} EUR | ★{it['rating']} ({it['reviews']} avis)")
 
         url  = get_next_page_url(driver)
         page += 1
@@ -250,7 +319,7 @@ def scrape_query(driver, query):
 
     return all_items
 
-# ── Sauvegarde ────────────────────────────────────────────
+
 def save_results(items):
     if not items:
         print("⚠️ Aucun produit — aucun fichier créé")
@@ -270,7 +339,7 @@ def save_results(items):
         json.dump(items, f, ensure_ascii=False, indent=2)
     print(f"✅ JSON : {json_path}")
 
-# ── Entry point ───────────────────────────────────────────
+
 if __name__ == "__main__":
     print("=== Amazon Spider ===")
     driver    = make_driver()
@@ -285,7 +354,6 @@ if __name__ == "__main__":
         driver.quit()
         print("\nChrome fermé.")
 
-    # Déduplication finale entre toutes les queries
     seen  = set()
     dedup = []
     for it in all_items:

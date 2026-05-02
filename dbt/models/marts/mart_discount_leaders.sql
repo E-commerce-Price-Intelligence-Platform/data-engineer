@@ -20,4 +20,3 @@ from {{ ref('int_prices_unified') }}
 where old_price is not null
   and old_price > price
 order by discount_pct desc
-limit 100

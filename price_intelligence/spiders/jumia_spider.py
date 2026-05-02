@@ -1,3 +1,4 @@
+import re
 import scrapy
 from datetime import datetime
 from price_intelligence.items import SmartphoneItem
@@ -60,16 +61,18 @@ class JumiaSpider(scrapy.Spider):
             # Réduction
             item["discount"] = (product.css("div.bdg._dsct::text").get() or "").strip() or None
 
-            # Rating — ex: "4.3 out of 5" → on garde juste "4.3"
+            # Rating — "4.3 out of 5" → keep "4.3" as float
             rating_raw = (product.css("div.stars._s::text").get() or "").strip()
             if rating_raw:
-                item["rating"] = rating_raw.split(" ")[0]  # garde "4.3"
+                m = re.match(r"([\d.]+)", rating_raw)
+                item["rating"] = float(m.group(1)) if m else None
             else:
                 item["rating"] = None
 
-            # Nombre d'avis
+            # Review count — "(29)" → 29 as int
             reviews_raw = (product.css("div.rev::text").get() or "").strip()
-            item["reviews"] = reviews_raw.strip("()") or None
+            digits = re.sub(r"[^\d]", "", reviews_raw)
+            item["reviews"] = int(digits) if digits else None
 
             # URL complète
             href        = product.css("a.core::attr(href)").get() or ""

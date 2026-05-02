@@ -30,5 +30,6 @@ desktop.ini
 .vscode/
 .DS_Store
 
-# GCP Credentials
+# GCP Credentials — block all JSON except tracked output files
 *.json
+!output/*.json

@@ -15,4 +15,3 @@ select
 
 from {{ ref('int_prices_unified') }}
 group by brand, model, source_site
-order by brand, model, avg_price

@@ -1,5 +1,6 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
+from airflow.utils.trigger_rule import TriggerRule
 from datetime import datetime, timedelta
 import subprocess
 import os
@@ -72,7 +73,10 @@ def setup_bigtable():
 
 
 def write_to_bigtable():
-    _run(["python", f"{BIGTABLE_PATH}/bigtable_writer.py"], cwd=OUTPUT_DIR)
+    _run(
+        ["python", f"{BIGTABLE_PATH}/bigtable_writer.py"],
+        extra_env={"OUTPUT_DIR": OUTPUT_DIR},
+    )
     logger.info("✅ Bigtable write done")
 
 
@@ -84,14 +88,6 @@ def load_to_bigquery():
         extra_env={"OUTPUT_DIR": OUTPUT_DIR},
     )
     logger.info("✅ BigQuery load done")
-
-
-def dbt_deps():
-    _run(
-        ["dbt", "deps", "--project-dir", DBT_DIR, "--profiles-dir", DBT_DIR],
-        cwd=DBT_DIR,
-    )
-    logger.info("✅ dbt deps installed")
 
 
 def dbt_run():
@@ -108,6 +104,9 @@ def dbt_test():
         cwd=DBT_DIR,
     )
     logger.info("✅ dbt test complete")
+
+
+# ── Validation & report ───────────────────────────────────
 
 
 # ── Validation & report ───────────────────────────────────
@@ -153,7 +152,7 @@ with DAG(
     description="Scraping quotidien des prix smartphones",
     default_args=default_args,
     start_date=datetime(2026, 1, 1),
-    schedule="0 6 * * *",
+    schedule=None,
     catchup=False,
     tags=["scraping", "price", "smartphones", "dbt"],
 ) as dag:
@@ -193,16 +192,19 @@ with DAG(
         execution_timeout=timedelta(minutes=10),
     )
 
-    task_dbt_deps = PythonOperator(
-        task_id="dbt_deps",
-        python_callable=dbt_deps,
-        execution_timeout=timedelta(minutes=5),
-    )
-
     task_dbt_run = PythonOperator(
         task_id="dbt_run",
         python_callable=dbt_run,
         execution_timeout=timedelta(minutes=15),
+    )
+
+    # Runs after dbt_run regardless of success/failure so failures are visible
+    # in the Airflow UI without blocking downstream validate/report tasks.
+    task_dbt_test = PythonOperator(
+        task_id="dbt_test",
+        python_callable=dbt_test,
+        trigger_rule=TriggerRule.ALL_DONE,
+        execution_timeout=None,
     )
 
     task_validate = PythonOperator(
@@ -216,13 +218,14 @@ with DAG(
     )
 
     # ── Pipeline order ────────────────────────────────────
-    # Jumia + Electroplanet scrape in parallel → Amazon → fan out to Bigtable and BigQuery
-    # dbt_test is NOT in the daily pipeline — run manually via:
-    #   docker exec -it airflow bash -c "dbt test --project-dir ... --profiles-dir ..."
+    # Scrapers run in parallel → BigQuery load → dbt run → dbt test (non-blocking)
+    # dbt deps is NOT a daily task — run once after deploy:
+    #   docker exec -it airflow dbt deps --project-dir /opt/airflow/price_intelligence/dbt \
+    #                                    --profiles-dir /opt/airflow/price_intelligence/dbt
 
     [task_jumia, task_electro] >> task_amazon
 
     task_amazon >> task_bigtable_setup >> task_bigtable_write
-    task_amazon >> task_load_bq >> task_dbt_deps >> task_dbt_run
+    task_amazon >> task_load_bq >> task_dbt_run >> task_dbt_test
 
-    [task_bigtable_write, task_dbt_run] >> task_validate >> task_report
+    [task_bigtable_write, task_dbt_test] >> task_validate >> task_report

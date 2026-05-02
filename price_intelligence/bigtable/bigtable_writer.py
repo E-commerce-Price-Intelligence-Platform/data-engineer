@@ -18,7 +18,7 @@ from google.cloud import bigtable
 PROJECT_ID = os.environ.get("GCP_PROJECT", "regal-unfolding-490222-g5")
 INSTANCE_ID = os.environ.get("BIGTABLE_INSTANCE_ID", "price-intel-instance")
 TABLE_ID = os.environ.get("BIGTABLE_TABLE_ID", "smartphones")
-OUTPUT_DIR = os.environ.get("OUTPUT_DIR", r"C:\Users\hp\Desktop\price-intelligence\output")
+OUTPUT_DIR = os.environ.get("OUTPUT_DIR", "output")
 
 SOURCES = ["jumia", "electroplanet", "amazon"]
 
