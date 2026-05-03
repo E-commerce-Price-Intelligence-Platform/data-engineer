@@ -15,6 +15,7 @@ services:
       - _AIRFLOW_WWW_USER_USERNAME=admin
       - _AIRFLOW_WWW_USER_PASSWORD=admin123
       - SELENIUM_REMOTE_URL=http://selenium:4444
+      - NIFI_URL=https://nifi:8443
       # Bigtable configuration - using GCP (no emulator)
       - GCP_PROJECT=regal-unfolding-490222-g5
       - BIGTABLE_INSTANCE_ID=price-intel-instance
@@ -41,6 +42,28 @@ services:
     ports:
       - "4444:4444"
 
+  nifi:
+    build:
+      context: ../nifi
+      dockerfile: Dockerfile
+    container_name: nifi
+    hostname: nifi
+    ports:
+      - "8443:8443"
+    environment:
+      - SINGLE_USER_CREDENTIALS_USERNAME=admin
+      - SINGLE_USER_CREDENTIALS_PASSWORD=adminadminadmin
+      - GCP_PROJECT=regal-unfolding-490222-g5
+      - BIGTABLE_INSTANCE_ID=price-intel-instance
+      - BIGTABLE_TABLE_ID=smartphones
+      - GOOGLE_APPLICATION_CREDENTIALS=/opt/nifi/price_intelligence/gcp-credentials.json
+    volumes:
+      - ..:/opt/nifi/price_intelligence
+      - nifi_conf:/opt/nifi/nifi-current/conf
+      - nifi_logs:/opt/nifi/nifi-current/logs
+
 volumes:
   airflow_logs:
   airflow_plugins:
+  nifi_conf:
+  nifi_logs:

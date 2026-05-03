@@ -1,137 +1,253 @@
 name,brand,model,price,old_price,currency,discount,rating,reviews,url,source_site,scraped_at
-Samsung GALAXY S24 FE SM-S721BZKDEUB,samsung,S24,556.48,,EUR,,4.2,11,,amazon_fr,2026-05-02T21:40:48.089494
-Samsung Galaxy S24 Ultra 12/1TB Black (Reconditionné),samsung,S24 Ultra,,,EUR,,4.6,16,,amazon_fr,2026-05-02T21:40:48.876226
-"Samsung Galaxy S25 FE, Smartphone AI, affichage dynamique AMOLED 2 x 6,7 pouces, appareil photo 50 MP, 8 Go RAM, 256 Go,...[Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,S25,,,EUR,,4.6,349,,amazon_fr,2026-05-02T21:40:49.496968
-Samsung S931 Galaxy S25 5G (6.2'' - 12/256GB) Navy,samsung,S25,,,EUR,,4.5,988,,amazon_fr,2026-05-02T21:40:49.939553
-"Samsung Galaxy S25 FE 256Go Smartphone Android 5G 8Go RAM AI Display 6.7"" Dynamic AMOLED 2X Fotocamera 50MP 4.900 mAh (Noir)",samsung,S25,,,EUR,,4.6,349,,amazon_fr,2026-05-02T21:40:50.115845
-Samsung Galaxy A57 5G Bleu 8 Go 128 Go AMZ,samsung,A57,538.02,,EUR,,5.0,1,,amazon_fr,2026-05-02T21:40:50.472505
-Samsung Galaxy A37 5G Vert foncé 6 Go 128 Go AMZ,samsung,Unknown,399.0,,EUR,,,,,amazon_fr,2026-05-02T21:40:50.938355
-Samsung GALAXY S25 5G SM-S931BDBDEUB,samsung,S25,,,EUR,,4.4,287,,amazon_fr,2026-05-02T21:40:51.360291
-Samsung Galaxy Xcover Pro 7 Enterprise 128Go Noir,samsung,Unknown,,,EUR,,4.2,67,,amazon_fr,2026-05-02T21:40:51.766386
-"Samsung Galaxy Z Flip7 FE, Smartphone Android 5G avec Galaxy AI, 256 Go, Smartphone déverrouillé, Noir",samsung,Unknown,,,EUR,,4.5,30,,amazon_fr,2026-05-02T21:40:52.196837
-Samsung Galaxy A37 5G Graphite 6 Go 128 Go AMZ,samsung,Unknown,399.0,,EUR,,,,,amazon_fr,2026-05-02T21:40:52.821081
-Samsung Galaxy A37 5G Graphite 8 Go 256 Go AMZ,samsung,Unknown,479.0,,EUR,,5.0,1,,amazon_fr,2026-05-02T21:40:53.236394
-Samsung A566 Galaxy A56 Enterprise Edition (6.7'' - 8/128GB) Graphite,samsung,A56,,,EUR,,4.4,230,,amazon_fr,2026-05-02T21:40:53.675828
-"Samsung Galaxy A56 5G, Smartphone Android, 128 Go, Smartphone déverrouillé, Vert Sauge",samsung,A56,,,EUR,,4.8,11,,amazon_fr,2026-05-02T21:40:54.082536
-Samsung GALAXY A26 5G A266B 128GB schwrz,samsung,A26,,,EUR,,4.5,679,,amazon_fr,2026-05-02T21:40:54.433586
-"SAMSUNG GALAXY S23 FE 128GB GRAPHITE, un design hérité des Galaxy S23, des photos lumineuses de nuit, un écran fluide et lumineux",samsung,S23,699.0,,EUR,Exclusivité Amazon,4.3,178,,amazon_fr,2026-05-02T21:40:54.843068
-SAMSUNG Galaxy Xcover 7 Entreprise Edition 6 6p 128Go,samsung,Unknown,,,EUR,,4.2,30,,amazon_fr,2026-05-02T21:40:55.204736
-Samsung Galaxy S25+ Plus 5G 256GB Speicher 12GB RAM 4.900mAh Akku AI Handy Android 15 Smartphone EU ohne Simlock ohne Branding (Silber),samsung,S25+,,,EUR,,4.2,480,,amazon_fr,2026-05-02T21:40:55.574764
-Samsung Smartphone Galaxy XCover7 Pro 5G Édition Enterprise 128Go/6Go Double SIM Noir,samsung,Unknown,,,EUR,,5.0,1,,amazon_fr,2026-05-02T21:40:55.927519
-"Samsung Galaxy A26 5G, Smartphone Android, 256 Go, Smartphone déverrouillé, Blanc",samsung,A26,,,EUR,,4.6,126,,amazon_fr,2026-05-02T21:40:56.101319
-Samsung Galaxy A57 A576 5G 256GB/8GB Double SIM Gris,samsung,A57,,,EUR,,,,,amazon_fr,2026-05-02T21:40:56.268549
-"Samsung Galaxy A26 5G, Smartphone Android, 128 Go, Smartphone déverrouillé, Vert d'eau",samsung,A26,,,EUR,,4.5,58,,amazon_fr,2026-05-02T21:40:56.435330
-"Samsung Galaxy A35 5G, Dual, 128GB 6GB Ram, Awesome Navy",samsung,A35,,,EUR,,4.4,278,,amazon_fr,2026-05-02T21:40:56.599204
-"Samsung Galaxy A16 Smartphone 4GB/128GB 6.7? - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A16,,,EUR,,4.3,38,,amazon_fr,2026-05-02T21:41:09.956620
-"SAMSUNG Galaxy S25 Ultra, Smartphone Android 5G avec Galaxy AI, 512 Go, Smartphone déverrouillé, Titanium Black, Versi...[Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,S25 Ultra,1124.11,,EUR,,4.6,543,,amazon_fr,2026-05-02T21:41:10.573466
-"Samsung Galaxy A17 5G, Dual, 128GB 4GB Ram, Black",samsung,A17,,,EUR,,4.2,694,,amazon_fr,2026-05-02T21:41:10.905478
-Samsung Galaxy A17 4G 128GB/4GB Double SIM Noir,samsung,A17,,,EUR,,4.4,230,,amazon_fr,2026-05-02T21:41:11.071674
-SAMSUNG - Smartphone Galaxy A14 5G Black 6.6IN 4GB 64GB Android 13,samsung,Unknown,,,EUR,,4.3,537,,amazon_fr,2026-05-02T21:41:11.327258
-Samsung A366B Galaxy A36 5G 128 GB Awesome White,samsung,A36,,,EUR,,4.4,7,,amazon_fr,2026-05-02T21:41:11.662401
-Samsung A366 Galaxy A36 Enterprise Edition (6.7'' - 6/128GB) Black,samsung,A36,,,EUR,,4.0,86,,amazon_fr,2026-05-02T21:41:12.004389
-Samsung Galaxy A17 4G 256GB/8GB Dual SIM Noir,samsung,A17,,,EUR,,4.7,49,,amazon_fr,2026-05-02T21:41:12.355209
-Samsung Galaxy A57 5G Bleu Clair 8 Go 128 Go AMZ,samsung,A57,549.0,,EUR,,,,,amazon_fr,2026-05-02T21:41:12.776328
-"Samsung Galaxy S25 Ultra 5G 12 Go/256 Go Titane Argent (Titanium White Silver) Double SIM SM-S938B - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,S25 Ultra,,,EUR,,4.2,629,,amazon_fr,2026-05-02T21:41:13.115937
-"Smartphone Samsung SM-A175F 6,7"" 4 GB RAM 128 GB Grigio",samsung,A17,,,EUR,,4.5,165,,amazon_fr,2026-05-02T21:41:13.457223
-"Samsung Galaxy Z Flip7 FE, Smartphone Android 5G avec Galaxy AI, 128 Go, Smartphone déverrouillé, Noir",samsung,Unknown,,,EUR,,5.0,2,,amazon_fr,2026-05-02T21:41:13.867951
-"Samsung Galaxy A17 5G A176 Dual Sim 4GB RAM 128GB - Black (SM-A176BZKAEUE) - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A17,,,EUR,,4.3,101,,amazon_fr,2026-05-02T21:41:14.078994
-"Smartphone Samsung Galaxy A56 6,7 5G Nano SIM 256 Go Gris",samsung,A56,,,EUR,,5.0,1,,amazon_fr,2026-05-02T21:41:14.391604
-"Samsung A566B/DS Galaxy A56 5G, Dual, 128GB 8GB Ram, Awesome Graphite",samsung,A56,,,EUR,,4.6,203,,amazon_fr,2026-05-02T21:41:14.845701
-"Samsung Galaxy S21 5G SM-G991B 15,8 cm (6.2) Double SIM Android 11 USB Type-C 8 Go 128 Go 4000 mAh Gris (Reconditionné)",samsung,Unknown,207.5,,EUR,,3.7,133,,amazon_fr,2026-05-02T21:41:15.388181
-"Samsung A266 Galaxy A26 (6.7'' - 6/128GB) Black - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A26,,,EUR,,4.6,303,,amazon_fr,2026-05-02T21:41:15.716574
-Samsung Galaxy A16 LTE 8/256GB Gris Libre,samsung,A16,,,EUR,,4.9,12,,amazon_fr,2026-05-02T21:41:16.065272
-"Samsung Smartphone Galaxy A16 4GB 128GB 5G Dual SIM 6.7? Negro Azul - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A16,,,EUR,,4.2,13,,amazon_fr,2026-05-02T21:41:16.464766
-Samsung A366B Galaxy A36 5G 256GB Lavendel Android-15 4905mAh 50MP AMOLED USB-C,samsung,A36,,,EUR,,4.4,35,,amazon_fr,2026-05-02T21:41:16.792427
-Samsung Galaxy A17 5G 256 Go/8 Go Double SIM Bleu,samsung,A17,,,EUR,,4.3,13,,amazon_fr,2026-05-02T21:41:17.121030
-"Samsung Galaxy A17 5G A176 Dual Sim 4GB RAM 128GB - Grey - 128 GB [Energieklasse B] (SM-A176BZAAEUE) - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A17,,,EUR,,4.3,72,,amazon_fr,2026-05-02T21:41:17.375764
-"Samsung Galaxy A36 5G, Smartphone Android, 128 Go, Smartphone déverrouillé, Noir",samsung,A36,,,EUR,,4.8,23,,amazon_fr,2026-05-02T21:41:17.687914
-"Samsung Galaxy A37 5G 17 cm (6.7"") Doppia SIM Android 16.0 USB tipo-C 6 GB 128 GB 5000 mAh Bianco",samsung,Unknown,,,EUR,,,,,amazon_fr,2026-05-02T21:41:18.381435
-"Samsung Galaxy A36 5G, Smartphone Android, 128 Go, Smartphone déverrouillé, Lime",samsung,A36,,,EUR,,4.4,49,,amazon_fr,2026-05-02T21:41:18.608144
-"Samsung Galaxy A16 A165 Dual Sim 4GB RAM 128GB - Grey - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A16,,,EUR,,4.4,963,,amazon_fr,2026-05-02T21:41:18.937105
-Samsung Galaxy A57 5G Lavande 8 Go 128 Go AMZ,samsung,A57,,,EUR,,,,,amazon_fr,2026-05-02T21:41:19.275863
-Samsung Galaxy S21 5G - Phantom Gris - 128Go - Smartphone Android débloqué - Version FR - Ecouteurs AKG inclus,samsung,Unknown,630.04,,EUR,,3.9,393,,amazon_fr,2026-05-02T21:41:19.692543
-"Samsung Galaxy XCover 7 EE 128GB 6RAM EU Black, SM-G556BZKDEEE - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,Unknown,,,EUR,,4.4,153,,amazon_fr,2026-05-02T21:41:19.999516
-"Samsung Galaxy S22 Ultra Smartphone Android 5G 8/12Go RAM AI Display 6.8"" Dynamic AMOLED 2X Fotocamera 108MP 5.000 mAh (Blanc, 128 Go)",samsung,Unknown,,,EUR,,4.1,975,,amazon_fr,2026-05-02T21:41:20.212068
-2021 Samsung Galaxy A32 5G 64 Go - Génial Noir (Reconditionné),samsung,Unknown,,,EUR,,3.6,31,,amazon_fr,2026-05-02T21:41:20.466402
-Samsung GALAXY A16 LTE SM-A165FZKBEUB,samsung,A16,,,EUR,,4.5,12,,amazon_fr,2026-05-02T21:41:20.820872
-Etui Smart View avec Porte Carte pour Samsung Galaxy S24 Noir,samsung,S24,,,EUR,,4.6,47,,amazon_fr,2026-05-02T21:41:21.188265
-"SAMSUNG Galaxy A12 - Smartphone 64GB, 4GB RAM, Dual Sim, Black (Reconditionné)",samsung,Unknown,,,EUR,,3.8,54,,amazon_fr,2026-05-02T21:41:21.522098
-Samsung Galaxy A17 4G 256GB/8GB Dual SIM Gris,samsung,A17,,,EUR,,4.6,29,,amazon_fr,2026-05-02T21:41:21.914926
-Samsung GALAXY S25 Ultra SM-S938BZBGEUB,samsung,S25 Ultra,,,EUR,,4.5,629,,amazon_fr,2026-05-02T21:41:22.232734
-"Samsung A16 (A165)/DS/128GB Green EU, W129015872 - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A16,,,EUR,,4.4,986,,amazon_fr,2026-05-02T21:41:22.598719
-"Samsung A566 Galaxy A56 (6.7'' - 8/256GB) Light Grey - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A56,,,EUR,,4.5,732,,amazon_fr,2026-05-02T21:41:22.955548
-Samsung Smartphone Marque Modèle Galaxy A13 5G 64 Go,samsung,Unknown,,,EUR,,4.2,915,,amazon_fr,2026-05-02T21:41:37.298814
-"Smartphone Samsung A17 SM-A175F 6,7"" 4 GB RAM 128 GB Azzurro Azzurro Chiaro",samsung,A17,,,EUR,,4.5,122,,amazon_fr,2026-05-02T21:41:37.841249
-Samsung Galaxy Z Fold6 5G 12 GB/256 GB Schwarz (Crafted Black) Dual-SIM,samsung,Unknown,,,EUR,,4.0,44,,amazon_fr,2026-05-02T21:41:38.191625
-"Samsung Galaxy A36 5G 6GB-128GB Negro (Awesome Black) Dual SIM SM-A366 - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A36,,,EUR,,4.6,502,,amazon_fr,2026-05-02T21:41:38.503302
-"Samsung A266 Galaxy A26 (6.7'' - 6/128GB) White - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A26,,,EUR,,4.3,83,,amazon_fr,2026-05-02T21:41:38.673889
-"Samsung Galaxy SM-G525F/DS 13,5 cm (5.3"") Double SIM Android 11 4G USB Type-C 4 Go 64 Go 3000 mAh Noir",samsung,Unknown,,,EUR,,4.3,642,,amazon_fr,2026-05-02T21:41:39.086159
-SAMSUNG G389F Galaxy XCOVER 3 Dark Silver,samsung,Unknown,,,EUR,,3.5,17,,amazon_fr,2026-05-02T21:41:39.460530
-"Samsung Galaxy S22 Ultra 5G, Caricatore incluso, Cellulare Smartphone Android senza SIM 128GB Display 6.8’’¹ Dynamic AMOLED 2X, 5 Fotocamere, 108MP, Phantom Black 2022 [Versione Italiana]",samsung,Unknown,1122.8,,EUR,,4.4,151,,amazon_fr,2026-05-02T21:41:39.886134
-Samsung Galaxy A40 4Go de RAM / 64Go Double Sim Noir,samsung,Unknown,,,EUR,,4.1,22,,amazon_fr,2026-05-02T21:41:40.245956
-"Samsung A266 Galaxy A26 (6.7'' - 8/256GB) Black - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A26,,,EUR,,4.4,759,,amazon_fr,2026-05-02T21:41:40.601138
-"Samsung Galaxy Enterprise Edition 13,5 cm (5.3"") Android 11 4G 4 Go 64 Go 3000 mAh Noir",samsung,Unknown,,,EUR,,4.2,196,,amazon_fr,2026-05-02T21:41:40.813142
-Samsung Galaxy A33 5G unlocked 6GB/128GB Blanco (Awesome White) Dual SIM A336,samsung,Unknown,456.3,,EUR,,4.3,53,,amazon_fr,2026-05-02T21:41:41.010643
-"Samsung Galaxy A16 Enterprise Edition 6.7"" Hybride Dual-SIM 4G USB Typ-C 4 GB 128 GB 5000 mAh Schwarz (SM-A165FZKBEEB)",samsung,A16,,,EUR,,4.4,12,,amazon_fr,2026-05-02T21:41:41.378458
-Samsung Galaxy XCover 5 Noir Enterprise Edition DACH 4+64GB,samsung,Unknown,,,EUR,,4.0,69,,amazon_fr,2026-05-02T21:41:41.876562
-"Samsung SM-A320F Galaxy A3 (2017) Smartphone - Écran Tactile 12,04 cm [4,7-Pouces] Mémoire 16 Go Android 6.0 - Noir [Import Allemagne]",samsung,Unknown,,,EUR,,4.2,22,,amazon_fr,2026-05-02T21:41:42.250335
-Samsung Galaxy XCover 4S Enterprise Edition 32Go Dual-Sim Noir,samsung,Unknown,,,EUR,,4.1,600,,amazon_fr,2026-05-02T21:41:42.470699
-Samsung Galaxy S21 Ultra 5G - Phantom Noir - 128Go - Smartphone Android débloqué - Version FR - Ecouteurs AKG inclus,samsung,Unknown,1255.72,,EUR,,3.6,229,,amazon_fr,2026-05-02T21:41:42.844273
-"Samsung SM-M156B Galaxy M15 Dual SIM 5G 4GB RAM 128GB Dark Blue EU - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,Unknown,,,EUR,,4.3,123,,amazon_fr,2026-05-02T21:41:43.190206
-Samsung Galaxy Xcover 5 EE 64 GB G525 Schwarz Dual SIM Outdoor EU,samsung,Unknown,,,EUR,,4.2,94,,amazon_fr,2026-05-02T21:41:43.586724
-"Film de protection anti-lumière bleu HD pour Samsung Galaxy S24 [3 pièces] | Anti-fatigue visuelle, ultra transparent, auto-régénérant, anti-bulles, kit de montage inclus | protection smartphone",samsung,S24,,,EUR,,,,,amazon_fr,2026-05-02T21:41:43.942888
-"2x se® Film de Protection 3D Privacy pour Samsung Galaxy S24 Ultra, Auto-réparateur, Compatible Empreinte & FaceID, Installation Sans Bulles, Résistant aux Chocs et Rayures, Fabriqué en Allemagne",samsung,S24 Ultra,,,EUR,,3.9,12,,amazon_fr,2026-05-02T21:41:44.282372
-Samsung Galaxy A20e 3Go de RAM / 32Go Double Sim Bleu,samsung,Unknown,,,EUR,,4.5,250,,amazon_fr,2026-05-02T21:41:44.731405
-Oreillette Intra-auriculaire Bluetooth pour Samsung Galaxy XCover Pro Smartphone sans Fil Son Main Libre Business (Gris),samsung,Unknown,,,EUR,,,,,amazon_fr,2026-05-02T21:41:45.210912
-"Samsung Galaxy XCover 3 Smartphone débloqué 4G ( Ecran : 4,5 pouces - 8 Go - Micro-SIM - Android) Argent foncé (import Allemagne)",samsung,Unknown,,,EUR,,4.0,857,,amazon_fr,2026-05-02T21:41:45.593603
-Samsung Etui Portefeuille Smart View pour S24 FE Noir,samsung,S24,20.0,,EUR,,4.5,293,,amazon_fr,2026-05-02T21:41:46.055757
-Samsung GT-S5360 Galaxy Y Smartphone HSDPA/3G/EDGE/GPRS Wifi Bluetooth GPS Android Gris,samsung,Unknown,,,EUR,,3.8,23,,amazon_fr,2026-05-02T21:42:31.644822
-"UNBREAKcable Étanche Smartphone 2 Pochette IPX8 Sac Étanche pour Téléphone iPhone 17 Air 16 15 14 13 12 11 Pro Max, XR, XS, X, Galaxy S25 S24 S23 S22 S21 Ultra A15 A35 A25 A54 A55, Jusqu'à 7.0 Pouces",apple,S25,15.99,,EUR,,4.2,102,,amazon_fr,2026-05-02T21:42:32.448018
-JAYM - Verre de Protection Premium pour [Samsung Galaxy A35 / A55 ] - Plat 2.5D - Renforcé 9H Ultra Résistant - Qualité supérieure Asahi,samsung,A55,,,EUR,,2.9,6,,amazon_fr,2026-05-02T21:42:47.179356
-"Apple iPhone 15 Pro, 128 Go - Titane Noir (Reconditionné)",apple,Iphone 15 Pro,593.0,,EUR,,3.7,15,,amazon_fr,2026-05-02T21:43:02.574623
-Apple iPhone 14 256Go - Lumière Stellaire (Reconditionné),apple,Iphone 14,381.0,,EUR,,3.9,5,,amazon_fr,2026-05-02T21:43:02.992182
-"Apple iPhone 14 Pro, 256 Go, Noir sidéral (Reconditionné)",apple,Iphone 14 Pro,464.0,,EUR,,3.6,19,,amazon_fr,2026-05-02T21:43:03.406621
-"Apple iPhone 13, 128 Go, Lumière Stellaire (Reconditionné)",apple,Iphone 13,262.69,,EUR,,4.1,495,,amazon_fr,2026-05-02T21:43:03.814209
-Apple iPhone 13 256Go - Bleu (Reconditionné),apple,Iphone 13,306.68,,EUR,,3.8,76,,amazon_fr,2026-05-02T21:43:04.262527
-"Apple iPhone 15, 128 Go - Jaune (Reconditionné)",apple,Iphone 15,436.39,,EUR,,3.7,24,,amazon_fr,2026-05-02T21:43:04.640062
-"Apple iPhone 12, 128Go, Vert - (Reconditionné)",apple,Unknown,224.11,,EUR,,3.7,155,,amazon_fr,2026-05-02T21:43:05.026371
-Apple iPhone 15 Plus 256Go - Rose (Reconditionné),apple,Iphone 15 Plus,562.83,,EUR,,4.0,342,,amazon_fr,2026-05-02T21:43:05.374429
-"Apple iPhone 13 mini, 128 Go, Minuit (Reconditionné)",apple,Iphone 13,243.47,,EUR,,3.7,23,,amazon_fr,2026-05-02T21:43:05.556254
-Apple iPhone 14 Plus 128Go - Rouge (Reconditionné),apple,Iphone 14,,,EUR,,3.9,11,,amazon_fr,2026-05-02T21:43:05.712801
-Apple Iphone Xr 64Go Blanc (Reconditionné),apple,Unknown,149.0,,EUR,,4.0,93,,amazon_fr,2026-05-02T21:43:05.968152
-Apple iPhone XS 64Go Or (Reconditionné),apple,Unknown,,,EUR,,3.8,62,,amazon_fr,2026-05-02T21:43:06.121841
-ONEFLOW Brassard de sport pour téléphone portable compatible avec Apple iPhone 16 - Brassard de fitness - Brassard de course à pied - Pour l'extérieur - Support pour smartphone - Bleu,apple,Iphone 16,31.99,,EUR,,5.0,1,,amazon_fr,2026-05-02T21:43:06.763367
-ONEFLOW Brassard de sport pour téléphone portable compatible avec Apple iPhone 16 - Brassard de fitness - Brassard de course à pied - Pour l'extérieur - Support pour smartphone - Noir,apple,Iphone 16,31.99,,EUR,,5.0,1,,amazon_fr,2026-05-02T21:43:07.100298
-JAYM - Lot de 3 Verres Trempés pour Apple iPhone 16,apple,Iphone 16,,,EUR,,5.0,1,,amazon_fr,2026-05-02T21:43:07.597805
-"T'nB - Ecouteurs Filaires, Connecteur Lightning, Semi Intra Auriculaire, Son Stéréo, Microphone Intégré, Casque Compatible pour Apple iPhone/iPad, Certifiés MFI– Noir",apple,Unknown,17.9,,EUR,,3.9,18,,amazon_fr,2026-05-02T21:43:23.574284
-Apple iPhone 15 128Go - Bleu (Reconditionné),apple,Iphone 15,434.41,,EUR,,3.7,24,,amazon_fr,2026-05-02T21:43:53.468409
-Apple iPhone 15 128Go - Vert (Reconditionné),apple,Iphone 15,439.86,,EUR,,3.7,24,,amazon_fr,2026-05-02T21:43:53.911501
-"Apple iPhone 15 Pro, 256 Go - Titane Naturel - (Reconditionné)",apple,Iphone 15 Pro,655.0,,EUR,,3.7,15,,amazon_fr,2026-05-02T21:43:54.353008
-Apple iPhone 15 Pro 128Go - Titane Naturel (Reconditionné),apple,Iphone 15 Pro,593.0,,EUR,,3.7,15,,amazon_fr,2026-05-02T21:43:54.791179
-"Apple iPhone 15 Pro, 256 Go - Titane Noir (Reconditionné)",apple,Iphone 15 Pro,655.0,,EUR,,3.7,15,,amazon_fr,2026-05-02T21:43:55.171186
-Apple iPhone 14 256Go - Minuit (Reconditionné),apple,Iphone 14,,,EUR,,3.9,5,,amazon_fr,2026-05-02T21:43:55.530092
-Apple iPhone 15 Pro Max 1to - Titane Bleu (Reconditionné),apple,Iphone 15 Pro Max,833.0,,EUR,,3.6,12,,amazon_fr,2026-05-02T21:43:57.135268
-Apple iPhone 15 Pro Max 1To - Titane Naturel (Reconditionné),apple,Iphone 15 Pro Max,833.0,,EUR,,3.6,12,,amazon_fr,2026-05-02T21:43:57.515637
-Apple Iphone Xr 64Go Noir (Reconditionné),apple,Unknown,179.0,,EUR,,4.0,93,,amazon_fr,2026-05-02T21:43:59.782605
-"Apple iPhone 12 15,5 cm (6.1"") Double SIM iOS 14 5G 64 Go Blanc",apple,Unknown,710.69,,EUR,,,,,amazon_fr,2026-05-02T21:44:00.117325
-Ricondizionato Smartphone iPhone 11 Pro Grade A Vert Nuit Mat Marque,apple,Unknown,,,EUR,,,,,amazon_fr,2026-05-02T21:44:00.459382
-Tier1 T1A - Apple iPhone XR 15.5 cm (6.1) Dual SIM iOS 12 4G 128 GB Black Refurbished,apple,Unknown,347.19,,EUR,,4.6,7,,amazon_fr,2026-05-02T21:44:01.072233
-"Apple iPhone 12 Pro 15,5 cm (6.1"") Double SIM iOS 14 5G 256 Go Bleu",apple,Unknown,1324.18,,EUR,,,,,amazon_fr,2026-05-02T21:44:01.655496
-Samsung Galaxy J5 Smartphone débloqué 4G (Ecran: 5 pouces - 8 Go - Simple Micro-SIM - Android 5.1 Lollipop) Noir,samsung,Unknown,,,EUR,,4.2,34,,amazon_fr,2026-05-02T21:44:02.126650
-"2x se® Film de Protection 3D Antireflet pour Apple iPhone 15, Auto-réparateur, Compatible Empreinte & FaceID, Installation Sans Bulles, Résistant aux Chocs et Rayures, Fabriqué en Allemagne",apple,Iphone 15,,,EUR,,3.9,36,,amazon_fr,2026-05-02T21:44:02.598730
-"2x se® Film de Protection 3D Antireflet pour Apple iPhone 15 Pro, Auto-réparateur, Compatible Empreinte & FaceID, Installation Sans Bulles, Résistant aux Chocs et Rayures, Fabriqué en Allemagne",apple,Iphone 15 Pro,,,EUR,,3.7,58,,amazon_fr,2026-05-02T21:44:03.413943
-"2x se® Film de Protection 3D Antireflet pour Apple iPhone 15 Plus, Auto-réparateur, Compatible Empreinte & FaceID, Installation Sans Bulles, Résistant aux Chocs et Rayures, Fabriqué en Allemagne",apple,Iphone 15 Plus,,,EUR,,3.8,13,,amazon_fr,2026-05-02T21:44:16.674771
-JAYM - Lot de 3 Verres Trempés pour Apple iPhone 15,apple,Iphone 15,,,EUR,,5.0,1,,amazon_fr,2026-05-02T21:44:17.147872
-Otterbox React Necklace MagSafe Apple iPhone 14 - Black with Premium Tempered Glass Protector,apple,Iphone 14,64.98,,EUR,,,,,amazon_fr,2026-05-02T21:44:18.500480
-"Tiger Glass Plus Pack Camera Lens + Verre TREMPE Recycle IPHONE 15 Plus - Protection Ecran et Caméra, Verre recyclé Ultra Résistant 9H+, Anti-Traces de Doigt, Pose Facile, Garantie à Vie",apple,Iphone 15 Plus,38.89,,EUR,,,,,amazon_fr,2026-05-02T21:44:19.565324
-"TIGER GLASS PLUS VERRE TREMPE RECYCLE iPhone 16 Plus/15 Plus - Protection Ecran, Verre Recyclé Ultra Résistant 9H+, Anti-traces de doigts, Haute Sensibilité, Applicateur Pose facile, Garantie à vie",apple,Iphone 16 Plus,27.89,,EUR,,5.0,1,,amazon_fr,2026-05-02T21:44:20.445267
-Lobwerk Schutzhülle für Apple iPhone 15 + Plus 6.7 Zoll Ultra Slim Case Tasche,apple,Iphone 15,,,EUR,,,,,amazon_fr,2026-05-02T21:44:20.888033
-"Film de protection anti-lumière bleu HD pour iPhone 15 Plus [3 pièces] | Anti-fatigue visuelle, ultra transparent, auto-régénérant, anti-bulles, kit de montage inclus | protection smartphone",apple,Iphone 15 Plus,17.4,,EUR,,,,,amazon_fr,2026-05-02T21:44:34.828911
-Lobwerk Schutzhülle für Apple iPhone 15 + Plus 6.7 Zoll Case Tasche Stoßfest,apple,Iphone 15,,,EUR,,,,,amazon_fr,2026-05-02T21:44:35.378597
-Lobwerk Hülle für Apple iPhone 15 6.1 Zoll Case Cover Stoßfest,apple,Iphone 15,,,EUR,,,,,amazon_fr,2026-05-02T21:44:35.801788
-Lobwerk Schutzhülle für Apple iPhone 15 + Plus 6.7 Zoll Ultra Slim Case Tasche Bumper,apple,Iphone 15,,,EUR,,,,,amazon_fr,2026-05-02T21:44:36.316309
-cadorabo Chaîne de téléphone Portable Compatible avec Apple iPhone 15 en Jaune - Cordon de téléphone réglable Pad Amovible pour insérer,apple,Iphone 15,12.99,,EUR,,,,,amazon_fr,2026-05-02T21:44:36.640088
-cadorabo Chaîne de téléphone Portable Compatible avec Apple iPhone 15 Pro en Orange - Cordon de téléphone réglable Pad Amovible pour insérer,apple,Iphone 15 Pro,12.99,,EUR,,,,,amazon_fr,2026-05-02T21:44:37.331823
-"Film de protection hydrogel de confidentialité pour iPhone 15 Plus [1 pièce] | Anti-Spia 28°, Auto-régénérant, Anti-rayures | Kit de montage inclus (Pans, Grattoir, Microfibre) | Protection Smartphone",apple,Iphone 15 Plus,17.4,,EUR,,,,,amazon_fr,2026-05-02T21:44:37.725159
-Otterbox React Necklace MagSafe Apple iPhone 15 - Black with Premium Tempered Glass Protector,apple,Iphone 15,66.17,,EUR,,5.0,1,,amazon_fr,2026-05-02T21:44:38.265072
-"Generico Film de protection anti-lumière bleu HD pour iPhone 15 [3 pièces] | Anti-fatigue visuelle, ultra transparent, auto-régénérant, anti-bulles, kit de montage inclus | protection smartphone",apple,Iphone 15,17.4,,EUR,,,,,amazon_fr,2026-05-02T21:44:39.571280
+Samsung GALAXY S24 FE SM-S721BZKDEUB,samsung,S24,556.48,,EUR,,4.2,11,,amazon_fr,2026-05-03T03:20:24.101096
+"Samsung Galaxy S25 FE, Smartphone AI, affichage dynamique AMOLED 2 x 6,7 pouces, appareil photo 50 MP, 8 Go RAM, 256 Go,...[Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,S25,,,EUR,,4.6,349,,amazon_fr,2026-05-03T03:20:24.366624
+Samsung S931 Galaxy S25 5G (6.2'' - 12/256GB) Navy,samsung,S25,,,EUR,,4.5,988,,amazon_fr,2026-05-03T03:20:24.467466
+"Samsung Galaxy S25 FE 256Go Smartphone Android 5G 8Go RAM AI Display 6.7"" Dynamic AMOLED 2X Fotocamera 50MP 4.900 mAh (Noir)",samsung,S25,,,EUR,,4.6,349,,amazon_fr,2026-05-03T03:20:24.579453
+Samsung Galaxy A57 5G Bleu 8 Go 128 Go AMZ,samsung,A57,538.02,,EUR,,5.0,1,,amazon_fr,2026-05-03T03:20:24.749703
+Samsung Galaxy A37 5G Vert foncé 6 Go 128 Go AMZ,samsung,Unknown,399.0,,EUR,,,,,amazon_fr,2026-05-03T03:20:24.898296
+Samsung GALAXY S25 5G SM-S931BDBDEUB,samsung,S25,,,EUR,,4.4,287,,amazon_fr,2026-05-03T03:20:25.009320
+"Samsung Galaxy Z Flip7 FE, Smartphone Android 5G avec Galaxy AI, 256 Go, Smartphone déverrouillé, Noir",samsung,Unknown,,,EUR,,4.5,30,,amazon_fr,2026-05-03T03:20:25.136379
+Samsung Galaxy Xcover Pro 7 Enterprise 128Go Noir,samsung,Unknown,,,EUR,,4.2,67,,amazon_fr,2026-05-03T03:20:25.245852
+Samsung Galaxy A37 5G Graphite 6 Go 128 Go AMZ,samsung,Unknown,399.0,,EUR,,,,,amazon_fr,2026-05-03T03:20:25.403177
+Samsung Galaxy A37 5G Graphite 8 Go 256 Go AMZ,samsung,Unknown,479.0,,EUR,,5.0,1,,amazon_fr,2026-05-03T03:20:25.552025
+Samsung A566 Galaxy A56 Enterprise Edition (6.7'' - 8/128GB) Graphite,samsung,A56,,,EUR,,4.4,230,,amazon_fr,2026-05-03T03:20:25.679171
+"Samsung Galaxy A56 5G, Smartphone Android, 128 Go, Smartphone déverrouillé, Vert Sauge",samsung,A56,,,EUR,,4.8,11,,amazon_fr,2026-05-03T03:20:25.778750
+Samsung GALAXY A26 5G A266B 128GB schwrz,samsung,A26,,,EUR,,4.5,679,,amazon_fr,2026-05-03T03:20:25.875168
+"SAMSUNG GALAXY S23 FE 128GB GRAPHITE, un design hérité des Galaxy S23, des photos lumineuses de nuit, un écran fluide et lumineux",samsung,S23,699.0,,EUR,Exclusivité Amazon,4.3,178,,amazon_fr,2026-05-03T03:20:25.992587
+Samsung Galaxy S25+ Plus 5G 256GB Speicher 12GB RAM 4.900mAh Akku AI Handy Android 15 Smartphone EU ohne Simlock ohne Branding (Silber),samsung,S25+,,,EUR,,4.2,480,,amazon_fr,2026-05-03T03:20:26.088195
+SAMSUNG Galaxy Xcover 7 Entreprise Edition 6 6p 128Go,samsung,Unknown,,,EUR,,4.2,30,,amazon_fr,2026-05-03T03:20:26.191687
+"Samsung Galaxy A26 5G, Smartphone Android, 256 Go, Smartphone déverrouillé, Blanc",samsung,A26,,,EUR,,4.6,126,,amazon_fr,2026-05-03T03:20:26.289142
+Samsung Galaxy A57 A576 5G 256GB/8GB Double SIM Gris,samsung,A57,,,EUR,,,,,amazon_fr,2026-05-03T03:20:26.391482
+Samsung Smartphone Galaxy XCover7 Pro 5G Édition Enterprise 128Go/6Go Double SIM Noir,samsung,Unknown,,,EUR,,5.0,1,,amazon_fr,2026-05-03T03:20:26.487477
+"Samsung Galaxy A26 5G, Smartphone Android, 128 Go, Smartphone déverrouillé, Vert d'eau",samsung,A26,,,EUR,,4.5,58,,amazon_fr,2026-05-03T03:20:26.591429
+"Samsung Galaxy A35 5G, Dual, 128GB 6GB Ram, Awesome Navy",samsung,A35,,,EUR,,4.4,278,,amazon_fr,2026-05-03T03:20:26.694931
+"Samsung Galaxy A16 Smartphone 4GB/128GB 6.7? - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A16,,,EUR,,4.3,38,,amazon_fr,2026-05-03T03:20:26.801046
+Samsung SM-S928B Galaxy S24 Ultra Dual SIM 5G 12GB RAM 256GB Titanium Gray EU (Reconditionné),samsung,S24 Ultra,689.0,,EUR,,4.5,37,,amazon_fr,2026-05-03T03:20:40.232976
+"Samsung Galaxy S24 FE S721 8GB 128GB 5G Dual SIM Exynos IP68 IA Mint - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,S24,427.95,,EUR,,4.2,15,,amazon_fr,2026-05-03T03:20:40.348678
+Samsung Galaxy S24 8/256 Black (Reconditionné),samsung,S24,499.0,,EUR,,3.6,3,,amazon_fr,2026-05-03T03:20:40.493445
+Samsung Galaxy S24 Ultra 12/512 Yellow (Reconditionné),samsung,S24 Ultra,664.0,,EUR,,5.0,6,,amazon_fr,2026-05-03T03:20:40.645528
+"Samsung Galaxy S21 128Go Smartphone Android 5G 8Go RAM AI Display 6.2"" Dynamic AMOLED 2X Fotocamera 64MP 4.000 mAh (Blanc)",samsung,Unknown,279.98,,EUR,,3.8,14,,amazon_fr,2026-05-03T03:20:40.833428
+"Samsung Galaxy S22+ Smartphone Android 5G 8Go RAM AI Display 6.6"" Dynamic AMOLED 2X Fotocamera 50MP 4.500 mAh (Noir, 256 GB)",samsung,Unknown,399.99,,EUR,,4.0,353,,amazon_fr,2026-05-03T03:20:40.965048
+"Samsung Galaxy S24 Ultra 17,3 cm (6.8"""") Double SIM 5G USB Type-C 12 Go 256 Go 5000 mAh Noir, SM-S928BZKGEUE",samsung,S24 Ultra,869.0,,EUR,,4.3,118,,amazon_fr,2026-05-03T03:20:41.080095
+Samsung A366 Galaxy A36 Dual 5G 256 Go 8 Go RAM (Awesome) Blanc,samsung,A36,269.98,,EUR,,4.4,362,,amazon_fr,2026-05-03T03:20:41.218083
+"Samsung S921B Galaxy S24 128 Go/8 Go de RAM, Double SIM, Onyx-Noir, Black, SM-S921BZKDEUE",samsung,S24,519.99,,EUR,,4.5,140,,amazon_fr,2026-05-03T03:20:41.338670
+SAMSUNG Galaxy S24 Ultra 5G 6 8p 512Go Noir titane (Reconditionné),samsung,S24 Ultra,709.0,,EUR,,4.3,32,,amazon_fr,2026-05-03T03:20:41.485525
+Samsung Galaxy S24 + 12/256 Argent,samsung,S24,814.44,,EUR,,4.2,530,,amazon_fr,2026-05-03T03:20:41.598400
+"Samsung Galaxy S24+ 17 cm (6.7"") Double SIM 5G USB Type-C 12 Go 256 Go 4900 mAh Violet (Reconditionné)",samsung,S24+,538.0,,EUR,,3.5,6,,amazon_fr,2026-05-03T03:20:41.707366
+"Samsung Galaxy S24 FE Smartphone Con IA 256GB Batería 4.700mAh Azul Claro Versión Importada EU - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,S24,,,EUR,,4.9,14,,amazon_fr,2026-05-03T03:20:41.805033
+"Samsung Galaxy A26 5G (A266B/DS), Dual SIM, 128GB, 6GB Ram, Noir, Global Version",samsung,A26,214.9,,EUR,,4.7,486,,amazon_fr,2026-05-03T03:20:41.938605
+Samsung GALAXY S24 Ultra 5G Dual-SIM 512GB Titanium Gray (Reconditionné),samsung,S24 Ultra,709.0,,EUR,,4.2,31,,amazon_fr,2026-05-03T03:20:42.059961
+Samsung SM-S931B Galaxy S25 Dual SIM 12+128GB Silver Shadow DE,samsung,S25,609.0,,EUR,,4.4,287,,amazon_fr,2026-05-03T03:20:42.177566
+"Samsung Galaxy S23+ Smartphone Android 5G 8Go RAM AI Display 6.6"" Dynamic AMOLED 2X Fotocamera 50MP 4.700 mAh (Noir, 256 GB)",samsung,S23+,449.0,,EUR,,3.7,164,,amazon_fr,2026-05-03T03:20:42.301107
+"SAMSUNG Galaxy S24 5G Entreprise Edition 6 2p 128Go, SM-S921BZKDEEB",samsung,S24,519.99,,EUR,,4.6,52,,amazon_fr,2026-05-03T03:20:42.410759
+Samsung Galaxy S24 + 12/512 Black (Reconditionné),samsung,S24,653.89,,EUR,,5.0,1,,amazon_fr,2026-05-03T03:20:42.527443
+Samsung SM-S926B Galaxy S24+ Dual SIM 5G 12GB RAM 256GB Gray (Reconditionné),samsung,S24+,539.0,,EUR,,3.5,2,,amazon_fr,2026-05-03T03:20:42.655910
+"Samsung S928B/DS Galaxy S24 Ultra, Dual, 256GB 12GB Ram, Titanium Violet (Reconditionné)",samsung,S24 Ultra,663.0,,EUR,,4.1,19,,amazon_fr,2026-05-03T03:20:42.787229
+Samsung Galaxy A56 5G 128 Go 8 Go RAM - Graphite,samsung,A56,341.94,,EUR,,4.4,18,,amazon_fr,2026-05-03T03:20:42.903486
+"Samsung Galaxy S20 - Smartphone Portable débloqué 5G (Ecran: 6,2 pouces - 128 Go - Double Nano-SIM - Android) - Gris",samsung,Unknown,289.0,,EUR,,3.8,512,,amazon_fr,2026-05-03T03:20:43.008913
+Samsung (A366 Galaxy A36 Dual 5G 256GB 8GB RAM (Awesome) Black,samsung,A36,295.0,,EUR,,4.5,295,,amazon_fr,2026-05-03T03:20:43.129084
+"Samsung Galaxy S23 Smartphone Android 5G 8 Go RAM AI Display 6.1"" Dynamic AMOLED 2X Fotocamera 50MP 3.900 mAh (Noir, 128 GB)",samsung,S23,439.99,,EUR,,4.2,997,,amazon_fr,2026-05-03T03:20:43.231904
+"Smartphone Samsung Galaxy S24 Ultra Enterprise Edition 6,8 5G Double SIM 256 Go Noir titane",samsung,S24 Ultra,1001.15,,EUR,,3.9,30,,amazon_fr,2026-05-03T03:20:43.337330
+"Samsung Galaxy S22, Téléphone mobile 5G 128Go Noir, Carte SIM non incluse, smartphone Android, Version FR",samsung,Unknown,339.99,,EUR,,3.9,513,,amazon_fr,2026-05-03T03:20:43.543698
+"Samsung Galaxy A57 Bleu Marine, 256 Go",samsung,A57,381.53,,EUR,,4.5,2,,amazon_fr,2026-05-03T03:20:43.652708
+Samsung GALAXY S24 Ultra SM-S928BZVHEUB (Reconditionné),samsung,S24 Ultra,604.0,,EUR,,5.0,2,,amazon_fr,2026-05-03T03:20:43.768496
+Samsung Galaxy A17 4G 128GB/4GB Double SIM Noir,samsung,A17,153.0,,EUR,,4.4,230,,amazon_fr,2026-05-03T03:20:43.874771
+"Samsung Galaxy S24 5G, 8/128, Creme - Unlocked (Reconditionné)",samsung,S24,394.0,,EUR,,,,,amazon_fr,2026-05-03T03:20:43.998172
+Samsung Galaxy S24 + Dual Sim 12 Go RAM 512 Go Gris Marbre EU (Reconditionné),samsung,S24,528.0,,EUR,,,,,amazon_fr,2026-05-03T03:20:44.150247
+"Smartphone Samsung Galaxy S23 Ultra 6.8"" Nano SIM 5G 8 Go RAM 256 Go Vert",samsung,S23 Ultra,664.98,,EUR,,4.3,15,,amazon_fr,2026-05-03T03:20:44.257614
+Samsung Galaxy S24 Ultra 12/256 Titanium Yellow,samsung,S24 Ultra,,,EUR,,4.6,72,,amazon_fr,2026-05-03T03:20:44.504872
+Samsung SM-S928B Galaxy S24 Ultra Dual SIM 5G 12GB RAM 256GB Titanium Gray EU,samsung,S24 Ultra,1129.0,,EUR,,3.6,45,,amazon_fr,2026-05-03T03:20:44.606502
+Samsung (A266 Galaxy A26 Dual 5G 256GB 8GB RAM Black,samsung,A26,245.0,,EUR,,4.5,289,,amazon_fr,2026-05-03T03:20:44.727092
+"Samsung Smartphone Galaxy Z Fold5 7.6"" 5G Nano SIM 512 Go Noir",samsung,Unknown,,,EUR,,4.2,306,,amazon_fr,2026-05-03T03:20:44.828335
+"Samsung Galaxy A26 5G, Smartphone Android, 256 Go, Smartphone déverrouillé, Vert d'eau",samsung,A26,248.0,,EUR,,4.4,113,,amazon_fr,2026-05-03T03:20:44.942977
+"Samsung Galaxy A36 5G, Smartphone Android, 256 Go de Stockage, 8 Go de RAM, Gris Clair, Mise à Niveau du système d'exploitation 6X, Grand écran, processeur Huit cœurs",samsung,A36,299.99,,EUR,,4.5,22,,amazon_fr,2026-05-03T03:20:57.512728
+Samsung SM-S921B Galaxy S24 Dual SIM 5G 8GB RAM 256GB Onyx Black EU (Reconditionné),samsung,S24,529.0,,EUR,,,,,amazon_fr,2026-05-03T03:20:57.938282
+Etui Smart View avec Porte Carte pour Samsung Galaxy S24 Noir,samsung,S24,32.0,,EUR,,4.6,47,,amazon_fr,2026-05-03T03:20:58.070902
+"Samsung Galaxy A17 5G, Dual, 128GB 4GB Ram, Black",samsung,A17,171.99,,EUR,,4.2,694,,amazon_fr,2026-05-03T03:20:58.186731
+Smartphone Samsung Galaxy A15 128Go Bleu Noir 5G,samsung,A15,176.99,,EUR,,4.2,3,,amazon_fr,2026-05-03T03:20:58.315640
+"Samsung A566B/DS Galaxy A56 5G, Dual, 128GB 8GB RAM, Gris",samsung,A56,370.99,,EUR,,4.6,260,,amazon_fr,2026-05-03T03:20:58.419831
+Samsung Galaxy S24 Ultra 12/1TB Black,samsung,S24 Ultra,1100.0,,EUR,,4.3,120,,amazon_fr,2026-05-03T03:20:58.524997
+Samsung Galaxy S24+ 5G 12 Go/256 Go Violet (Cobalt Violet) Double SIM SM-S926B (Reconditionné),samsung,S24+,761.76,,EUR,,4.2,26,,amazon_fr,2026-05-03T03:20:58.627329
+"Samsung Galaxy S23 FE (S711) 5G 8/128GB DS Graphite, Black",samsung,S23,389.99,,EUR,,4.1,358,,amazon_fr,2026-05-03T03:20:58.727191
+Samsung Galaxy S24 8/256GB Amarillo Amber Libre Versión Importada EU,samsung,S24,599.0,,EUR,,4.4,20,,amazon_fr,2026-05-03T03:20:58.827575
+"Samsung Galaxy S24 FE 5G, 128GB, Gelb - Unlocked (Reconditionné)",samsung,S24,405.0,,EUR,,5.0,1,,amazon_fr,2026-05-03T03:20:58.933592
+"Samsung Galaxy S24 5g SM S921B 256 GB Dual Sim 6.2"" 50 Mp Deca Core Cobalt Violet (Reconditionné)",samsung,S24,510.0,,EUR,,,,,amazon_fr,2026-05-03T03:20:59.041574
+"Samsung A266 Galaxy A26 (6.7'' - 6/128GB) Black - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A26,195.99,,EUR,,4.6,303,,amazon_fr,2026-05-03T03:20:59.152010
+"Smartphone Samsung Galaxy Z Flip5 6,7 Nano SIM 5G 256 Go Graphite",samsung,Unknown,574.9,,EUR,,3.9,425,,amazon_fr,2026-05-03T03:20:59.417856
+"Samsung Galaxy S23 Ultra Smartphone Android 5G 8/12Go RAM AI Display 6.8"" Dynamic AMOLED 2X Fotocamera 200MP 5.000 mAh (Noir, 512 GB)",samsung,S23 Ultra,719.99,,EUR,,4.0,49,,amazon_fr,2026-05-03T03:20:59.530413
+"Samsung A176B/DS Galaxy A17 5G, Dual, 128GB 4GB Ram, Noir",samsung,A17,189.99,,EUR,,4.2,61,,amazon_fr,2026-05-03T03:20:59.740530
+"Samsung S926B Galaxy S24 + 256 Go/12 Go de RAM, Double SIM, Jaune ambré (Reconditionné)",samsung,S24,538.0,,EUR,,5.0,1,,amazon_fr,2026-05-03T03:20:59.843909
+Samsung Galaxy S24 Ultra 12/256 Violet (Reconditionné),samsung,S24 Ultra,616.26,,EUR,,4.2,8,,amazon_fr,2026-05-03T03:20:59.942274
+Samsung Galaxy S24+ 5G 512GB/12GB Dual SIM Cobalt Violet (Reconditionné),samsung,S24+,540.36,,EUR,,3.0,1,,amazon_fr,2026-05-03T03:21:00.051316
+Samsung Galaxy S26 Ultra Noir 512 Go,samsung,S26 Ultra,1090.0,,EUR,,4.6,48,,amazon_fr,2026-05-03T03:21:00.180185
+"Samsung Galaxy Note20 5G, 256 Go, Mystic Gray (Reconditionné)",samsung,Unknown,276.89,,EUR,,3.5,119,,amazon_fr,2026-05-03T03:21:00.279392
+"Samsung S921B Galaxy S24 128 Go/8 Go de RAM, Double SIM, Violet Cobalt",samsung,S24,565.0,,EUR,,3.0,2,,amazon_fr,2026-05-03T03:21:00.378119
+Samsung Galaxy A17 5G 128GB/4GB Double SIM Bleu,samsung,A17,174.99,,EUR,,4.1,21,,amazon_fr,2026-05-03T03:21:00.489070
+"Samsung Galaxy S23+ Dual Sim 8GB RAM 256GB Beige | EU, Reconditionné",samsung,S23+,376.0,,EUR,,4.8,5,,amazon_fr,2026-05-03T03:21:00.626770
+SAMSUNG Galaxy A05s 4GB+64GB [Version Internationale] (Noir),samsung,A05,146.59,,EUR,,4.4,28,,amazon_fr,2026-05-03T03:21:00.748826
+"Samsung Galaxy S22 Ultra Smartphone Android 5G 8/12Go RAM AI Display 6.8"" Dynamic AMOLED 2X Fotocamera 108MP 5.000 mAh (Noir, 256 Go)",samsung,Unknown,599.0,,EUR,,4.1,975,,amazon_fr,2026-05-03T03:21:00.849016
+"Smartphone Samsung SM-A175F 6,7"" 4 GB RAM 128 GB Grigio",samsung,A17,155.58,,EUR,,4.5,165,,amazon_fr,2026-05-03T03:21:01.058156
+Samsung Galaxy A16 5G Smartphone 128 GB Mitternachtsblau,samsung,A16,173.19,,EUR,,4.2,11,,amazon_fr,2026-05-03T03:21:01.224370
+Samsung Galaxy A55 5G SM-A556BZKAEUB,samsung,A55,374.23,,EUR,,4.5,15,,amazon_fr,2026-05-03T03:21:13.418317
+Samsung Galaxy A55 5G Smartphone 128 GB Blau,samsung,A55,,,EUR,,4.2,64,,amazon_fr,2026-05-03T03:21:13.521684
+Samsung Galaxy A55 5G Smartphone 256GB Mitternachtsblau,samsung,A55,,,EUR,,4.3,2,,amazon_fr,2026-05-03T03:21:13.619966
+"Samsung Galaxy A55 5G, Dual, 128GB 8GB Ram, Awesome Navy",samsung,A55,,,EUR,,4.5,513,,amazon_fr,2026-05-03T03:21:13.719240
+"Samsung Galaxy A55 5G 16,8 cm (6.6"") Double SIM Hybride USB Type-C 8 Go 128 Go 5000 mAh Marine - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A55,367.52,,EUR,,4.6,55,,amazon_fr,2026-05-03T03:21:13.826642
+"Smartphone Samsung Galaxy A55 5G 256Go Bleu ciel - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A55,,,EUR,,4.5,1,,amazon_fr,2026-05-03T03:21:13.929492
+"Samsung A55 SM-A556B 8+128GB DS 5G Awesome Navy OEM - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A55,359.99,,EUR,,4.5,21,,amazon_fr,2026-05-03T03:21:14.044519
+"Samsung SM-A556B, Galaxy A55 5G, Dual SIM, 8 Go 128 Go, Bleu Marine Fantastique, EU (Reconditionné)",samsung,A55,289.0,,EUR,,3.8,5,,amazon_fr,2026-05-03T03:21:14.175042
+"Samsung Galaxy A55 5G 6.6"",, 256GB, Dual SIM, Awesome Navy (Samsung Galaxy A55 256GB Dark Blue 6.6) (Reconditionné)",samsung,A55,385.0,,EUR,,,,,amazon_fr,2026-05-03T03:21:14.278749
+"Samsung Galaxy A55 5G, 8/128 GB, Awesome Lilac (Reconditionné)",samsung,A55,284.0,,EUR,,,,,amazon_fr,2026-05-03T03:21:14.523815
+SAMSUNG Galaxy A54 5G Smartphone Noir 128 Go,samsung,Unknown,303.99,,EUR,,4.4,251,,amazon_fr,2026-05-03T03:21:14.641310
+Samsung Galaxy A55 5G 128GB Lilac,samsung,A55,369.0,,EUR,,4.6,303,,amazon_fr,2026-05-03T03:21:14.741556
+"Samsung Galaxy A56 256Go Smartphone Android 5G 8Go RAM AI Display 6.7"" Super AMOLED Fotocamera 50MP 5.000 mAh (Graphite)",samsung,A56,359.0,,EUR,,4.4,43,,amazon_fr,2026-05-03T03:21:14.846566
+Samsung Galaxy A16 4GB+128GB [Version Internationale] (Noir),samsung,A16,122.9,,EUR,,4.4,47,,amazon_fr,2026-05-03T03:21:15.059568
+Samsung Galaxy A55 5G SM-A556BZYAEUB,samsung,A55,395.57,,EUR,,4.4,241,,amazon_fr,2026-05-03T03:21:15.168445
+"Samsung SM-A556B Galaxy A55 5G Dual SIM 8GB 256GB Awesome Navy EU - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A55,,,EUR,,4.4,714,,amazon_fr,2026-05-03T03:21:15.279269
+"Samsung SM-A556B Galaxy A55 5G Dual SIM 8GB 256GB Awesome Lemon EU - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A55,,,EUR,,4.7,158,,amazon_fr,2026-05-03T03:21:15.371614
+"Samsung Galaxy A55 5G, Dual, 128GB 8GB Ram, Awesome Navy (Reconditionné)",samsung,A55,328.89,,EUR,,,,,amazon_fr,2026-05-03T03:21:15.486671
+"Samsung Galaxy A55 5G, Dual, 8/128GB, Bleu Nuit",samsung,A55,379.99,,EUR,,4.4,118,,amazon_fr,2026-05-03T03:21:15.690660
+"Samsung tel - Smartphone 5g 6.5"" 8+128GB A55 Bleu Clair sm-a556blbaeue - 1286791 - [Versions italienne, hongroise, polonaise, roumaine, autrichienne et suisse]",samsung,A55,388.45,,EUR,,4.4,12,,amazon_fr,2026-05-03T03:21:15.907372
+Samsung Galaxy Note 9 Dual SIM 128GB 6GB RAM SM-N960F/DS Noir de Minuit SIM Free,samsung,Unknown,269.99,,EUR,,,,,amazon_fr,2026-05-03T03:21:16.020499
+"Samsung Galaxy A41 Smartphone débloqué (Super AMOLED - Double SIM - 4 Go RAM, 64 Go ROM - Android 10.0) Noir",samsung,Unknown,219.99,,EUR,,4.4,22,,amazon_fr,2026-05-03T03:21:16.403199
+"Samsung Galaxy A35 5G Entreprise Edition 16.8 cm (6.6) Hybrid, W128986361 (Edition 16.8 cm (6.6) Hybrid Dual SIM Android 14 USB Type-C 6 GB 128 GB 5000 mAh Navy)",samsung,A35,229.07,,EUR,,4.4,124,,amazon_fr,2026-05-03T03:21:16.842702
+"Samsung Galaxy A07 LTE, Smartphone Android, 128 Go de Stockage, 4 Go de RAM, Vert, 6 mises à Niveau du système d'exploitation, Grand écran, processeur 6 nm (Version Émirats Arabes Unis)",samsung,A07,113.71,,EUR,,4.3,107,,amazon_fr,2026-05-03T03:21:17.177568
+"Samsung Galaxy A57, Gris, 256 Go",samsung,A57,386.44,,EUR,,5.0,1,,amazon_fr,2026-05-03T03:21:17.423136
+Samsung A366 Galaxy A36 Enterprise Edition (6.7'' - 6/128GB) Black,samsung,A36,249.0,,EUR,,4.0,86,,amazon_fr,2026-05-03T03:21:17.538906
+"Samsung Galaxy A55 5G, Dual, 256GB 8GB RAM, Bleu Nuit",samsung,A55,,,EUR,,4.5,423,,amazon_fr,2026-05-03T03:21:17.642927
+"Samsung Galaxy A57 5G (Awesome Navy, 8 Go de RAM, 256 Go de stockage), IA agentique, triple caméra avec vidéo de nightographie, autonomie de 2 jours, mises à niveau du système d'exploitation 6",samsung,A57,396.0,,EUR,,3.8,8,,amazon_fr,2026-05-03T03:21:17.748890
+SAMSUNG Galaxy A20e Schwarz,samsung,Unknown,149.0,,EUR,,4.4,29,,amazon_fr,2026-05-03T03:21:30.514390
+"Samsung Galaxy S20+ - Smartphone Portable débloqué 4G (Ecran: 6,7 pouces - 128 Go - Double Nano-SIM - Android) - Gris",samsung,Unknown,277.5,,EUR,,4.2,26,,amazon_fr,2026-05-03T03:21:30.626418
+"Samsung Galaxy A57 Violet, 256 Go",samsung,A57,386.44,,EUR,,5.0,4,,amazon_fr,2026-05-03T03:21:31.008062
+"Samsung Galaxy A54 128Go Smartphone Android 5G 8Go RAM AI Display 6.4"" Super AMOLED Fotocamera 50MP 5.000 mAh (Violet)",samsung,Unknown,309.99,,EUR,,4.4,5,,amazon_fr,2026-05-03T03:21:31.223148
+"Samsung A546B Galaxy A54 5G 128 GB (Awesome Graphite) Ohne Simlock, Ohne Branding",samsung,Unknown,309.98,,EUR,,4.3,195,,amazon_fr,2026-05-03T03:21:31.375095
+Samsung Galaxy A21s Noir (Reconditionné),samsung,Unknown,106.99,,EUR,,4.2,494,,amazon_fr,2026-05-03T03:21:31.560307
+"Samsung Galaxy A54 5G, Dual, 256GB 8GB Ram, Awesome Lime",samsung,Unknown,,,EUR,,4.5,373,,amazon_fr,2026-05-03T03:21:31.668536
+Apple iPhone 16 (128 Go) - Noir,apple,Iphone 16,749.0,,EUR,,4.6,23,,amazon_fr,2026-05-03T03:21:57.611415
+"Apple iPhone 16, 128GB, Noir (Reconditionné)",apple,Iphone 16,599.99,,EUR,,3.9,411,,amazon_fr,2026-05-03T03:21:57.711827
+"Apple iPhone 16 Pro, 256GB, Titane noir (Reconditionné)",apple,Iphone 16 Pro,799.99,,EUR,,3.8,347,,amazon_fr,2026-05-03T03:21:57.810421
+"Apple iPhone 17 256 Go : Écran 6,3 pouces avec ProMotion, Puce A19, Caméra avant Center Stage, Meilleure résistance aux rayures, Autonomie d’une journée ; Noir",apple,Iphone 17,889.0,,EUR,,4.6,226,,amazon_fr,2026-05-03T03:21:57.924484
+"Apple iPhone 16 Pro Max, 256GB, Titane sable (Reconditionné)",apple,Iphone 16 Pro Max,849.0,,EUR,,4.1,503,,amazon_fr,2026-05-03T03:21:58.025889
+Apple iPhone 15 (128 Go) - Noir,apple,Iphone 15,669.0,,EUR,,4.6,65,,amazon_fr,2026-05-03T03:21:58.140422
+"Apple iPhone 16 Plus, 128GB, Rose (Reconditionné)",apple,Iphone 16 Plus,648.59,,EUR,,4.1,86,,amazon_fr,2026-05-03T03:21:58.243320
+"Apple iPhone 16, 512GB, Outremer (Reconditionné)",apple,Iphone 16,786.0,,EUR,,3.9,411,,amazon_fr,2026-05-03T03:21:58.340410
+"Apple iPhone 16e 128 Go : Conçu pour Apple Intelligence, Puce A18, Autonomie de Taille, Caméra Fusion 48 Mpx, Écran Super Retina XDR de 6,1 Pouces; Noir",apple,Iphone 16,589.0,,EUR,,4.6,456,,amazon_fr,2026-05-03T03:21:58.449156
+"Apple iPhone 16 Pro Max, 512GB, Titane sable (Reconditionné)",apple,Iphone 16 Pro Max,893.5,,EUR,,4.1,503,,amazon_fr,2026-05-03T03:21:58.555769
+Apple iPhone 16 Plus (128 Go) - Noir,apple,Iphone 16 Plus,969.0,,EUR,,4.5,527,,amazon_fr,2026-05-03T03:21:58.758352
+"Apple iPhone 16e, 128 Go, Noir (Reconditionné)",apple,Iphone 16,467.0,,EUR,,4.3,122,,amazon_fr,2026-05-03T03:21:58.856039
+"Apple iPhone 16 Pro Max, 256GB, Titane blanc (Reconditionné)",apple,Iphone 16 Pro Max,908.79,,EUR,,4.1,503,,amazon_fr,2026-05-03T03:21:58.956846
+"Apple iPhone 15, 128 Go, Noir (Reconditionné)",apple,Iphone 15,420.0,,EUR,,3.7,24,,amazon_fr,2026-05-03T03:21:59.064753
+"Apple iPhone 16 6.1"" 128 Go Rose",apple,Iphone 16,,,EUR,,4.6,314,,amazon_fr,2026-05-03T03:21:59.167034
+"Apple iPhone 15 Pro, 128 Go - Titane Noir (Reconditionné)",apple,Iphone 15 Pro,549.99,,EUR,,3.7,15,,amazon_fr,2026-05-03T03:21:59.269099
+Apple iPhone 16 Pro (128 Go) - Titane Noir,apple,Iphone 16 Pro,,,EUR,,4.5,23,,amazon_fr,2026-05-03T03:21:59.361685
+Apple iPhone 16 Pro Max (256 Go) - Titane Noir,apple,Iphone 16 Pro Max,,,EUR,,4.6,2,,amazon_fr,2026-05-03T03:21:59.459997
+Apple iPhone 16 Pro (256 Go) - Titane Naturel,apple,Iphone 16 Pro,,,EUR,,4.5,23,,amazon_fr,2026-05-03T03:21:59.551615
+"Apple iPhone 14, 128 Go - Bleu - (Reconditionné)",apple,Iphone 14,346.0,,EUR,,3.9,5,,amazon_fr,2026-05-03T03:21:59.648299
+"Apple iPhone 13, 128 Go, Bleu (Reconditionné)",apple,Iphone 13,285.0,,EUR,,3.8,76,,amazon_fr,2026-05-03T03:21:59.745399
+"Apple iPhone 17e 256 Go : Écran Super Retina XDR 6,1 Pouces, Puce A19, Autonomie d’Une journée, Caméra Fusion 48 MP ; Rose poudré",apple,Iphone 17,719.0,,EUR,,4.6,21,,amazon_fr,2026-05-03T03:21:59.850575
+Apple iPhone 14 Pro Max 1To - Violet Foncé (Reconditionné),apple,Iphone 14 Pro Max,663.91,,EUR,,3.8,19,,amazon_fr,2026-05-03T03:21:59.947803
+"Apple iPhone 13 Pro, 128 Go - Bleu Alpin (Reconditionné)",apple,Iphone 13 Pro,384.89,,EUR,,3.6,32,,amazon_fr,2026-05-03T03:22:00.056466
+"Apple iPhone 12, 128Go, Noir - (Reconditionné)",apple,Unknown,212.0,,EUR,,3.7,155,,amazon_fr,2026-05-03T03:22:00.157616
+Apple iPhone 14 Plus 128Go - Rouge (Reconditionné),apple,Iphone 14,358.16,,EUR,,3.9,11,,amazon_fr,2026-05-03T03:22:00.258911
+"Apple iPhone 13, 128 Go, Lumière Stellaire (Reconditionné)",apple,Iphone 13,262.69,,EUR,,4.1,495,,amazon_fr,2026-05-03T03:22:00.365582
+"Apple iPhone 16 Pro 6.3"" 256 Go Noir Titane",apple,Iphone 16 Pro,,,EUR,,4.6,313,,amazon_fr,2026-05-03T03:22:00.453544
+"Apple iPhone 14 Pro, 256 Go, Noir sidéral (Reconditionné)",apple,Iphone 14 Pro,492.22,,EUR,,3.6,19,,amazon_fr,2026-05-03T03:22:00.556335
+APPLE IPHONE 16 Pro 128GB Desert Titanium MYNF3QL/A,apple,Iphone 16 Pro,,,EUR,,4.5,160,,amazon_fr,2026-05-03T03:22:00.644723
+Apple iPhone 14 (128 Go) - Bleu,apple,Iphone 14,,,EUR,,4.6,81,,amazon_fr,2026-05-03T03:22:00.733456
+Apple iPhone 15 Plus 128Go - Vert (Reconditionné),apple,Iphone 15 Plus,463.0,,EUR,,4.0,342,,amazon_fr,2026-05-03T03:22:00.832603
+APPLE IPHONE 16 Pro 128GB Natural Titanium MYNG3QL/A,apple,Iphone 16 Pro,,,EUR,,4.7,142,,amazon_fr,2026-05-03T03:22:00.925256
+Apple iPhone 16 Plus 5G 128GB 8GB RAM Dual Black EU,apple,Iphone 16 Plus,,,EUR,,4.6,51,,amazon_fr,2026-05-03T03:22:01.014981
+"Apple iPhone 16 6.1"" 128Go Ultramarine",apple,Iphone 16,,,EUR,,4.7,496,,amazon_fr,2026-05-03T03:22:01.107435
+IPHONE 16 6.1IN A18 6.1IN 128GB,apple,Iphone 16,,,EUR,,4.6,275,,amazon_fr,2026-05-03T03:22:01.202165
+"Apple iPhone 17, 256GB, SIM Global, Sage- Débloqué (Reconditionné)",apple,Iphone 17,732.0,,EUR,,4.4,29,,amazon_fr,2026-05-03T03:22:01.305991
+APPLE IPHONE 16 Pro 128GB Black Titanium MYND3QL/A,apple,Iphone 16 Pro,,,EUR,,4.6,287,,amazon_fr,2026-05-03T03:22:01.395196
+Apple iPhone 13 128 Go Bleu,apple,Iphone 13,,,EUR,,4.0,477,,amazon_fr,2026-05-03T03:22:01.484743
+APPLE IPHONE 16 Pro Max 256GB Natural Titanium MYWY3QL/A,apple,Iphone 16 Pro Max,,,EUR,,4.6,241,,amazon_fr,2026-05-03T03:22:01.580891
+"Apple iPhone SE 2e Génération, 64 Go, Noir (Reconditionné)",apple,Unknown,96.0,,EUR,,3.8,91,,amazon_fr,2026-05-03T03:22:01.686036
+APPLE IPHONE 16 Pro Max 256GB Desert Titanium MYWX3QL/A,apple,Iphone 16 Pro Max,,,EUR,,4.6,357,,amazon_fr,2026-05-03T03:22:01.776113
+Apple iPhone 16e 256GB Black,apple,Iphone 16,,,EUR,,4.7,112,,amazon_fr,2026-05-03T03:22:01.868424
+"Apple iPhone 16e 6.1"" 128GB Nero",apple,Iphone 16,,,EUR,,4.7,639,,amazon_fr,2026-05-03T03:22:01.967389
+Apple iPhone 6S 4.7-Inch 32 GB SIM-Free Smartphone - Space Grey (Renewed),apple,Unknown,106.89,,EUR,,3.6,343,,amazon_fr,2026-05-03T03:22:02.069699
+Apple iPhone 16e 128GB White,apple,Iphone 16,,,EUR,,4.7,262,,amazon_fr,2026-05-03T03:22:02.167003
+"Apple iPhone 13 Mini, 128Go - Rouge (Reconditionné)",apple,Iphone 13,275.0,,EUR,,3.7,23,,amazon_fr,2026-05-03T03:22:02.265689
+Apple iPhone 17 256GB black,apple,Iphone 17,,,EUR,,4.7,293,,amazon_fr,2026-05-03T03:22:14.234481
+"Apple iPhone 11 Pro, 64 Go, Gris Sidéral (Reconditionné)",apple,Unknown,209.0,,EUR,,4.3,54,,amazon_fr,2026-05-03T03:22:14.490060
+Apple iPhone 11 64GB Noir (Reconditionné),apple,Unknown,197.0,,EUR,,3.9,47,,amazon_fr,2026-05-03T03:22:14.618216
+IPHONE 16 6.7IN A18 Plus 256GB,apple,Iphone 16,,,EUR,,4.8,15,,amazon_fr,2026-05-03T03:22:14.720864
+APPLE IPHONE 16 Pro Max 256GB White Titanium MYWW3QL/A,apple,Iphone 16 Pro Max,,,EUR,,4.4,172,,amazon_fr,2026-05-03T03:22:14.819128
+"Apple iPhone 15 Pro Max, 512 Go - Blanc Titane - (Reconditionné)",apple,Iphone 15 Pro Max,779.0,,EUR,,3.6,12,,amazon_fr,2026-05-03T03:22:14.952953
+"Apple iPhone 12 mini, 64Go, (Product)Red - (Reconditionné)",apple,Unknown,169.55,,EUR,,3.7,91,,amazon_fr,2026-05-03T03:22:15.065378
+"Apple iPhone SE 3e Génération, 128 Go, Minuit (Reconditionné)",apple,Unknown,175.0,,EUR,,4.0,25,,amazon_fr,2026-05-03T03:22:15.181100
+Apple iPhone 11 64GB Blanc (Reconditionné),apple,Unknown,187.0,,EUR,,3.8,1,,amazon_fr,2026-05-03T03:22:15.297828
+"Apple iPhone Air 512 Go : Le Plus Fin des iPhone, Écran 6,5 Pouces Jusqu’à 120 Hz, Puissante Puce A19 Pro, Caméra Avant Center Stage, Autonomie d’Une journée, eSim ; Blanc Nuage",apple,Unknown,1219.0,,EUR,,4.6,56,,amazon_fr,2026-05-03T03:22:15.422239
+Apple iPhone 15 Plus (128 Go) - Noir,apple,Iphone 15 Plus,,,EUR,,4.7,17,,amazon_fr,2026-05-03T03:22:15.526867
+"Apple iPhone 17 Pro 256 Go : Écran 6,3 pouces avec ProMotion jusqu’à 120 Hz, Puce A19 Pro, Autonomie prodigieuse, Système caméra Pro Fusion avec caméra avant Center Stage ; Bleu intense",apple,Iphone 17 Pro,1269.99,,EUR,,4.3,127,,amazon_fr,2026-05-03T03:22:15.643376
+"Apple iPhone 16 Pro 256GB:Telefono 5G con Controllo Photo Camera, Dolby Vision 4K a 120fps e un'autonomia senza precedenti.Compatible AirPods, Titanio naturale",apple,Iphone 16 Pro,,,EUR,,4.5,139,,amazon_fr,2026-05-03T03:22:15.768375
+Apple iPhone 14 Pro (128 Go) - Noir sidéral,apple,Iphone 14 Pro,,,EUR,,4.6,5,,amazon_fr,2026-05-03T03:22:15.891780
+"Apple iPhone 16 Pro 256 Go : appareil photo Telefono 5G con Controllo, Dolby Vision 4K a 120 ips et une autonomie antérieure. compatible avec les AirPods ; Titanio sabbia",apple,Iphone 16 Pro,,,EUR,,4.6,257,,amazon_fr,2026-05-03T03:22:15.982711
+"Apple iPhone 13 Pro Max, 128GB, Or (Reconditionné)",apple,Iphone 13 Pro Max,409.0,,EUR,,3.8,22,,amazon_fr,2026-05-03T03:22:16.084707
+"Apple iPhone 16 Pro 512 Go : Telefono 5G con Controllo fotocamera, Dolby Vision 4K a 120 ips e un'autonomie senza precedenti. Compatibile con AirPods ; Titanio nero",apple,Iphone 16 Pro,,,EUR,,4.2,32,,amazon_fr,2026-05-03T03:22:16.176067
+Apple iPhone 13 (128 Go) - Minuit,apple,Iphone 13,,,EUR,,4.6,83,,amazon_fr,2026-05-03T03:22:16.264288
+"iPhone 15 (6.1"" - 128 Go, 6 Go RAM) Bleu",apple,Iphone 15,,,EUR,,4.6,1,,amazon_fr,2026-05-03T03:22:16.352611
+"Apple IPHONE 16 Plus 256 GB 6,7"" Noir Europe",apple,Iphone 16 Plus,1228.1,,EUR,,,,,amazon_fr,2026-05-03T03:22:16.475007
+APPLE IPHONE 16 Pro Max 256GB Black Titanium MYWV3QL/A,apple,Iphone 16 Pro Max,,,EUR,,4.6,478,,amazon_fr,2026-05-03T03:22:16.579486
+Apple iPhone 16e 256GB White,apple,Iphone 16,,,EUR,,4.4,56,,amazon_fr,2026-05-03T03:22:16.667301
+"Apple iPhone 12 Pro Max, 256GB, Or - (Reconditionné)",apple,Unknown,399.0,,EUR,,3.8,47,,amazon_fr,2026-05-03T03:22:16.765706
+"Lamicall Support Téléphone Vélo, Support Téléphone Moto - Support Guidonavec 360° Rotation pour iPhone 17/16/15/14/13/12 Pro Max, Plus, Mini XS X 8 7, Samsung, Huawei, 4.7-6.8“ Smartphones - Noir",samsung,Iphone 17,18.99,,EUR,Offre à durée limitée,4.5,146,,amazon_fr,2026-05-03T03:22:16.910734
+Apple iPhone 16e 128GB Black,apple,Iphone 16,699.0,,EUR,,4.7,778,,amazon_fr,2026-05-03T03:22:17.016061
+Apple iPhone 15 Pro (256 Go) - Titane Noir,apple,Iphone 15 Pro,,,EUR,,4.6,44,,amazon_fr,2026-05-03T03:22:17.111890
+"Apple iPhone 17 Pro Max, 256GB, SIM Global, Orange Cosmique- Débloqué (Reconditionné)",apple,Iphone 17 Pro Max,1299.0,,EUR,,4.4,23,,amazon_fr,2026-05-03T03:22:17.210909
+Apple iPhone 14 Plus (256 Go) - Mauve,apple,Iphone 14,1053.59,,EUR,,4.6,29,,amazon_fr,2026-05-03T03:22:17.340243
+Apple Iphone Xr 64Go Jaune (Reconditionné),apple,Unknown,175.89,,EUR,,4.0,93,,amazon_fr,2026-05-03T03:22:17.458663
+ONEFLOW Brassard de sport pour téléphone portable compatible avec Apple iPhone 16 - Brassard de fitness - Brassard de course à pied - Pour l'extérieur - Support pour smartphone - Noir,apple,Iphone 16,31.99,,EUR,,5.0,1,,amazon_fr,2026-05-03T03:22:30.082516
+kwmobile Film de confidentialité 3X pour Apple iPhone 16 Protection écran - Film de Protection pour écran de Smartphone - Transparent-Noir,apple,Iphone 16 Pro,14.99,,EUR,,3.5,2,,amazon_fr,2026-05-03T03:22:30.255243
+Apple iPhone 14 Pro Max (128 Go) - Noir sidéral,apple,Iphone 14 Pro Max,1229.0,,EUR,,4.6,944,,amazon_fr,2026-05-03T03:22:30.405582
+Apple iPhone 15 128Go - Vert (Reconditionné),apple,Iphone 15,419.0,,EUR,,3.7,24,,amazon_fr,2026-05-03T03:22:43.386168
+Apple iPhone 15 (128 Go) - Bleu,apple,Iphone 15,659.0,,EUR,,4.6,65,,amazon_fr,2026-05-03T03:22:43.499610
+"Apple iPhone 15 Pro, 256 Go - Titane Naturel - (Reconditionné)",apple,Iphone 15 Pro,599.0,,EUR,,3.7,15,,amazon_fr,2026-05-03T03:22:43.617567
+Apple iPhone 15 Pro 128Go - Titane Naturel (Reconditionné),apple,Iphone 15 Pro,575.0,,EUR,,3.7,15,,amazon_fr,2026-05-03T03:22:43.722994
+"Apple iPhone 17e 256 Go : Écran Super Retina XDR 6,1 Pouces, Puce A19, Autonomie d’Une journée, Caméra Fusion 48 MP ; Noir",apple,Iphone 17,689.0,,EUR,,4.6,21,,amazon_fr,2026-05-03T03:22:43.839575
+"Apple iPhone 15 Pro, 256 Go - Titane Noir (Reconditionné)",apple,Iphone 15 Pro,678.0,,EUR,,3.7,15,,amazon_fr,2026-05-03T03:22:43.946802
+Apple iPhone 15 Plus 128Go - Noir (Reconditionné),apple,Iphone 15 Plus,476.0,,EUR,,4.0,342,,amazon_fr,2026-05-03T03:22:44.054136
+"Apple iPhone 13, 128 Go, Minuit (Reconditionné)",apple,Iphone 13,289.9,,EUR,,3.8,76,,amazon_fr,2026-05-03T03:22:44.294742
+Apple iPhone 14 256Go - Lumière Stellaire (Reconditionné),apple,Iphone 14,369.99,,EUR,,3.9,5,,amazon_fr,2026-05-03T03:22:44.395073
+Apple iPhone 15 Pro Max 256Go - Titane Naturel (Reconditionné),apple,Iphone 15 Pro Max,666.0,,EUR,,3.6,12,,amazon_fr,2026-05-03T03:22:44.492879
+"Apple iPhone 13, 128Go, Minuit - (Reconditionné)",apple,Iphone 13,279.0,,EUR,,3.7,304,,amazon_fr,2026-05-03T03:22:45.047806
+Apple iPhone 15 Pro (128 Go) - Titane Naturel,apple,Iphone 15 Pro,,,EUR,,4.6,44,,amazon_fr,2026-05-03T03:22:45.233932
+"Apple iPhone 13 Pro, 512Go Stockage, Bleu Alpin - (Reconditionné)",apple,Iphone 13 Pro,448.9,,EUR,,3.6,32,,amazon_fr,2026-05-03T03:22:45.335212
+"Apple iPhone 11, 256GB, Noir (Reconditionné)",apple,Unknown,246.89,,EUR,,3.9,80,,amazon_fr,2026-05-03T03:22:45.453233
+"Apple iPhone 12, 64 Go, Noir (Reconditionné)",apple,Unknown,209.0,,EUR,,3.7,155,,amazon_fr,2026-05-03T03:22:45.649929
+"Apple iPhone 13 Pro Max, 256GB - Or (Reconditionné)",apple,Iphone 13 Pro Max,488.0,,EUR,,3.8,22,,amazon_fr,2026-05-03T03:22:45.749558
+"Apple iPhone 13 Pro Max, 128Go, Graphite - (Reconditionné)",apple,Iphone 13 Pro Max,429.0,,EUR,,4.0,160,,amazon_fr,2026-05-03T03:22:45.845599
+"Apple iPhone 17, 256GB, SIM Global, Lavande- Débloqué (Reconditionné)",apple,Iphone 17,735.0,,EUR,,4.4,29,,amazon_fr,2026-05-03T03:22:46.071965
+"Apple iPhone 13 Pro, 256GB, Silber - (Generalüberholt)",apple,Iphone 13 Pro,410.0,,EUR,,3.6,38,,amazon_fr,2026-05-03T03:22:46.172760
+"Apple iPhone 12 Pro, 128GB, Argent - (Reconditionné)",apple,Unknown,289.0,,EUR,,3.7,78,,amazon_fr,2026-05-03T03:22:46.269896
+"Apple iPhone 12 Pro Max, 128GB, Argent - (Reconditionné)",apple,Unknown,319.0,,EUR,,3.8,47,,amazon_fr,2026-05-03T03:22:46.958420
+"Apple iPhone 12 mini, 128Go, Noir - (Reconditionné)",apple,Unknown,177.72,,EUR,,3.7,91,,amazon_fr,2026-05-03T03:22:47.066089
+Apple iPhone 14 Plus 256Go - Minuit (Reconditionné),apple,Iphone 14,387.67,,EUR,,3.9,11,,amazon_fr,2026-05-03T03:22:47.172048
+"Apple iPhone 11, 128Go, Red - (Reconditionné)",apple,Unknown,190.0,,EUR,,3.9,71,,amazon_fr,2026-05-03T03:22:47.365320
+Apple iPhone 16 Plus (256 Go) - Noir,apple,Iphone 16 Plus,1069.54,,EUR,,4.5,527,,amazon_fr,2026-05-03T03:22:47.683263
+APPLE IPHONE 15 PLUS 512GB BLACK,apple,Iphone 15 Plus,,,EUR,,4.1,8,,amazon_fr,2026-05-03T03:23:00.089038
+Apple iPhone 13 Mini 128Go - Vert (Reconditionné),apple,Iphone 13,299.0,,EUR,,3.7,23,,amazon_fr,2026-05-03T03:23:00.290467
+Apple iPhone 15 Pro Max (1 to) - Titane Noir,apple,Iphone 15 Pro Max,1629.0,,EUR,,4.6,45,,amazon_fr,2026-05-03T03:23:00.386848
+"Apple iPhone 14 Pro Max, 256 Go - Or - (Reconditionné)",apple,Iphone 14 Pro Max,599.0,,EUR,,3.8,19,,amazon_fr,2026-05-03T03:23:00.597351
+APPLE IPHONE 15 PRO 512GB BLUE TITANIUM,apple,Iphone 15 Pro,,,EUR,,4.4,48,,amazon_fr,2026-05-03T03:23:00.685035
+"Apple iPhone 17 Pro 256 Go : Écran 6,3 pouces avec ProMotion jusqu’à 120 Hz, Puce A19 Pro, Autonomie prodigieuse, Système caméra Pro Fusion avec caméra avant Center Stage ; Orange cosmique",apple,Iphone 17 Pro,1319.0,,EUR,,4.3,127,,amazon_fr,2026-05-03T03:23:00.790431
+"Apple iPhone 17 Pro Max 2 to : Écran 6,9 Pouces, Puce A19 Pro, Autonomie Record sur iPhone, Système caméra Pro Fusion, Caméra Avant Center Stage ; Orange Cosmique",apple,Iphone 17 Pro Max,2479.0,,EUR,,4.5,170,,amazon_fr,2026-05-03T03:23:01.007110
+Apple 2022 iPhone SE (64 Go) - Lumière stellaire (3ᵉ génération),apple,Unknown,,,EUR,,4.6,16,,amazon_fr,2026-05-03T03:23:01.108365
+Apple iPhone XS 512 Go Or (Reconditionné),apple,Unknown,318.89,,EUR,,3.8,62,,amazon_fr,2026-05-03T03:23:01.318663
+"Apple iPhone XR, 128 Go, PRODUCT(RED) (Reconditionné)",apple,Unknown,175.0,,EUR,,4.0,93,,amazon_fr,2026-05-03T03:23:01.425200
+"Apple iPhone 15 Plus 6.7"" 256GB Blue",apple,Iphone 15 Plus,,,EUR,,4.5,68,,amazon_fr,2026-05-03T03:23:01.602047
+APPLE IPHONE 15 PRO MAX 256GB BLUE TITANIUM,apple,Iphone 15 Pro Max,,,EUR,,4.6,799,,amazon_fr,2026-05-03T03:23:01.771387
+"Apple iPhone 16 Plus, 512GB, Noir (Reconditionné)",apple,Iphone 16 Plus,789.99,,EUR,,4.1,86,,amazon_fr,2026-05-03T03:23:01.954616
+Apple iPhone XS Max (256Go) - Or,apple,Unknown,,,EUR,,4.6,678,,amazon_fr,2026-05-03T03:23:02.210079
+"Lamicall Support Téléphone Bureau Pliable - [15mm Ultrafin] Base Métallique, Hauteur & Angle Réglables, Support Téléphone Universel pour iPhone 17/16/15/14/13/12 Pro Max, Samsung et Autres Smartphones",samsung,Iphone 17,16.14,,EUR,Finit dans,4.7,12,,amazon_fr,2026-05-03T03:23:02.331015
+"Cable pour Apple CarPlay et Android Auto - USB A vers USB C et Lightning 2 en 1 pour iPhone 16/15/14/Galaxy/Android, [MFi & 3A Charge Rapide & Transmission de Données]",apple,Iphone 16,14.99,,EUR,,4.1,159,,amazon_fr,2026-05-03T03:23:02.625632
+APPLE IPHONE 15 PLUS 512GB GREEN,apple,Iphone 15 Plus,,,EUR,,3.7,7,,amazon_fr,2026-05-03T03:23:02.712901
+APPLE IPHONE 15 Pro Max 512GB Blue Titanium,apple,Iphone 15 Pro Max,,,EUR,,4.6,118,,amazon_fr,2026-05-03T03:23:02.839645
+"Apple iPhone 15 Pro Max 6.7"" 256GB Titanium White",apple,Iphone 15 Pro Max,,,EUR,,4.5,435,,amazon_fr,2026-05-03T03:23:02.936197
+JAYM - Lot de 3 Verres Trempés pour Apple iPhone 15,apple,Iphone 15,9.9,,EUR,,5.0,1,,amazon_fr,2026-05-03T03:23:03.356089
+kwmobile 3X Film Protection Compatible avec Apple iPhone 15-3X Film de Protection d'Écran Mat pour Téléphone en Plastique,apple,Iphone 15,7.09,,EUR,,3.4,339,,amazon_fr,2026-05-03T03:23:16.297596
+"2x se® Film de Protection 3D Antireflet pour Apple iPhone 15, Auto-réparateur, Compatible Empreinte & FaceID, Installation Sans Bulles, Résistant aux Chocs et Rayures, Fabriqué en Allemagne",apple,Iphone 15,16.99,,EUR,,3.9,36,,amazon_fr,2026-05-03T03:23:16.424555
+2 films hydrogel protecteur d'écran anti-lumière bleue compatible pour Apple iPhone 15,apple,Iphone 15,7.99,,EUR,,,,,amazon_fr,2026-05-03T03:23:16.608150
+"Generico Film de protection anti-lumière bleu HD pour iPhone 15 [3 pièces] | Anti-fatigue visuelle, ultra transparent, auto-régénérant, anti-bulles, kit de montage inclus | protection smartphone",apple,Iphone 15,17.4,,EUR,,,,,amazon_fr,2026-05-03T03:23:17.021178

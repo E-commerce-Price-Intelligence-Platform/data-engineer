@@ -1,5 +1,19 @@
 [
   {
+    "name": "GALAXY S26ULTRA 12+512GB COBALT VIOLET SAMSUNG",
+    "brand": "samsung",
+    "model": "S26",
+    "price": 15990.0,
+    "old_price": null,
+    "currency": "DH",
+    "discount": null,
+    "rating": null,
+    "reviews": null,
+    "url": "https://www.electroplanet.ma/p3124124-galaxy-s26ultra-12-512gb-cobalt-violet-samsung.html",
+    "source_site": "electroplanet",
+    "scraped_at": "2026-05-03T03:16:40.802365"
+  },
+  {
     "name": "GALAXY S26ULTRA 12+512GB BLACK SAMSUNG",
     "brand": "samsung",
     "model": "S26",
@@ -11,7 +25,7 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3124123-galaxy-s26ultra-12-512gb-black-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:28:25.632038"
+    "scraped_at": "2026-05-03T03:16:42.283718"
   },
   {
     "name": "GALAXY S26ULTRA 12+256GB BLACK SAMSUNG",
@@ -25,7 +39,21 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3124119-galaxy-s26ultra-12-256gb-black-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:28:28.754748"
+    "scraped_at": "2026-05-03T03:16:43.713842"
+  },
+  {
+    "name": "GALAXY S26PLUS 12+512GB COBALT VIOLET SAMSUNG",
+    "brand": "samsung",
+    "model": "S26",
+    "price": 13990.0,
+    "old_price": null,
+    "currency": "DH",
+    "discount": null,
+    "rating": null,
+    "reviews": null,
+    "url": "https://www.electroplanet.ma/p3124116-galaxy-s26plus-12-512gb-cobalt-violet-samsung.html",
+    "source_site": "electroplanet",
+    "scraped_at": "2026-05-03T03:16:45.175623"
   },
   {
     "name": "GALAXY S26PLUS 12+256GB SKY BLUE SAMSUNG",
@@ -39,7 +67,7 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3124113-galaxy-s26plus-12-256gb-sky-blue-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:28:32.145757"
+    "scraped_at": "2026-05-03T03:16:46.665445"
   },
   {
     "name": "GALAXY S26PLUS 12+256GB BLACK SAMSUNG",
@@ -53,7 +81,7 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3124111-galaxy-s26plus-12-256gb-black-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:28:35.484712"
+    "scraped_at": "2026-05-03T03:16:50.284923"
   },
   {
     "name": "GALAXY S26 12+256GB BLACK SAMSUNG",
@@ -67,7 +95,7 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3124103-galaxy-s26-12-256gb-black-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:28:38.786471"
+    "scraped_at": "2026-05-03T03:16:53.349064"
   },
   {
     "name": "SMART GALAXY A17 (5G) 4+128GB BLACK SAMSUNG",
@@ -81,7 +109,7 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3110380-smart-galaxy-a17-5g-4-128gb-black-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:28:42.249158"
+    "scraped_at": "2026-05-03T03:16:54.796406"
   },
   {
     "name": "SMART GALAXY A17 (5G) 8+256GB LIGHT BLUE SAMSUNG",
@@ -95,7 +123,7 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3110382-smart-galaxy-a17-5g-8-256gb-light-blue-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:28:45.325892"
+    "scraped_at": "2026-05-03T03:16:56.238154"
   },
   {
     "name": "SMART GALAXY A17 (5G) 8+256GB GRAY SAMSUNG",
@@ -109,7 +137,7 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3110381-smart-galaxy-a17-5g-8-256gb-gray-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:28:48.614695"
+    "scraped_at": "2026-05-03T03:16:57.699605"
   },
   {
     "name": "SMART GALAXY A17 (5G) 8+256GB BLACK SAMSUNG",
@@ -123,7 +151,7 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3110383-smart-galaxy-a17-5g-8-256gb-black-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:28:52.212524"
+    "scraped_at": "2026-05-03T03:17:01.120245"
   },
   {
     "name": "SMART GALAXY A17 (5G) 4+128GB LIGHT BLUE SAMSUNG",
@@ -137,7 +165,7 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3110379-smart-galaxy-a17-5g-4-128gb-light-blue-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:28:55.455237"
+    "scraped_at": "2026-05-03T03:17:02.487811"
   },
   {
     "name": "SMART GALAXY A17 (5G) 4+128GB GRAY SAMSUNG",
@@ -151,7 +179,7 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3110378-smart-galaxy-a17-5g-4-128gb-gray-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:28:58.608849"
+    "scraped_at": "2026-05-03T03:17:03.889288"
   },
   {
     "name": "SMARTGALAXY S25FE 8G/256G WHITE SAMSUNG",
@@ -165,7 +193,7 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3104910-smartgalaxy-s25fe-8g-256g-white-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:29:02.065808"
+    "scraped_at": "2026-05-03T03:17:05.312206"
   },
   {
     "name": "SMART GALAXY S25FE 8G/256G BLACK SAMSUNG",
@@ -179,7 +207,21 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3104909-smart-galaxy-s25fe-8g-256g-black-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:29:05.574839"
+    "scraped_at": "2026-05-03T03:17:06.818182"
+  },
+  {
+    "name": "SMART GALAXY S25FE 8G/256G ICYBLUE SAMSUNG",
+    "brand": "samsung",
+    "model": "S25",
+    "price": 6699.0,
+    "old_price": 6990.0,
+    "currency": "DH",
+    "discount": "4%",
+    "rating": null,
+    "reviews": null,
+    "url": "https://www.electroplanet.ma/p3104908-smart-galaxy-s25fe-8g-256g-icyblue-samsung.html",
+    "source_site": "electroplanet",
+    "scraped_at": "2026-05-03T03:17:08.267293"
   },
   {
     "name": "SMART GALAXY S25FE 8G/256G NAVY SAMSUNG",
@@ -193,7 +235,7 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3104907-smart-galaxy-s25fe-8g-256g-navy-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:29:09.680831"
+    "scraped_at": "2026-05-03T03:17:09.761779"
   },
   {
     "name": "SMARTPHONE GALAXY A17 8+256GB LIGHT BLUE SAMSUNG",
@@ -207,7 +249,7 @@
     "reviews": 1,
     "url": "https://www.electroplanet.ma/p3104446-smartphone-galaxy-a17-8-256gb-light-blue-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:29:13.158752"
+    "scraped_at": "2026-05-03T03:17:11.211663"
   },
   {
     "name": "SMARTPHONE GALAXY A17 6+128GB BLACK SAMSUNG",
@@ -221,7 +263,7 @@
     "reviews": 1,
     "url": "https://www.electroplanet.ma/p3104442-smartphone-galaxy-a17-6-128gb-black-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:29:16.672298"
+    "scraped_at": "2026-05-03T03:17:12.664731"
   },
   {
     "name": "SMARTPHONE GALAXY A07 6+128GB LIGHT VIOLET SAMSUN",
@@ -235,7 +277,7 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3102631-smartphone-galaxy-a07-6-128gb-light-violet-samsun.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:29:20.379009"
+    "scraped_at": "2026-05-03T03:17:14.073649"
   },
   {
     "name": "SMARTPHONE GALAXY A07 6+128GB BLACK SAMSUNG",
@@ -249,7 +291,7 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3102633-smartphone-galaxy-a07-6-128gb-black-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:29:24.346780"
+    "scraped_at": "2026-05-03T03:17:15.446646"
   },
   {
     "name": "SMARTPHONE GALAXY A07 4+64GB LIGHT VIOLET SAMSUNG",
@@ -263,7 +305,35 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3102625-smartphone-galaxy-a07-4-64gb-light-violet-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:29:27.916912"
+    "scraped_at": "2026-05-03T03:17:16.857240"
+  },
+  {
+    "name": "SMARTPHONE GALAXY A07 4+64GB GREEN SAMSUNG",
+    "brand": "samsung",
+    "model": "A07",
+    "price": 1249.0,
+    "old_price": null,
+    "currency": "DH",
+    "discount": null,
+    "rating": null,
+    "reviews": null,
+    "url": "https://www.electroplanet.ma/p3102626-smartphone-galaxy-a07-4-64gb-green-samsung.html",
+    "source_site": "electroplanet",
+    "scraped_at": "2026-05-03T03:17:20.606457"
+  },
+  {
+    "name": "SMARTPHONE GALAXY A07 4+64GB BLACK SAMSUNG",
+    "brand": "samsung",
+    "model": "A07",
+    "price": 1249.0,
+    "old_price": null,
+    "currency": "DH",
+    "discount": null,
+    "rating": null,
+    "reviews": null,
+    "url": "https://www.electroplanet.ma/p3102627-smartphone-galaxy-a07-4-64gb-black-samsung.html",
+    "source_site": "electroplanet",
+    "scraped_at": "2026-05-03T03:17:22.038017"
   },
   {
     "name": "SMARTPHONE GALAXY A07 4+128GB GREEN SAMSUNG",
@@ -277,7 +347,7 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3102629-smartphone-galaxy-a07-4-128gb-green-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:29:31.292425"
+    "scraped_at": "2026-05-03T03:17:23.429323"
   },
   {
     "name": "SMARTPHONE GALAXY A07 4+128GB LIGHT VIOLET SAMSUN",
@@ -291,35 +361,49 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3102628-smartphone-galaxy-a07-4-128gb-light-violet-samsun.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:29:35.015342"
+    "scraped_at": "2026-05-03T03:17:24.820658"
+  },
+  {
+    "name": "SMARTPHONE GALAXY A07 4+128GB BLACK SAMSUNG",
+    "brand": "samsung",
+    "model": "A07",
+    "price": 1490.0,
+    "old_price": null,
+    "currency": "DH",
+    "discount": null,
+    "rating": null,
+    "reviews": null,
+    "url": "https://www.electroplanet.ma/p3102630-smartphone-galaxy-a07-4-128gb-black-samsung.html",
+    "source_site": "electroplanet",
+    "scraped_at": "2026-05-03T03:17:26.230377"
   },
   {
     "name": "SMARTPHONE GALAXYA26 5G 6G128GB PEACH PINK SAMSUNG",
     "brand": "samsung",
     "model": "Unknown",
     "price": 2749.0,
-    "old_price": 149.0,
+    "old_price": 129.0,
     "currency": "DH",
     "discount": null,
-    "rating": 5.0,
+    "rating": 4.0,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080793-smartphone-galaxya26-5g-6g128gb-peach-pink-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:29:55.837729"
+    "scraped_at": "2026-05-03T03:17:34.721115"
   },
   {
     "name": "SMARTPHONE GALAXYA26 5G 6G128GB WHITE SAMSUNG",
     "brand": "samsung",
     "model": "Unknown",
     "price": 2749.0,
-    "old_price": 149.0,
+    "old_price": 399.0,
     "currency": "DH",
     "discount": null,
     "rating": 5.0,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080794-smartphone-galaxya26-5g-6g128gb-white-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:30:00.897199"
+    "scraped_at": "2026-05-03T03:17:36.178693"
   },
   {
     "name": "SMARTPHONE GALAXYA26 5G 8G256GB BLACK SAMSUNG",
@@ -333,21 +417,21 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080798-smartphone-galaxya26-5g-8g256gb-black-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:30:05.617507"
+    "scraped_at": "2026-05-03T03:17:40.233464"
   },
   {
     "name": "SMARTPHONE GALAXYA26 5G 8G256GB PEACH PINK SAMSUN",
     "brand": "other",
     "model": "Unknown",
     "price": 3249.0,
-    "old_price": 149.0,
+    "old_price": 399.0,
     "currency": "DH",
     "discount": null,
-    "rating": 5.0,
+    "rating": 4.2,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080796-smartphone-galaxya26-5g-8g256gb-peach-pink-samsun.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:30:09.648565"
+    "scraped_at": "2026-05-03T03:17:41.707671"
   },
   {
     "name": "SMARTPHONE GALAXYA26 5G 6G128GB BLACK SAMSUNG",
@@ -357,11 +441,11 @@
     "old_price": 59.0,
     "currency": "DH",
     "discount": null,
-    "rating": 5.0,
+    "rating": 4.0,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080795-smartphone-galaxya26-5g-6g128gb-black-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:30:14.384960"
+    "scraped_at": "2026-05-03T03:17:53.839093"
   },
   {
     "name": "SMARTPHONE GALAXYA56 5G 8G256GB GRAPHITE SAMSUNG",
@@ -371,11 +455,11 @@
     "old_price": 5249.0,
     "currency": "DH",
     "discount": "9%",
-    "rating": null,
+    "rating": 4.2,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080814-smartphone-galaxya56-5g-8g256gb-graphite-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:30:18.373145"
+    "scraped_at": "2026-05-03T03:17:55.329481"
   },
   {
     "name": "SMARTPHONE GALAXYA56 5G 8G256GB OLIVE SAMSUNG",
@@ -385,11 +469,11 @@
     "old_price": 5249.0,
     "currency": "DH",
     "discount": "9%",
-    "rating": 4.0,
+    "rating": null,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080813-smartphone-galaxya56-5g-8g256gb-olive-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:30:21.803957"
+    "scraped_at": "2026-05-03T03:17:56.783591"
   },
   {
     "name": "SMARTPHONE GALAXYA56 5G 8G256GB LIGHTGRAY SAMSUNG",
@@ -399,11 +483,11 @@
     "old_price": 5249.0,
     "currency": "DH",
     "discount": "9%",
-    "rating": 4.0,
+    "rating": 4.2,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080812-smartphone-galaxya56-5g-8g256gb-lightgray-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:30:25.589636"
+    "scraped_at": "2026-05-03T03:17:58.295470"
   },
   {
     "name": "SMARTPHONE GALAXYA56 5G 8G256GB PINK SAMSUNG",
@@ -413,11 +497,11 @@
     "old_price": 5249.0,
     "currency": "DH",
     "discount": "9%",
-    "rating": null,
+    "rating": 4.0,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080811-smartphone-galaxya56-5g-8g256gb-pink-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:30:29.078070"
+    "scraped_at": "2026-05-03T03:17:59.747660"
   },
   {
     "name": "SMARTPHONE GALAXYA56 5G 8G128GB GRAPHITE SAMSUNG",
@@ -427,11 +511,11 @@
     "old_price": 4990.0,
     "currency": "DH",
     "discount": "16%",
-    "rating": 5.0,
+    "rating": 4.2,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080810-smartphone-galaxya56-5g-8g128gb-graphite-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:30:33.377562"
+    "scraped_at": "2026-05-03T03:18:01.239727"
   },
   {
     "name": "SMARTPHONE GALAXYA56 5G 8G128GB OLIVE SAMSUNG",
@@ -445,7 +529,7 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080809-smartphone-galaxya56-5g-8g128gb-olive-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:30:50.669497"
+    "scraped_at": "2026-05-03T03:18:02.755051"
   },
   {
     "name": "SMARTPHONE GALAXYA56 5G 8G128GB LIGHTGRAY SAMSUNG",
@@ -459,7 +543,7 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080808-smartphone-galaxya56-5g-8g128gb-lightgray-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:30:54.748453"
+    "scraped_at": "2026-05-03T03:18:04.160635"
   },
   {
     "name": "SMARTPHONE GALAXYA56 5G 8G128GB PINK SAMSUNG",
@@ -473,21 +557,21 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080807-smartphone-galaxya56-5g-8g128gb-pink-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:30:58.867597"
+    "scraped_at": "2026-05-03T03:18:05.640009"
   },
   {
     "name": "SMARTPHONE GALAXYA36 5G 8G256GB BLACK SAMSUNG",
     "brand": "samsung",
     "model": "Unknown",
     "price": 3990.0,
-    "old_price": 149.0,
+    "old_price": 399.0,
     "currency": "DH",
     "discount": null,
     "rating": 5.0,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080806-smartphone-galaxya36-5g-8g256gb-black-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:31:02.834512"
+    "scraped_at": "2026-05-03T03:18:08.679528"
   },
   {
     "name": "SMARTPHONE GALAXYA36 5G 8G256GB LIME SAMSUNG",
@@ -501,21 +585,21 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080803-smartphone-galaxya36-5g-8g256gb-lime-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:31:06.685640"
+    "scraped_at": "2026-05-03T03:18:10.139959"
   },
   {
     "name": "SMARTPHONE GALAXYA36 5G 8G128GB WHITE SAMSUNG",
     "brand": "samsung",
     "model": "Unknown",
     "price": 3490.0,
-    "old_price": 149.0,
+    "old_price": 399.0,
     "currency": "DH",
     "discount": null,
     "rating": 4.2,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080801-smartphone-galaxya36-5g-8g128gb-white-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:31:10.755450"
+    "scraped_at": "2026-05-03T03:18:11.649114"
   },
   {
     "name": "SMARTPHONE GALAXYA36 5G 8G128GB LAVENDER SAMSUNG",
@@ -525,39 +609,39 @@
     "old_price": 399.0,
     "currency": "DH",
     "discount": null,
-    "rating": 5.0,
+    "rating": 4.2,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080800-smartphone-galaxya36-5g-8g128gb-lavender-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:31:14.681496"
+    "scraped_at": "2026-05-03T03:18:13.111684"
   },
   {
     "name": "SMARTPHONE GALAXYA36 5G 8G128GB LIME SAMSUNG",
     "brand": "samsung",
     "model": "Unknown",
     "price": 3490.0,
-    "old_price": 129.0,
+    "old_price": 149.0,
     "currency": "DH",
     "discount": null,
-    "rating": 4.0,
+    "rating": 4.2,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080799-smartphone-galaxya36-5g-8g128gb-lime-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:31:18.598547"
+    "scraped_at": "2026-05-03T03:18:14.614936"
   },
   {
     "name": "SMARTPHONE GALAXYA36 5G 8G256GB WHITE SAMSUNG",
     "brand": "samsung",
     "model": "Unknown",
     "price": 3990.0,
-    "old_price": 399.0,
+    "old_price": 149.0,
     "currency": "DH",
     "discount": null,
     "rating": 4.2,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080805-smartphone-galaxya36-5g-8g256gb-white-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:31:22.713251"
+    "scraped_at": "2026-05-03T03:18:16.033481"
   },
   {
     "name": "SMARTPHONE GALAXYA36 5G 8G256GB LAVENDER SAMSUNG",
@@ -567,11 +651,53 @@
     "old_price": 149.0,
     "currency": "DH",
     "discount": null,
-    "rating": 5.0,
+    "rating": 4.2,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3080804-smartphone-galaxya36-5g-8g256gb-lavender-samsung.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:31:26.721945"
+    "scraped_at": "2026-05-03T03:18:19.001062"
+  },
+  {
+    "name": "GALAXY S25ULTRA 12GB 512GB TITANIUM BLACK SAMSUNG",
+    "brand": "samsung",
+    "model": "S25",
+    "price": 15999.0,
+    "old_price": 149.0,
+    "currency": "DH",
+    "discount": null,
+    "rating": null,
+    "reviews": null,
+    "url": "https://www.electroplanet.ma/p3073055-galaxy-s25ultra-12gb-512gb-titanium-black-samsung.html",
+    "source_site": "electroplanet",
+    "scraped_at": "2026-05-03T03:18:20.629929"
+  },
+  {
+    "name": "GALAXY S25PLUS 12GB 256GB NAVY SAMSUNG",
+    "brand": "samsung",
+    "model": "S25",
+    "price": 10999.0,
+    "old_price": 59.0,
+    "currency": "DH",
+    "discount": null,
+    "rating": null,
+    "reviews": null,
+    "url": "https://www.electroplanet.ma/p3073045-galaxy-s25plus-12gb-256gb-navy-samsung.html",
+    "source_site": "electroplanet",
+    "scraped_at": "2026-05-03T03:18:43.238907"
+  },
+  {
+    "name": "GALAXY S26ULTRA 16+1TB COBALT VIOLET SAMSUNG",
+    "brand": "samsung",
+    "model": "S26",
+    "price": 18990.0,
+    "old_price": null,
+    "currency": "DH",
+    "discount": null,
+    "rating": null,
+    "reviews": null,
+    "url": "https://www.electroplanet.ma/p3124128-galaxy-s26ultra-16-1tb-cobalt-violet-samsung.html",
+    "source_site": "electroplanet",
+    "scraped_at": "2026-05-03T03:18:48.656863"
   },
   {
     "name": "IPHONE 17 PRO MAX 256GB SILVER MFYM4AF/A APPLE",
@@ -585,7 +711,49 @@
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3106691-iphone-17-pro-max-256gb-silver-mfym4af-a-apple.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:32:54.253930"
+    "scraped_at": "2026-05-03T03:19:16.793273"
+  },
+  {
+    "name": "IPHONE 17 PRO MAX 256GB DEEP BLUE MFYP4AF/A APPLE",
+    "brand": "apple",
+    "model": "Unknown",
+    "price": 16990.0,
+    "old_price": 20299.0,
+    "currency": "DH",
+    "discount": "16%",
+    "rating": 5.0,
+    "reviews": null,
+    "url": "https://www.electroplanet.ma/p3106690-iphone-17-pro-max-256gb-deep-blue-mfyp4af-a-apple.html",
+    "source_site": "electroplanet",
+    "scraped_at": "2026-05-03T03:19:18.372114"
+  },
+  {
+    "name": "IPHONE 17 PRO MAX 256GB ORANGE MFYN4AF/A APPLE",
+    "brand": "apple",
+    "model": "Unknown",
+    "price": 16990.0,
+    "old_price": 20299.0,
+    "currency": "DH",
+    "discount": "16%",
+    "rating": 4.2,
+    "reviews": null,
+    "url": "https://www.electroplanet.ma/p3106689-iphone-17-pro-max-256gb-orange-mfyn4af-a-apple.html",
+    "source_site": "electroplanet",
+    "scraped_at": "2026-05-03T03:19:22.863335"
+  },
+  {
+    "name": "IPHONE 17 PRO 256GB DEEP BLUE MG8J4AF/A APPLE",
+    "brand": "apple",
+    "model": "Unknown",
+    "price": 15499.0,
+    "old_price": 18599.0,
+    "currency": "DH",
+    "discount": "17%",
+    "rating": 5.0,
+    "reviews": null,
+    "url": "https://www.electroplanet.ma/p3106681-iphone-17-pro-256gb-deep-blue-mg8j4af-a-apple.html",
+    "source_site": "electroplanet",
+    "scraped_at": "2026-05-03T03:19:24.419073"
   },
   {
     "name": "IPHONE 17 PRO 256GB COSMIC ORANGE MG8H4AF/A APPLE",
@@ -595,11 +763,11 @@
     "old_price": 18599.0,
     "currency": "DH",
     "discount": "17%",
-    "rating": 4.0,
+    "rating": 5.0,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3106680-iphone-17-pro-256gb-cosmic-orange-mg8h4af-a-apple.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:32:58.343611"
+    "scraped_at": "2026-05-03T03:19:25.987220"
   },
   {
     "name": "IPHONE AIR 256GB SPACE BLACK MG2L4AF/A APPLE",
@@ -609,11 +777,25 @@
     "old_price": 17199.0,
     "currency": "DH",
     "discount": "33%",
-    "rating": 4.2,
+    "rating": 5.0,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3106698-iphone-air-256gb-space-black-mg2l4af-a-apple.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:33:02.667857"
+    "scraped_at": "2026-05-03T03:19:27.618340"
+  },
+  {
+    "name": "IPHONE 17 PRO MAX 512GB ORANGE MFYT4AF/A APPLE",
+    "brand": "apple",
+    "model": "Unknown",
+    "price": 20999.0,
+    "old_price": 24299.0,
+    "currency": "DH",
+    "discount": "14%",
+    "rating": 4.2,
+    "reviews": null,
+    "url": "https://www.electroplanet.ma/p3106695-iphone-17-pro-max-512gb-orange-mfyt4af-a-apple.html",
+    "source_site": "electroplanet",
+    "scraped_at": "2026-05-03T03:19:29.083370"
   },
   {
     "name": "IPHONE 17 PRO MAX 512GB DEEP BLUE MFYU4AF/A APPLE",
@@ -623,25 +805,25 @@
     "old_price": 24299.0,
     "currency": "DH",
     "discount": "14%",
-    "rating": null,
+    "rating": 4.0,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3106696-iphone-17-pro-max-512gb-deep-blue-mfyu4af-a-apple.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:33:06.710780"
+    "scraped_at": "2026-05-03T03:19:30.596675"
   },
   {
     "name": "IPHONE 16 PRO",
     "brand": "apple",
     "model": "Iphone 16 Pro",
     "price": 16899.0,
-    "old_price": 149.0,
+    "old_price": 399.0,
     "currency": "DH",
     "discount": null,
-    "rating": 4.2,
+    "rating": 5.0,
     "reviews": null,
     "url": "https://www.electroplanet.ma/pc3051153-iphone-16-pro.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:33:10.113989"
+    "scraped_at": "2026-05-03T03:19:34.479192"
   },
   {
     "name": "IPHONE 16",
@@ -655,21 +837,35 @@
     "reviews": 1,
     "url": "https://www.electroplanet.ma/pc3051123-iphone-16.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:33:14.279245"
+    "scraped_at": "2026-05-03T03:19:35.930439"
+  },
+  {
+    "name": "IPHONE 16E 256GB BLACK MD1T4 APPLE",
+    "brand": "apple",
+    "model": "Iphone 16",
+    "price": 11699.0,
+    "old_price": 149.0,
+    "currency": "DH",
+    "discount": null,
+    "rating": 5.0,
+    "reviews": null,
+    "url": "https://www.electroplanet.ma/p3080538-iphone-16e-256gb-black-md1t4-apple.html",
+    "source_site": "electroplanet",
+    "scraped_at": "2026-05-03T03:19:40.475817"
   },
   {
     "name": "IPHONE 16 PRO 256GB BLACK TITANIUM MYNH3 APPLE",
     "brand": "apple",
     "model": "Iphone 16 Pro",
     "price": 18779.0,
-    "old_price": 149.0,
+    "old_price": 129.0,
     "currency": "DH",
     "discount": null,
-    "rating": 4.2,
+    "rating": 4.0,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3051157-iphone-16-pro-256gb-black-titanium-mynh3-apple.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:33:25.944956"
+    "scraped_at": "2026-05-03T03:19:41.997434"
   },
   {
     "name": "IPHONE 16 512GB ULTRAMARINE MYER3 APPLE",
@@ -679,53 +875,67 @@
     "old_price": 149.0,
     "currency": "DH",
     "discount": null,
-    "rating": null,
+    "rating": 4.2,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3051136-iphone-16-512gb-ultramarine-myer3-apple.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:33:30.820350"
+    "scraped_at": "2026-05-03T03:19:43.489507"
   },
   {
     "name": "IPHONE 16 256GB BLACK MYEE3 APPLE",
     "brand": "apple",
     "model": "Iphone 16",
     "price": 15259.0,
-    "old_price": 399.0,
+    "old_price": 149.0,
     "currency": "DH",
     "discount": null,
-    "rating": 5.0,
+    "rating": 4.0,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3051128-iphone-16-256gb-black-myee3-apple.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:33:35.989480"
+    "scraped_at": "2026-05-03T03:19:45.119479"
   },
   {
     "name": "IPHONE 16 128GB BLACK MYE73 APPLE",
     "brand": "apple",
     "model": "Iphone 16",
     "price": 13399.0,
-    "old_price": 59.0,
+    "old_price": 149.0,
     "currency": "DH",
     "discount": null,
-    "rating": 5.0,
+    "rating": 4.2,
     "reviews": null,
     "url": "https://www.electroplanet.ma/p3051123-iphone-16-128gb-black-mye73-apple.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:33:40.469451"
+    "scraped_at": "2026-05-03T03:19:46.765385"
   },
   {
     "name": "IPHONE 16 PRO 256GB DESERT TITANIUM MYNK3 APPLE",
     "brand": "apple",
     "model": "Iphone 16 Pro",
     "price": 18779.0,
-    "old_price": 149.0,
+    "old_price": 399.0,
     "currency": "DH",
     "discount": null,
     "rating": 5.0,
     "reviews": 1,
     "url": "https://www.electroplanet.ma/p3051159-iphone-16-pro-256gb-desert-titanium-mynk3-apple.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:33:45.214968"
+    "scraped_at": "2026-05-03T03:19:48.272740"
+  },
+  {
+    "name": "IPHONE 15 128GB BLACK MTP03",
+    "brand": "apple",
+    "model": "Iphone 15",
+    "price": 11699.0,
+    "old_price": 11999.0,
+    "currency": "DH",
+    "discount": "3%",
+    "rating": 4.2,
+    "reviews": null,
+    "url": "https://www.electroplanet.ma/p2994176-iphone-15-128gb-black-mtp03.html",
+    "source_site": "electroplanet",
+    "scraped_at": "2026-05-03T03:19:51.096706"
   },
   {
     "name": "IPHONE 17 PRO",
@@ -735,11 +945,11 @@
     "old_price": 18599.0,
     "currency": "DH",
     "discount": "17%",
-    "rating": 5.0,
+    "rating": 4.2,
     "reviews": null,
     "url": "https://www.electroplanet.ma/pc3106677-iphone-17-pro.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:33:49.212852"
+    "scraped_at": "2026-05-03T03:19:52.665382"
   },
   {
     "name": "IPHONE 17 PRO MAX",
@@ -749,38 +959,38 @@
     "old_price": 20299.0,
     "currency": "DH",
     "discount": "16%",
-    "rating": 5.0,
+    "rating": 4.2,
     "reviews": null,
     "url": "https://www.electroplanet.ma/pc3106686-iphone-17-pro-max.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:33:52.948407"
+    "scraped_at": "2026-05-03T03:19:54.193727"
   },
   {
     "name": "IPHONE 16E",
     "brand": "apple",
     "model": "Iphone 16",
     "price": 14599.0,
-    "old_price": 399.0,
+    "old_price": 129.0,
     "currency": "DH",
     "discount": null,
-    "rating": 4.2,
+    "rating": 4.0,
     "reviews": null,
     "url": "https://www.electroplanet.ma/pc3080536-iphone-16e.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:33:57.158931"
+    "scraped_at": "2026-05-03T03:19:55.707575"
   },
   {
     "name": "IPHONE 15",
     "brand": "apple",
     "model": "Iphone 15",
-    "price": 11999.0,
+    "price": 11699.0,
     "old_price": 11999.0,
     "currency": "DH",
-    "discount": null,
+    "discount": "3%",
     "rating": 5.0,
     "reviews": null,
     "url": "https://www.electroplanet.ma/pc2994176-iphone-15.html",
     "source_site": "electroplanet",
-    "scraped_at": "2026-05-02T21:34:07.766888"
+    "scraped_at": "2026-05-03T03:20:02.235619"
   }
 ]

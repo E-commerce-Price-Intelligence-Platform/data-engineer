@@ -14,7 +14,7 @@ End-to-end data engineering pipeline: scrapes smartphone prices from three e-com
            │ Scrapy              │ Selenium             │ Selenium
            ▼                     ▼                      ▼
 ┌──────────────────────────────────────────────────────────────────┐
-│                   Scrapers → output/*.json                        │
+│                   Scrapers → output/*.json                       │
 │  ~356 products      ~56 products           ~136 products         │
 └────────────────────────────┬─────────────────────────────────────┘
                              │
@@ -33,13 +33,20 @@ End-to-end data engineering pipeline: scrapes smartphone prices from three e-com
                                   │  8 models · 53 tests │
                                   └──────────────────────┘
 
-          All steps orchestrated by Apache Airflow (manual trigger):
+          Hybrid orchestration — streaming (NiFi) + batch (Airflow):
 
   [scrape_jumia, scrape_electroplanet]
         └──► scrape_amazon
-                ├──► setup_bigtable ──► write_to_bigtable ──┐
-                └──► load_to_bigquery ──► dbt_run ──► dbt_test (non-blocking)
-                                                    └──► validate_output ──► generate_report
+                ├──► setup_bigtable ──► nifi_trigger ──────────────┐
+                │         NiFi polls output/ every 30s              │
+                │         GetFile→SplitJson→EvaluateJsonPath        │
+                │         →UpdateAttribute→ExecuteStreamCommand      │
+                │         →Bigtable (real-time streaming path)       │
+                └──► load_to_bigquery ──► dbt_run ──► dbt_test ─────┤
+                                         (batch path)               │
+                                                    validate_output ◄┘
+                                                          │
+                                                   generate_report
 ```
 
 ---
@@ -69,15 +76,15 @@ Schedule: **manual trigger only** (`schedule=None`) — switch to `"0 6 * * *"` 
 ```
 [scrape_jumia, scrape_electroplanet] ──► scrape_amazon
                                               │
-                    ┌─────────────────────────┼──────────────────────┐
-                    ▼                         ▼                      │
-          setup_bigtable             load_to_bigquery                │
-                    │                         │                      │
-                    ▼                         ▼                      │
-          write_to_bigtable              dbt_run                     │
-                    │                         │                      │
-                    │                   dbt_test (ALL_DONE,          │
-                    │                   no timeout, non-blocking)    │
+                    ┌─────────────────────────┼─────────────────────┐
+                    ▼                         ▼                     │
+          setup_bigtable             load_to_bigquery               │
+                    │                         │                     │
+                    ▼                         ▼                     │
+          write_to_bigtable              dbt_run                    │
+                    │                         │                     │
+                    │                   dbt_test (ALL_DONE,         │
+                    │                   no timeout, non-blocking)   │
                     └──────────► validate_output ◄──────────────────┘
                                        │
                                  generate_report

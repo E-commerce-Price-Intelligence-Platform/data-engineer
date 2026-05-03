@@ -72,12 +72,22 @@ def setup_bigtable():
     logger.info("✅ Bigtable setup done")
 
 
-def write_to_bigtable():
+def nifi_trigger():
+    """
+    Ensures NiFi flow exists and is running (idempotent).
+    Calls setup_flow.py via REST API — cleans up existing processors
+    and recreates them if needed. NiFi then polls output/*.json every 30s
+    and streams each record to GCP Bigtable.
+    """
     _run(
-        ["python", f"{BIGTABLE_PATH}/bigtable_writer.py"],
-        extra_env={"OUTPUT_DIR": OUTPUT_DIR},
+        ["python3", f"{PROJECT_ROOT}/nifi/setup_flow.py"],
+        extra_env={
+            "NIFI_URL":      os.environ.get("NIFI_URL", "https://nifi:8443"),
+            "NIFI_USERNAME": "admin",
+            "NIFI_PASSWORD": "adminadminadmin",
+        },
     )
-    logger.info("✅ Bigtable write done")
+    logger.info("✅ NiFi flow configured — streaming to Bigtable active")
 
 
 # ── BigQuery + dbt ────────────────────────────────────────
@@ -180,10 +190,11 @@ with DAG(
         python_callable=setup_bigtable,
     )
 
-    task_bigtable_write = PythonOperator(
-        task_id="write_to_bigtable",
-        python_callable=write_to_bigtable,
-        execution_timeout=timedelta(minutes=5),
+    # NiFi handles real-time Bigtable writes (streaming path).
+    # This task pings NiFi to confirm it is running and will pick up output files.
+    task_nifi_trigger = PythonOperator(
+        task_id="nifi_trigger",
+        python_callable=nifi_trigger,
     )
 
     task_load_bq = PythonOperator(
@@ -198,8 +209,7 @@ with DAG(
         execution_timeout=timedelta(minutes=15),
     )
 
-    # Runs after dbt_run regardless of success/failure so failures are visible
-    # in the Airflow UI without blocking downstream validate/report tasks.
+    # Runs after dbt_run regardless of success/failure — non-blocking, no timeout.
     task_dbt_test = PythonOperator(
         task_id="dbt_test",
         python_callable=dbt_test,
@@ -218,14 +228,18 @@ with DAG(
     )
 
     # ── Pipeline order ────────────────────────────────────
-    # Scrapers run in parallel → BigQuery load → dbt run → dbt test (non-blocking)
-    # dbt deps is NOT a daily task — run once after deploy:
-    #   docker exec -it airflow dbt deps --project-dir /opt/airflow/price_intelligence/dbt \
-    #                                    --profiles-dir /opt/airflow/price_intelligence/dbt
+    # Streaming path : setup_bigtable → nifi_trigger
+    #   NiFi polls output/ every 30s and writes each record to Bigtable in real-time.
+    # Batch path     : load_to_bigquery → dbt_run → dbt_test (non-blocking)
+    # Both paths converge at validate_output → generate_report.
+    #
+    # First-time dbt setup (run once after deploy):
+    #   docker exec airflow dbt deps --project-dir /opt/airflow/price_intelligence/dbt \
+    #                                --profiles-dir /opt/airflow/price_intelligence/dbt
 
     [task_jumia, task_electro] >> task_amazon
 
-    task_amazon >> task_bigtable_setup >> task_bigtable_write
-    task_amazon >> task_load_bq >> task_dbt_run >> task_dbt_test
+    task_amazon >> task_bigtable_setup >> task_nifi_trigger   # streaming path
+    task_amazon >> task_load_bq >> task_dbt_run >> task_dbt_test  # batch path
 
-    [task_bigtable_write, task_dbt_test] >> task_validate >> task_report
+    [task_nifi_trigger, task_dbt_test] >> task_validate >> task_report
